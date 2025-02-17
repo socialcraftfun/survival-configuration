@@ -1,0 +1,26 @@
+%YAML 1.1
+---
+worlds:
+-   name: scworld
+    title: Обычный мир
+    enabled: true
+    extrazoomout: 2
+    maps:
+    -   class: org.dynmap.hdmap.HDMap
+        name: surface
+        title: Surface
+        prefix: t
+        perspective: iso_SE_30_medres
+        shader: stdtexture
+        lighting: shadows
+        mapzoomin: 4
+        boostzoom: 1
+    protected: false
+    showborder: true
+    sendposition: true
+    sendhealth: false
+    visibilitylimits: [
+        ]
+    hiddenlimits: [
+        ]
+    hidestyle: stone

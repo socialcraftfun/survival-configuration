@@ -1,0 +1,35 @@
+me:
+  radius: 30
+  format: '&5*%name% %message%*'
+do:
+  radius: 30
+  format: '&e*%action%* (%name%)'
+todo:
+  radius: 30
+  format: '%message%, - сказал &e%name%, %action%'
+try:
+  radius: 30
+  format: '&e%name% &7%action% %result%'
+whisp:
+  radius: 5
+  format: '&7%name%&f шепчет: "&o%message%&r"'
+shout:
+  radius: 50
+  format: '&6%name%&f кричит: "&o%message%!&r"'
+#форматы команды /try
+success: '&a[Успешно]'
+wasted: '&c[Неудачно]'
+ownNameChapter: '$1'
+spit:
+  enable: false
+  damage: 0.0
+  velocity: 1.0
+messages:
+  help:
+    - '[Отыгровка рп]'
+    - '&6/me <действие>&f- действие от первого лица'
+    - '&6/do <описание> &f- описание происходящего вокруг'
+    - '&6/todo <сообщение@действие> &f- деепричастный оборот'
+    - '&6/try <действие> &f- попытка действие'
+    - '&6/whisp &f-шептать'
+    - '&6/shout &f-кричать'

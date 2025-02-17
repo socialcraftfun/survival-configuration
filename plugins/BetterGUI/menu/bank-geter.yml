@@ -1,0 +1,73 @@
+menu-settings:
+  name: 'Снять наличные'
+  rows: 1
+  command: 
+    - bank-get
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+#
+get1:
+  position-x: 2
+  position-y: 1
+  amount: 1
+  id: GREEN_WOOL
+  name: '&aСнять &l&a1 денег'
+  click-requirement:
+    default:
+      take-money:
+        money:
+          value: 1
+          take: true
+      fail-action: "tell: Нету нужное количество денег на счете"
+  action: "give: diamond, 1"
+#
+get10:
+  position-x: 5
+  position-y: 1
+  amount: 10
+  id: GREEN_WOOL
+  name: '&aСнять &l&a10 денег'
+  click-requirement:
+    default:
+      take-money:
+        money:
+          value: 10
+          take: true
+      fail-action: "tell: Нету нужное количество денег на счете"
+  action: "give: diamond, 10"
+#
+get100:
+  position-x: 8
+  position-y: 1
+  amount: 50
+  id: GREEN_WOOL
+  name: '&aСнять &l&a50 денег'
+  click-requirement:
+    default:
+      take-money:
+        money:
+          value: 50
+          take: true
+      fail-action: "tell: Нету нужное количество денег на счете"
+  action: "give: diamond, 50"
+#
+get64:
+  position-x: 9
+  position-y: 1
+  amount: 64
+  id: GREEN_WOOL
+  name: '&aСнять &l&aстак денег'
+  click-requirement:
+    default:
+      take-money:
+        money:
+          value: 64
+          take: true
+      fail-action: "tell: Нету нужное количество денег на счете"
+  action: "give: diamond, 64"
+#

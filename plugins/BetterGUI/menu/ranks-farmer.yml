@@ -1,0 +1,85 @@
+menu-settings:
+  name: 'Описание рангов: &6Фермер'
+  rows: 3
+  command: 
+    - ranks-farmer
+    - farmer
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+# ОПИСАНИЕ
+info:
+  type: template
+  template: info
+  position-x: 2
+  position-y: 2
+  lore:
+    - '&fПолучи новые возможности'
+    - ' &fдля постройки ферм'
+    - ' &fи ускорения производства'
+    - ' &fресурсов!'
+# ВОМОЖНОСТИ
+opportunity:
+  type: template
+  template: opportunity
+  position-x: 4
+  position-y: 2
+  lore:
+    - '&f* 3 привата &8(&6/rg claim&8)'
+    - '&f* 4 хоума &8(&6/sethome&8)'
+    - '&f* 1 спавнер стоимостью 3 звезды'
+    - ' &7- для получения обратись к админу'
+    - '&f* Открыть магазин на рынке!'
+    - '&f    &8(&6/warp capital&8)'
+    - '&f* Флаги для привата'
+    - ' &7- creeper-explosion'
+    - '    &8иммунитет от криперов'
+    - ' &7- auto-plant'
+    - '    &8автоматическая поскадка урожая'
+    - '&f* Крафт-столы &8(&b/crafts&8)'
+    - ' &7- Камнерез &8(&b/stonecutter&8)'
+    - ' &7- Эндерчест &8(&b/echest&8)'
+    - '&f* Команды:'
+    - '&7 - /ext - потушить себя'
+    - '&7 - /bc - сделать объявление'
+    - ''
+    - '&eНезеритовая мотыга'
+# ТРЕБОВАНИЯ
+requirements:
+  type: template
+  template: requirements
+  position-x: 6
+  position-y: 2
+  lore:
+    - '&fБыть гражданином'
+    - '&fВремя: &b%statistic_hours_played%&f/&910ч.'
+    - '&fОпыт: &b%player_level%&f/&950Lvl'
+    - '&fБаланс: &b%vault_eco_balance_formatted%&f/&9128'
+    - '&f64 Жемчуг эндера'
+    - '&f64 Огненный стержень'
+    - '&f64 Белая шерсть'
+    - '&f64 Сноп сена'
+    - '&f64 Сырой лосось'
+    - '&f64 Арбуз'
+    - '&f64 Мёд'
+    - '&f64 ТНТ'
+    - '&f16 Тортиков'
+# ОБЯЗАНОСТИ
+responsibilities:
+  type: template
+  template: responsibilities
+  position-x: 8
+  position-y: 2
+  lore:
+    - '&fСтроить фермы и поставлять'
+    - ' &fресурсы республикам и столице'
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 3

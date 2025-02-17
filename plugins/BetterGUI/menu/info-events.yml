@@ -1,0 +1,31 @@
+menu-settings:
+  name: 'Ивенты'
+  rows: 5
+  command: events
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_PLING'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+next_event:
+  id: ender_eye
+  position-x: 5
+  position-y: 2
+  name: '&aСледующий ивент'
+  lore:
+    - ''
+    - '&f&l%denizen_<server.flag[new_event_name]>%'
+    - '&7в %denizen_<server.flag[new_event_time]>%'
+    - '&7%denizen_<server.flag[new_event_date]>%, %denizen_<server.flag[new_event_week_day]>%'
+
+#
+# НАЗАД
+#
+back:
+ position-x: 1
+ position-y: 5
+ type: template
+ template: back

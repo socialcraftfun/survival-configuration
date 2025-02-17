@@ -1,0 +1,20 @@
+location: scworld:-175.500:90.000:-197.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&bАдминистрация'
+    height: 0.3
+  - content: '&b--------------'
+    height: 0.3
+  - content: информация о рангах
+    height: 0.3
+  - content: кабинет админа
+    height: 0.3
+  - content: карта мира
+    height: 0.3
+  actions: {}

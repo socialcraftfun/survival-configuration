@@ -1,0 +1,40 @@
+# Supported types: [sqlite, mysql]. Default: sqlite
+storage-type: sqlite
+
+data:
+  # MySQL connection configuration
+  address: localhost:3306
+  database: survival
+  username: root
+  password: root
+  pool-settings:
+    maximum-pool-size: 10
+    minimum-idle: 10
+    maximum-lifetime: 1800000 # 30 minutes
+    properties:
+      useUnicode: true
+      characterEncoding: utf8
+      #useSSL: false
+      #verifyServerCertificate: false
+
+groups:
+  police:
+    displayname: Полиция
+  hospital:
+    displayname: Больница
+  army:
+    displayname: Армия
+  media:
+    displayname: СМИ
+  extra:
+
+passport:
+  original:
+    file: passport-original
+    author: 'Министерство паспортов'
+    cost: 100
+  copy:
+    file: passport-copy
+    author: 'Архив паспортов'
+    cost: 50
+  name: 'Паспорт SC'

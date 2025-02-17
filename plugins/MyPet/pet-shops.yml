@@ -1,0 +1,498 @@
+#####################################################################
+#             This is the shop configuration of MyPet               #
+#               You can find more info on the wiki:                 #
+#  https://wiki.mypet-plugin.de/setup/configurations/pet-shops.yml  #
+#####################################################################
+
+Shops:
+#
+#
+# NOOB
+#
+#
+  noob:
+    Name: "Набор новичка"
+    Balance:
+      Type: Private
+    Position: 2
+    Icon:
+      Material: "grass_block"
+      Glowing: false
+    Pets:
+      wolf:
+        Name: Волк
+        Description:
+          - <green> Волк!
+        PetType: Wolf
+        EXP: 0
+        Price: 100
+        Options:
+          - tamed
+      pig:
+        Name: Хрюндель
+        Description:
+          - <green> Хрюндель!
+        PetType: Pig
+        EXP: 0
+        Price: 100
+      ocelot:
+        Name: Оцелот
+        Description:
+          - <green> Оцелот!
+        PetType: Ocelot
+        EXP: 0
+        Price: 100
+      parrot:
+        Name: Попугай
+        Description:
+          - <green> Попугай!
+        PetType: Parrot
+        EXP: 0
+        Price: 100
+      slime:
+        Name: Слизьняк
+        Description:
+          - <green> Слизьняк!
+        PetType: Slime
+        EXP: 0
+        Price: 100
+        Options:
+          - size:2
+#
+#
+# Веселая ферма
+#
+#
+  farm:
+# When Default is set to true /petshop will open the sop instead of the shop selection GUI
+#    Default: true
+    Name: "Веселая ферма"
+    Balance:
+      Type: Private
+    Position: 2
+    Icon:
+      Material: "hay_block"
+      Glowing: false
+    Pets:
+     # a_unique_name:
+     #   Position: 0
+     #   Name: "Ingame Name"
+     #   Description:
+     #   - <green>This is a description!
+     #   PetType: PetTypeName
+     #   EXP: 0
+     #   Price: 100
+     #   Skilltree: "skilltreename"
+     #   Options:
+     #     - baby
+     #     - saddle
+      axolotl:
+        Name: Аксолотль
+        Description:
+          - <green> Аксолотль!
+        PetType: Axolotl
+        EXP: 0
+        Price: 100
+      allay:
+        Name: Тихоня
+        Description:
+          - <green> Тихоня!
+        PetType: Allay
+        EXP: 0
+        Price: 100
+      bat:
+        Name: Летучая мышь
+        Description:
+          - <green> Летучая мышь!
+        PetType: Bat
+        EXP: 0
+        Price: 100
+      chicken:
+        Name: Курица
+        Description:
+          - <green> Курица!
+        PetType: Chicken
+        EXP: 0
+        Price: 100
+      cow:
+        Name: Корова
+        Description:
+          - <green> Корова!
+        PetType: Cow
+        EXP: 0
+        Price: 100
+      donkey:
+        Name: Осел
+        Description:
+          - <green> Осел!
+        PetType: Donkey
+        EXP: 0
+        Price: 100
+      frog:
+        Name: Лягушка
+        Description:
+          - <green> Лягушка!
+        PetType: Frog
+        EXP: 0
+        Price: 100
+      goat:
+        Name: Козел
+        Description:
+          - <green> Козел!
+        PetType: Goat
+        EXP: 0
+        Price: 100
+      horse:
+        Name: Лошадь
+        Description:
+          - <green> Лошадь!
+        PetType: Horse
+        EXP: 0
+        Price: 100
+      llama:
+        Name: Лама
+        Description:
+          - <green> Лама!
+        PetType: Llama
+        EXP: 0
+        Price: 100
+      mooshroom:
+        Name: Муухомор
+        Description:
+          - <green> Муухомор!
+        PetType: Mooshroom
+        EXP: 0
+        Price: 100
+      mule:
+        Name: Мул
+        Description:
+          - <green> Мул!
+        PetType: Mule
+        EXP: 0
+        Price: 100
+      polarbear:
+        Name: Полярный медведь
+        Description:
+          - <green> Полярный медведь!
+        PetType: PolarBear
+        EXP: 0
+        Price: 100
+      rabbit:
+        Name: Кролик
+        Description:
+          - <green> Кролик!
+        PetType: Rabbit
+        EXP: 0
+        Price: 100
+      sheep:
+        Name: Овца
+        Description:
+          - <green> Овца!
+        PetType: Sheep
+        EXP: 0
+        Price: 100
+      silverfish:
+        Name: Чешуйница
+        Description:
+          - <green> Чешуйница!
+        PetType: Silverfish
+        EXP: 0
+        Price: 100
+      snowman:
+        Name: Снеговик
+        Description:
+          - <green> Снеговик!
+        PetType: Snowman
+        EXP: 0
+        Price: 100
+      squid:
+        Name: Спрут
+        Description:
+          - <green> Спрут!
+        PetType: Squid
+        EXP: 0
+        Price: 100
+      glow_squid:
+        Name: Светящийся спрут
+        Description:
+          - <green> Светящийся спрут!
+        PetType: GlowSquid
+        EXP: 0
+        Price: 100
+      tadpole:
+        Name: Головастик
+        Description:
+          - <green> Tadpole!
+        PetType: Tadpole
+        EXP: 0
+        Price: 100
+###################
+#                 #
+#     МОНСТРЫ     #
+#                 #
+###################
+  monsters:
+    Name: "Монстры"
+    Balance:
+      Type: Private
+    Position: 3
+    Icon:
+      Material: "BONE"
+      Glowing: false
+    Pets:
+      zombie:
+        Name: Зомби
+        Description:
+          - <green> Зомби!
+        PetType: Zombie
+        EXP: 0
+        Price: 100
+      skeleton:
+        Name: Скелет
+        Description:
+          - <green> Скелет!
+        PetType: Skeleton
+        EXP: 0
+        Price: 100
+      stray:
+        Name: Зимогор
+        Description:
+          - <green> Зимогор!
+        PetType: Stray
+        EXP: 0
+        Price: 100
+      spider:
+        Name: Паук
+        Description:
+          - <green> Паук!
+        PetType: Spider
+        EXP: 0
+        Price: 100
+      cavespider:
+        Name: Пещерный паук
+        Description:
+          - <green> Пещерный паук!
+        PetType: CaveSpider
+        EXP: 0
+        Price: 100
+      creeper:
+        Name: Крипер
+        Description:
+          - <green> Крипер!
+        PetType: Creeper
+        EXP: 0
+        Price: 100
+      vex:
+        Name: Вредина
+        Description:
+          - <green> Вредина!
+        PetType: Vex
+        EXP: 0
+        Price: 100
+      guardian:
+        Name: Страж
+        Description:
+          - <green> Страж!
+        PetType: Guardian
+        EXP: 0
+        Price: 100
+###################
+#                 #
+# Бойцовский клуб #
+#                 #
+###################
+  club:
+    Name: "Бойцовский клуб"
+    Balance:
+      Type: Private
+    Position: 4
+    Icon:
+      Material: "IRON_BARS"
+      Glowing: false
+    Pets:
+      villager:
+        Name: Житель
+        Description:
+          - <green> Житель!
+        PetType: Villager
+        EXP: 0
+        Price: 100
+      vindicator:
+        Name: Поборник
+        Description:
+          - <green> Поборник!
+        PetType: Vindicator
+        EXP: 0
+        Price: 100
+      witch:
+        Name: Ведьма
+        Description:
+          - <green> Ведьма!
+        PetType: Witch
+        EXP: 0
+        Price: 100
+      evoker:
+        Name: Вызыватель
+        Description:
+          - <green> Вызыватель!
+        PetType: Evoker
+        EXP: 0
+        Price: 100
+      illusioner:
+        Name: Иллюзионист
+        Description:
+          - <green> Иллюзионист!
+        PetType: Illusioner
+        EXP: 0
+        Price: 100
+      iron_golem:
+        Name: Железный Голем
+        Description:
+          - <green> Железный Голем!
+        PetType: IronGolem
+        EXP: 0
+        Price: 100
+#######
+#     #
+# END #
+#     #
+#######
+  end:
+    Name: "Край"
+    Balance:
+      Type: Private
+    Position: 5
+    Icon:
+      Material: "END_STONE"
+      Glowing: false
+    Pets:
+      enderman:
+        Name: Эндермен
+        Description:
+          - <green> Эндермен!
+        PetType: Enderman
+        EXP: 0
+        Price: 100
+      endermite:
+        Name: Эндермит
+        Description:
+          - <green> Эндермит!
+        PetType: Endermite
+        EXP: 0
+        Price: 100
+##########
+#        #
+# NETHER #
+#        #
+##########
+  nether:
+    Name: "Адские животные"
+    Balance:
+      Type: Private
+    Position: 6
+    Icon:
+      Material: "RED_NETHER_BRICKS"
+      Glowing: false
+    Pets:
+      strider:
+        Name: Страйдер
+        Description:
+          - <green> Страйдер!
+        PetType: Strider
+        EXP: 0
+        Price: 100
+      magmacube:
+        Name: Куб магмы
+        Description:
+          - <green> Куб магмы!
+        PetType: MagmaCube
+        EXP: 0
+        Price: 100
+        Options:
+          - size:2
+      hoglin:
+        Name: Хоглин
+        Description:
+          - <green> Хоглин!
+        PetType: Hoglin
+        EXP: 0
+        Price: 100
+      zoglin:
+        Name: Зоглин
+        Description:
+          - <green> Зоглин!
+        PetType: Zoglin
+        EXP: 0
+        Price: 100
+      piglin:
+        Name: Пиглин
+        Description:
+          - <green> Пиглин!
+        PetType: Piglin
+        EXP: 0
+        Price: 100
+      zombified_piglin:
+        Name: Зомбифицированный пиглин
+        Description:
+          - <green> Свинозомби!
+        PetType: ZombifiedPiglin
+        EXP: 0
+        Price: 100
+      blaze:
+        Name: Инфрит
+        Description:
+          - <green> Инфрит!
+        PetType: Blaze
+        EXP: 0
+        Price: 100
+      wither_skeleton:
+        Name: Скелет-иссушитель
+        Description:
+          - <green> Wither Skeleton!
+        PetType: WitherSkeleton
+        EXP: 0
+        Price: 100
+      wither:
+        Name: Иссушитель
+        Description:
+          - <green> Иссушитель!
+        PetType: Wither
+        EXP: 0
+        Price: 100
+  epic:
+    Name: "Премиум люкс президент класс"
+    Balance:
+      Type: Private
+    Position: 13
+    Icon:
+      Material: "GOLD_BLOCK"
+      Glowing: false
+    Pets:
+      skeleton_horse:
+        Name: Лошадь-скелет
+        Description:
+          - <green> Лошадь-скелет!
+        PetType: SkeletonHorse
+        EXP: 0
+        Price: 100
+      zombie_horse:
+        Name: Зомби-лошадь
+        Description:
+          - <green> Зомби-лошадь!
+        PetType: ZombieHorse
+        EXP: 0
+        Price: 100
+      warden:
+        Name: Хранитель
+        Description:
+          - <green> Если встретишь - молись
+        PetType: Warden
+        EXP: 100
+        Price: 200
+      elder_guardian:
+        Name: Древний Страж
+        Description:
+          - <green> Древний Страж!
+        PetType: ElderGuardian
+        EXP: 0
+        Price: 100

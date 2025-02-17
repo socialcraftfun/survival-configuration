@@ -1,0 +1,150 @@
+menu-settings:
+  name: 'Главное меню'
+  rows: 5
+  command: menu
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+#
+# 1 СТРОКА
+#
+#
+commands:
+  id: command_block
+  position-x: 3
+  position-y: 1
+  name: '&6Команды сервера'
+  action:
+    - 'open: menu_commands.yml'
+#
+#
+info_server:
+  id: ender_eye
+  position-x: 5
+  position-y: 1
+  name: '&6О сервере'
+#
+#
+rules:
+  id: book
+  position-x: 7
+  position-y: 1
+  name: '&6Правила сервера'
+  action:
+    - close-menu
+    - "tell: &6====================================================="
+    - "tell: &6КРАТКИЕ ПРАВИЛА СЕРВЕРА"
+    - "tell: &a1. Не гриферить"
+    - "tell: &a2. Не брать чужое даже без привата"
+    - "tell: &a3. Быть уважительным к игрокам и админам"
+    - "tell: &a4. Не использовать нецензурную лексику в чате, табличках и любых названиях"
+    - "tell: &a5. Не обсуждать политику, не отыгрывать политическое РП"
+    - "tell: &a6. Не строить лаг-машины и не портить игровой мир"
+    - "tell: &a7. Не использовать баги и читы"
+    - "tell: &a8. Не рекламировать сторонние ресурсы"
+    - "tell: &aНаказание по ситуации: мут/тюрьма/бан"
+    - "tell: &6Прочитай полные правила по ссылке!"
+    - "tell: &6https://socialcraft.fun/forum/rules/"
+    - "tell: &6====================================================="
+#
+# 2 СТРОКА
+#
+#
+links:
+  id: cobweb
+  position-x: 2
+  position-y: 2
+  name: '&6Полезные ссылки'
+  action:
+    - close-menu
+    - "tell: &9====================================================="
+    - "tell: &9Дискорд: <&r>https://discord.gg/NpD6tteQ3g"
+    - "tell: &9Онлайн карта: <&r>http://95.217.92.217:25579/"
+    - "tell: &9Донат: <&r>https://socialcraft.fun"
+    - "tell: &9Форум: <&r>https://socialcraft.fun/forum"
+    - "tell: &9HotMC: <&r>https://hotmc.ru/minecraft-server-190849"
+    - "tell: &9ВК: <&r>https://vk.com/serversocialcraft"
+    - "tell: &9====================================================="
+#
+#
+earn:
+  id: diamond
+  position-x: 8
+  position-y: 2
+  name: '&6Как заработать'
+  action:
+    - 'open: help_earn.yml'
+#
+# 3 СТРОКА
+#
+#
+info_player:
+  id: player_head
+  position-x: 5
+  position-y: 3
+  name: '&6ТЫ'
+  action:
+    - 'open: player.yml'
+#
+# 4 СТРОКА
+#
+#
+warp:
+  id: ender_pearl
+  position-x: 2
+  position-y: 4
+  name: '&6Варпы'
+  action:
+    - 'open: menu-warps.yml'
+#
+#
+donate:
+  id: enchanted_golden_apple
+  position-x: 8
+  position-y: 4
+  name: '&5&lДонат &8(/dm)'
+  action:
+    - 'open: menu-donators.yml'
+  lore:
+    - ' &fСписок бонусов, которые вы можете получить'
+    - '&fза донат на сайте socialcraft.fun'
+#
+# 5 СТРОКА
+#
+#
+crafts:
+  id: crafting_table
+  position-x: 2
+  position-y: 5
+  name: '&6Крафт-столы'
+  lore:
+    - ' &fБыстрый доступ ко всем'
+    - '&fкрафт-столам в одном месте'
+  action:
+    - 'open: menu-crafting-tables.yml'
+#
+#
+events:
+  id: dragon_egg
+  position-x: 5
+  position-y: 5
+  name: '&6Ивенты'
+  action:
+    - 'open: info-events.yml'
+#
+#
+ranks:
+  id: diamond_pickaxe
+  position-x: 7
+  position-y: 5
+  name: '&6&lРанги &8(/ranks)'
+  lore:
+    - ' &fБонусы, условия получения и обязаности'
+    - '&fвсех рангов'
+  action:
+    - 'open: ranks.yml'

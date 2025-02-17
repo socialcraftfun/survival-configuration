@@ -1,0 +1,187 @@
+# Citizens NPC Storage
+
+last-created-npc-id: 4
+npc:
+  '2':
+    name: Приём
+    uuid: 810434b1-a4ef-4d85-b651-295fd1556631
+    traits:
+      owner:
+        uuid: 7474bfbc-4258-3f3b-8a5b-8dc718c13a69
+      skintrait: {}
+      spawned: true
+      location:
+        bodyYaw: 110.67532
+        world: scworld
+        x: -1334.5
+        y: 69.0
+        z: -461.5
+        yaw: 119.7469
+        pitch: -13.7385
+      type: PLAYER
+      commandtrait:
+        commands:
+          '0':
+            command: bank-give
+            hand: RIGHT
+            player: true
+            npc: false
+            op: false
+            cooldown: 0
+            globalcooldown: 0
+            n: -1
+            delay: 0
+            cost: -1.0
+            experienceCost: -1
+      lookclose:
+        range: 5.0
+        enabled: true
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+    traitnames: scoreboardtrait,spawned,owner,rotationtrait,commandtrait,skintrait,mounttrait,lookclose,location,type,inventory
+    navigator:
+      speedmodifier: 1.0
+      avoidwater: false
+      usedefaultstuckaction: true
+  '1':
+    name: Выдача
+    uuid: c89bba5a-16a9-4c7c-bef8-b405fade6dd2
+    traits:
+      owner:
+        uuid: 7474bfbc-4258-3f3b-8a5b-8dc718c13a69
+      skintrait: {}
+      spawned: true
+      location:
+        bodyYaw: 43.33078
+        world: scworld
+        x: -1334.5
+        y: 69.0
+        z: -466.5
+        yaw: 43.3308
+        pitch: -11.4667
+      type: PLAYER
+      commandtrait:
+        commands:
+          '0':
+            command: bank-get
+            hand: RIGHT
+            player: true
+            npc: false
+            op: false
+            cooldown: 0
+            globalcooldown: 0
+            n: -1
+            delay: 0
+            cost: -1.0
+            experienceCost: -1
+      lookclose:
+        range: 5.0
+        enabled: true
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+    traitnames: scoreboardtrait,spawned,owner,rotationtrait,commandtrait,skintrait,mounttrait,lookclose,location,type,inventory
+    navigator:
+      speedmodifier: 1.0
+      avoidwater: false
+      usedefaultstuckaction: true
+  '0':
+    name: '&dКосмический Брокер'
+    uuid: 545b7373-6c94-485d-965b-221f892b9745
+    traits:
+      owner:
+        uuid: 7474bfbc-4258-3f3b-8a5b-8dc718c13a69
+      skintrait: {}
+      spawned: true
+      location:
+        bodyYaw: 12.454536
+        world: scworld
+        x: -1318.0
+        y: 69.0
+        z: -495.0
+        yaw: 12.4545
+        pitch: 0.0
+      type: PLAYER
+      hologramtrait: {}
+      commandtrait:
+        commands:
+          '0':
+            command: stars
+            hand: RIGHT
+            player: true
+            npc: false
+            op: false
+            cooldown: 0
+            globalcooldown: 0
+            n: -1
+            delay: 0
+            cost: -1.0
+            experienceCost: -1
+      lookclose:
+        range: 5.0
+        enabled: true
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+    traitnames: scoreboardtrait,spawned,owner,rotationtrait,commandtrait,hologramtrait,skintrait,mounttrait,lookclose,location,type,inventory
+    navigator:
+      speedmodifier: 1.0
+      avoidwater: false
+      usedefaultstuckaction: true
+  '3':
+    name: Алмазный обмен
+    uuid: 919f5a74-f0d7-43d3-808d-576e40b5974e
+    traits:
+      spawned: true
+      assignment:
+        assignment_list:
+          '0': stars_to_diamonds
+      type: PLAYER
+      triggers:
+        enabled:
+          CHAT: true
+          CLICK: true
+          PROXIMITY: true
+          DAMAGE: false
+        properly_set:
+          CHAT: true
+          CLICK: true
+          PROXIMITY: true
+          DAMAGE: false
+        radius:
+          PROXIMITY: 5
+      location:
+        bodyYaw: -31.523159
+        world: scworld
+        x: -1321.5
+        y: 69.0
+        z: -489.5
+        yaw: -31.5232
+        pitch: -1.1388
+      lookclose:
+        range: 5.0
+        enabled: true
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      skintrait: {}
+      owner:
+        uuid: 7474bfbc-4258-3f3b-8a5b-8dc718c13a69
+    traitnames: spawned,owner,scoreboardtrait,rotationtrait,assignment,mounttrait,skintrait,lookclose,type,triggers,inventory,location,constants
+    navigator:
+      speedmodifier: 1.0
+      avoidwater: false
+      usedefaultstuckaction: true

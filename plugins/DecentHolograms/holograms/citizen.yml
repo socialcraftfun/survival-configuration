@@ -1,0 +1,36 @@
+location: scworld:-1343.500:80.000:-517.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&b[Гражданин]'
+    height: 0.3
+  - content: '&b&nБонусы'
+    height: 0.3
+  - content: Магазин звёзд &7/stars
+    height: 0.3
+  - content: Портативный верстак &7/wb
+    height: 0.3
+  - content: '&oДоступ к остальным рангам'
+    height: 0.3
+  - content: '&oВступление в республику'
+    height: 0.3
+  - content: '&oПолучение паспорта'
+    height: 0.3
+  - content: '&oГолосование на выборах'
+    height: 0.3
+  - content: '&oВозможность баллотироваться'
+    height: 0.3
+  - content: '&oна пост Президента'
+    height: 0.3
+  - content: '&b------------------'
+    height: 0.3
+  - content: 'Что нужно: &b/ranks'
+    height: 0.3
+  - content: 'Повысить ранг: &b/rank citizen'
+    height: 0.3
+  actions: {}

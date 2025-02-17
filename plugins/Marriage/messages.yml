@@ -1,0 +1,75 @@
+player_not_found: '&cИгрок с именем %s не найден'
+target_already_married: '&cИгрок %s уже женат или замужем'
+already_married: '&cТы уже женат или замужем'
+married: '&a&lИгроки %s и %s только что поженились!'
+marriage_requested: '&aИгрок %s предлагает тебе пожениться, пропиши &e/marry %s &aчтобы
+  согласиться'
+request_sent: '&aТы сделал(а) предложение %s'
+not_married: '&cТы сейчас не женат (не замужем)'
+divorced: '&aИгроки %s и %s развелись!'
+home_teleport: '&aТы телепортировался в семейный дом'
+home_not_set: '&cСемейный дом не установлен'
+no_item: '&cТы должен держать в руке предмет, который хочешь подарить'
+item_gifted: '&aТы подарил %s %s своему партнеру'
+gift_received: '&aТы получил %s %s в подарок от партнера'
+partner_not_online: '&cТвой партнер сейчас не онлайн'
+fetching_list: '&eСоставляю список пар...'
+home_set: '&aСемейный дом установлен'
+invalid_format: '&cКоманда введена неверно'
+invalid_gender: '&cТакого пола не существует! Выбери "male"(мужской) or "female"(женский)'
+gender_set: '&aУстановлен пол %s!'
+marry_self: '&cТы не можешь жениться на себе -_-'
+negative_number: '&cВведи положительное число'
+priest_added: '&aСвященник назначен, %s теперь может проводить венчания'
+priest_removed: '&aСвященник убран, он больше не может проводить венчания'
+teleported: '&aТы телепортировался к партнеру'
+teleported_2: '&aТвой партнер телепортировался к тебе'
+online_since: '&aТвой партнер был &2онлайн &a%s!'
+offline_since: '&aТвой партнер был &cоффлайн &a%ss!'
+not_a_priest: '&cТы не можешь проводить венчания. Получи роль священника'
+cooldown: '&cНе прописывай команды так часто!'
+update_available: |-
+  &f&l[Marriage] &eДоступно обновление! %s for %s
+  Пропиши &6/marry update &eчтобы обновить плагин
+paid_fee: '&a%s было снято с твоего счета'
+insufficient_money: '&cНа твоем счете недостаточно денег, нужно %s'
+partner_fee: '&cТвой партнер не оплатил взнос'
+married_to: '&fЖенат (замужем) на %s'
+chat_enabled: '&aСемейный чат включен'
+chat_disabled: '&aСемейный чат выключен'
+chat_spy_enabled: '&aТеперь ты можешь видеть семейные чаты'
+chat_spy_disabled: '&aТы больше не можешь видеть семейные чаты'
+no_health: '&cУ тебя недостаточно здоровья, чтобы поделиться'
+full_health: '&cУ твоего партнера и так полное здоровье'
+health_given: '&aТы передал партнеру %s сердечек'
+health_taken: '&aТвой партнер передал тебе %s сердечек'
+pvp_enabled: '&aПвп с партнером включено'
+pvp_disabled: '&aПвп с партнером отключено'
+partner_pvp: '&aТвой партнер изменил правила пвп'
+bonus_exp: '&aТы получил %s дополнительного опыта за нахождение в одном мире с партнером'
+config_reload: '&aНастройки были перезагружены, имей в виду, что некоторые настройки
+  требуют перезагрузки сервера'
+gender_already_changed: '&cТвой пол уже установлен, менять пол запрещено'
+teleport_unsafe: '&cМесто, куда ты пытаешься телепортироваться, небезопасно или заблокировано'
+partner_inventory_full: '&cНельзя подарить предмет, инвентарь твоего партнера заполнен'
+command_marry: Сделать предложение другому игроку
+command_marry_priest: Поженить двух игроков
+command_chat: Включить семейный чат
+command_divorce: Развестись
+command_gender: Установить свой пол, "male" - мужской, "female" - женский
+command_gift: Подарить партнеру предмет, который держишь в руке
+command_home: Телепортироваться в семейный дом
+command_list: Показать список всех пар на сервере
+command_seen: Проверить, когда партнер был онлайн
+command_sethome: Установить семейный дом
+command_teleport: Телепортироваться к партнеру
+command_heal: Вылечить партнера, поделившись здоровьем
+command_pvp: Включить или выключить пвп с партнером
+status: '&aСтатус: %s'
+single: '&fодинок'
+on_off: on/off
+unknown_gender: '&cUnknown gender. Pick one of: %s'
+current_gender: '&aYour current gender is %s. Available options: %s'
+list_header: '&6&lMarried Players:'
+list_page: '&6Page %s of %s'
+gay_is_denied: '&cSame-sex marriage isn''t allowed!'

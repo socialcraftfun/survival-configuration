@@ -1,0 +1,99 @@
+menu-settings:
+  name: 'Описание рангов'
+  rows: 5
+  command: ranks
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+#
+# 2 СТРОКА
+#
+#
+# ГРАЖДАНИЕ
+citizen:
+  id: LIGHT_BLUE_GLAZED_TERRACOTTA
+  position-x: 2
+  position-y: 2
+  name: '&b[Гражданин]'
+  lore:
+    - '&fНажмите чтобы открыть полный список'
+  action:
+    - 'open: ranks-citizen.yml'
+# ФЕРМЕР
+farmer:
+  id: YELLOW_GLAZED_TERRACOTTA
+  position-x: 4
+  position-y: 2
+  name: '&6[Фермер]'
+  lore:
+    - '&fНажмите чтобы открыть полный список'
+  action:
+    - 'open: ranks-farmer.yml'
+# ЭКОЛОГ
+eco:
+  id: LIME_GLAZED_TERRACOTTA
+  position-x: 6
+  position-y: 2
+  name: '&a[Эколог]'
+  lore:
+    - '&fНажмите чтобы открыть полный список'
+  action:
+    - 'open: ranks-eco.yml'
+# ПОЛИЦЕЙСКИЙ
+police:
+  id: BLUE_GLAZED_TERRACOTTA
+  position-x: 8
+  position-y: 2
+  name: '&9[Полицейский]'
+  lore:
+    - '&fНажмите чтобы открыть полный список'
+  action:
+    - 'open: ranks-police.yml'
+#
+# 4 СТРОКА
+#
+#
+# ЛИДЕР
+leader:
+  id: ORANGE_GLAZED_TERRACOTTA
+  position-x: 3
+  position-y: 4
+  name: '&6[Лидер]'
+  lore:
+    - '&fНажмите чтобы открыть полный список'
+  action:
+    - 'open: ranks-leader.yml'
+# ПРЕЗИДЕНТ
+president:
+  id: GREEN_GLAZED_TERRACOTTA
+  position-x: 5
+  position-y: 4
+  name: '&2[Президент]'
+  lore:
+    - '&fНажмите чтобы открыть полный список'
+  action:
+    - 'open: ranks-president.yml'
+# Ютубер
+president:
+  id: GREEN_GLAZED_TERRACOTTA
+  position-x: 7
+  position-y: 4
+  name: '&cYouTube'
+  lore:
+    - '&fНажмите чтобы открыть полный список'
+  action:
+    - 'open: ranks-youtuber.yml'
+#
+# 5 СТРОКА
+#
+#
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 5

@@ -1,0 +1,25 @@
+storageSize: 3
+shopfrontSize: 3
+type: PLAYER
+duration: 30d
+cost: 12
+storage: []
+trusted: []
+disable_notifications: false
+expire: 1724272994314
+times_rented: 1
+collected_money: 0.0
+require_permission: false
+stats:
+  items_sold: 1595
+  items_bought: 0
+  money_earned: 184.0
+  money_spent: 0.0
+entity:
+  profession: NONE
+  name: §aСвободный магазин!
+  location:
+    x: -1276.5
+    y: 68.0
+    z: -496.5
+    world: scworld

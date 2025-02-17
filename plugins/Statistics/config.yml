@@ -1,0 +1,5 @@
+host: '199.83.103.236'
+port: 3306
+database: 'scs_main'
+username: 'socialcraft_user'
+password: 'xT7eP1qV5d'

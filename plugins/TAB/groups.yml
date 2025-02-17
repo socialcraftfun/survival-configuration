@@ -1,0 +1,23 @@
+Owner:
+  tabprefix: '&0&l[&a&lOwner&0&l] &a'
+  tagprefix: '&2&lOwner &a'
+Player:
+  tabprefix: '&0&l[&7&lPlayer&0&l] &3'
+  tagprefix: '&2&lPlayer &3'
+example_group:
+  header:
+  - This is an example of per-group header/footer
+  footer:
+  - applied to a group
+per-world:
+  world1:
+    Owner:
+      tabprefix: '&0&l[&a&lOwner&0&l] &a'
+      tagprefix: '&2&lOwner &a'
+_DEFAULT_:
+  tabprefix: '%javascript_check_voice%%vault_prefix%'
+  tagprefix: '' # %vault_prefix%
+  tabsuffix: '%essentials_afk%'
+  tagsuffix: '%essentials_afk%'
+  customtabname: '%player%'
+  customtagname: '%essentialsnick%'

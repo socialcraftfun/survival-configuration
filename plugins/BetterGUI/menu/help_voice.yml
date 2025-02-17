@@ -1,0 +1,115 @@
+menu-settings:
+  name: 'Помощь по ГС чату'
+  rows: 4
+  command: helpvoice
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+#
+# 1 СТРОКА
+#
+
+#
+# 2 СТРОКА
+#
+
+# ШАГ 1
+step_1:
+  id: player_head
+  paper-skull: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTlkODU5ZDZiYWYzM2VjY2RlOTk3NTAxYTc2ZThiODNjNDFhYTY4NTliOGU0ZmUxYmUyYWMwOGNjMDQ4NDMifX19"
+  amount: 1
+  position-x: 4
+  position-y: 2
+  name: '&aЧто такое &9Simple Voice Chat&a?'
+  lore:
+    - ''
+    - '&7Это мод для майнкрафта, которая повзолит'
+    - '&7общаться прямо на сервере при помощи'
+    - '&7&9голосового &7чата'
+# ШАГ 2
+step_2:
+  id: player_head
+  paper-skull: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTlkODU5ZDZiYWYzM2VjY2RlOTk3NTAxYTc2ZThiODNjNDFhYTY4NTliOGU0ZmUxYmUyYWMwOGNjMDQ4NDMifX19"
+  amount: 2
+  position-x: 5
+  position-y: 2
+  name: '&aПомощь по установке'
+  lore:
+    - ''
+    - '&e1. &7Перейти по ссылке, нажав на эту кнопку'
+    - '&e2. &7Скачайте файл, подходящий под ваш клиент &9(Forge/Fabric)'
+    - '&e3. &7Переместите файл в папку &9mods &7майнкрафта'
+    - ''
+    - '&9Клик&7, чтобы получить ссылку'
+  action:
+    - "tell: &9&nhttps://modrinth.com/plugin/simple-voice-chat"
+# ШАГ 3
+step_3:
+  id: player_head
+  paper-skull: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTlkODU5ZDZiYWYzM2VjY2RlOTk3NTAxYTc2ZThiODNjNDFhYTY4NTliOGU0ZmUxYmUyYWMwOGNjMDQ4NDMifX19"
+  amount: 3
+  position-x: 6
+  position-y: 2
+  name: '&aПомощь по запуску'
+  lore:
+    - ''
+    - '  &7После того, как вы установили мод и зашли на сервер'
+    - '&7нажмите кнопку &cV&7. В меню вы сможете'
+    - '&7настроить мод под себя'
+    - ''
+    - '&7На нашем сервере с голосым чатом также открывается'
+    - '&7доступ к прослушиванию кастомных пластинок!'
+    - ''
+    - '&7 В табе будет отображатся работа голосового чата'
+    - '&a● &7- голосовой чат работает'
+    - '&c● &7- голосовой чат не работает'
+#
+# 3 СТРОКА
+#
+
+#
+# 4 СТРОКА
+#
+
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 4
+  position-y: 4
+# ХЕЛП по режиму
+help_mode:
+  id: player_head
+  position-x: 5
+  position-y: 4
+  name: '&fПомощь по игре'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help.yml'
+# ХЕЛП по чату
+help_chat:
+  id: player_head
+  position-x: 6
+  position-y: 4
+  name: '&fПомощь по голосовому чату'
+  lore:
+    - ''
+    - '&eВы уже на текущей странице'
+# ХЕЛП по приватам
+help_region:
+  id: glass_bottle
+  position-x: 7
+  position-y: 4
+  name: '&fПомощь по приватам'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help_region.yml'

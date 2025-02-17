@@ -1,0 +1,36 @@
+location: scworld:-1335.500:80.000:-515.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&9[Полицейский]'
+    height: 0.3
+  - content: '&9&nБонусы'
+    height: 0.3
+  - content: Незеритовый меч
+    height: 0.3
+  - content: Незеритовая броня
+    height: 0.3
+  - content: '&oПолучает зарплату'
+    height: 0.3
+  - content: '&oЧитает локальные чаты'
+    height: 0.3
+  - content: '&7/co near /tp'
+    height: 0.3
+  - content: '&7/mute /jail'
+    height: 0.3
+  - content: '&7/smithtable'
+    height: 0.3
+  - content: '&9------------------'
+    height: 0.3
+  - content: 'Что нужно: &9/rank police'
+    height: 0.3
+  - content: Для получения
+    height: 0.3
+  - content: '&9обратись к админу'
+    height: 0.3
+  actions: {}

@@ -1,0 +1,54 @@
+menu-settings:
+  name: '&c&lYou&f&lTube'
+  rows: 3
+  command: 
+    - ranks-youtuber
+    - youtuber
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+# ОПИСАНИЕ
+info:
+  type: template
+  template: info
+  position-x: 2
+  position-y: 2
+# ВОМОЖНОСТИ
+opportunity:
+  type: template
+  template: opportunity
+  position-x: 4
+  position-y: 2
+  lore:
+    - '&f* &dОбъявление о стримах или видео'
+    - '&f    &dна весь сервер!'
+    - '&f* Все возможности &2Инвестора'
+# ТРЕБОВАНИЯ
+requirements:
+  type: template
+  template: requirements
+  position-x: 6
+  position-y: 2
+  lore:
+    - '&fСделать 1 ролик для YouTube'
+    - ' &fили стрим по SocialCraft'
+# ОБЯЗАНОСТИ
+responsibilities:
+  type: template
+  template: responsibilities
+  position-x: 8
+  position-y: 2
+  lore:
+    - '&fВыпускать новые ролики '
+    - ' &fне реже, чем раз'
+    - ' &fв 2 недели'
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 3

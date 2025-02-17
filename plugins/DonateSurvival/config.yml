@@ -1,0 +1,48 @@
+# Supported types: [sqlite, mysql]. Default: sqlite
+storage-type: sqlite
+
+data:
+  # MySQL connection configuration
+  address: localhost:3306
+  database: survival
+  username: root
+  password: root
+  pool-settings:
+    maximum-pool-size: 10
+    minimum-idle: 10
+    maximum-lifetime: 1800000 # 30 minutes
+    properties:
+      useUnicode: true
+      characterEncoding: utf8
+      #useSSL: false
+      #verifyServerCertificate: false
+
+# List of entity types https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+spawners:
+  default: pig
+  list:
+    pig: 1
+    horse: 1
+    rabbit: 1
+    cat: 1
+    wolf: 1
+    parrot: 1
+    bat: 1
+    squid: 1
+    slime: 1
+    enderman: 1
+    polar_bear: 1
+    drowned: 1
+    dolphin: 1
+    llama: 1
+    fox: 1
+    panda: 1
+    cow: 1
+    skeleton: 1
+    MUSHROOM_COW: 1
+    ZOMBIFIED_PIGLIN: 3
+shop:
+  spawner:
+    specified-price-for-spawners: false
+    cost: 5
+  sword: 10

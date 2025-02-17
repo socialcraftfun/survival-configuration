@@ -1,0 +1,113 @@
+# This file is not intended to be manually modified! If you want to manually edit this file anyways, ensure that the server is not running currently and that you have prepared a backup of this file.
+
+data-version: 3|1|3465
+'123':
+  uniqueId: 528d97c5-e4e7-477f-a283-3f3102a732d5
+  world: scworld
+  x: 821
+  y: 85
+  z: -497
+  yaw: 353.87268
+  type: admin
+  name: ''
+  object:
+    type: villager
+    baby: false
+    profession: NITWIT
+    villagerType: PLAINS
+    villagerLevel: 1
+  recipes:
+    '1':
+      resultItem:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: PUMPKIN_PIE
+        amount: 64
+      item1:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: DIAMOND
+        amount: 4
+    '2':
+      resultItem:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: COOKIE
+        amount: 64
+      item1:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: DIAMOND
+        amount: 3
+    '3':
+      resultItem:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: CAKE
+      item1:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: DIAMOND
+        amount: 3
+    '4':
+      resultItem:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: HONEY_BOTTLE
+        amount: 16
+      item1:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: DIAMOND
+        amount: 3
+  snapshots: []
+'124':
+  uniqueId: 2a28641d-312a-4fe1-96b1-fc8126cb3792
+  world: scworld
+  x: 818
+  y: 85
+  z: -497
+  yaw: 346.87527
+  type: admin
+  name: ''
+  object:
+    type: villager
+    baby: false
+    profession: NITWIT
+    villagerType: PLAINS
+    villagerLevel: 1
+  recipes:
+    '1':
+      resultItem:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: COOKED_BEEF
+        amount: 64
+      item1:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: DIAMOND
+        amount: 4
+    '2':
+      resultItem:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: COOKED_SALMON
+        amount: 64
+      item1:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: DIAMOND
+        amount: 3
+    '3':
+      resultItem:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: BAKED_POTATO
+        amount: 64
+      item1:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3465
+        type: DIAMOND
+        amount: 3
+  snapshots: []

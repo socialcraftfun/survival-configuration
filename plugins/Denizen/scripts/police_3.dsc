@@ -1,0 +1,793 @@
+#
+# Команда модераторов и полицейских /police
+police_cmd:
+    type: command
+    name: police
+    description: Команда для работы с полицейской базой данных и назначения полицейских
+    usage: /police rank | profile [player] | case | help
+    permission: police.cmd
+    permission message: У вас нет разрешения использовать эту команду
+    tab completions:
+        1: rank|profile|case|help
+        2: <context.args.first.equals[rank].if_true[check|assign].if_false[]>|<context.args.first.equals[profile].if_true[<server.online_players.parse[name]>].if_false[]>|<context.args.first.equals[case].if_true[create|<util.list_numbers[to=<server.flag[police_case_count]>]>].if_false[]>
+        3: <context.args.get[2].equals[check].if_true[<server.online_players.parse[name]>].if_false[]>|<context.args.get[2].equals[assign].if_true[<server.online_players.parse[name]>].if_false[]>|<context.args.get[2].is_integer.if_true[look|edit|add|close|wrong].if_false[]>|<context.args.get[2].equals[create].if_true[<server.online_players.parse[name]>].if_false[]>
+        4: <context.args.get[3].equals[add].if_true[accused|evidence|victim|witness|comment|charges].if_false[]>|<context.args.get[3].equals[edit].if_true[comment|charges|victim|accused|measures|evidence|witness].if_false[]>|<context.args.get[2].equals[create].if_true[кража|оскобления|"порча мира"|"убийство игрока"|"убийство моба"|жульничество|читы|багоюз|угрозы|помеха|вандализм|"нецензурная лексика"|вымогательства|провокации|дискриминация|флуд|спам|"реклама внеигрового ресурса"|"строительство лагмашины"|"политическая пропаганда"].if_false[]>
+        5: <context.args.get[4].equals[accused].if_true[<server.online_players.parse[name]>].if_false[]>|<context.args.get[4].equals[victim].if_true[<server.online_players.parse[name]>].if_false[]>|<context.args.get[4].equals[witness].if_true[<server.online_players.parse[name]>].if_false[]>|<context.args.get[2].equals[create].if_true[<server.online_players.parse[name]>].if_false[]>|<context.args.get[4].equals[charges].if_true[кража|оскобления|"порча мира"|"убийство игрока"|"убийство моба"|жульничество|читы|багоюз|угрозы|помеха|вандализм|"нецензурная лексика"|вымогательства|провокации|дискриминация|флуд|спам|"реклама внеигрового ресурса"|"строительство лагмашины"|"политическая пропаганда"].if_false[]>
+    script:
+    - choose <context.args.first>:
+        - case rank:
+            - choose <context.args.get[2]>:
+                - case check:
+                    - narrate "Временно не работает"
+                    - narrate "Используй /rpolice check"
+                - case assign:
+                    - narrate "Временно не работает"
+                    - narrate "Используй /rpolice assign"
+        - case profile:
+            - define player <server.match_offline_player[<context.args.get[2].if_null[<empty>]>].if_null[null]>
+            - if <[player]> == null:
+                - narrate <&9>=====================================================
+                - narrate "Такого игрока нет на сервере"
+                - narrate <&9>=====================================================
+                - stop
+            - narrate <&9>=====================================================
+            - narrate "<&9>Игрок <&f><[player].name> <[player].has_flag[rank_system_star].if_true[<&6>★].if_false[]>"
+            # - narrate "UUID: <[player].uuid>"
+            - narrate "<&7>Дата регистрации: <&f><[player].first_played_time.format[dd/MM/yyyy]>"
+            - narrate "<&7>Проведено на сервере: <&f><duration[<[player].statistic[PLAY_ONE_MINUTE]>t].formatted>"
+            - if !<[player].is_online>:
+                - narrate "<&7>Был онлайн <&f><[player].last_played_time.add[3h].format[dd/MM/yyyy HH:mm МСК]>"
+                - narrate "<&f><util.time_now.duration_since[<[player].last_played_time>].formatted> назад"
+                - narrate "<&7>Последние координаты: <&f><[player].location.format[bx, by, bz в мире world]>"
+            - else:
+                - narrate "<&f>Сейчас онлайн"
+            - narrate <[player].has_flag[socialquizzes_rules].if_true[<&7>Тест на знание правил: <&f>пройден].if_false[<&7>Тест на знание правил: <&f>не пройден]>
+            - narrate "<&7>Ранг: <[player].flag[rank_system_main]>"
+            - narrate <[player].has_flag[is_in_resp].if_true[<&7>Республика: <&f><[player].flag[is_in_resp]>].if_false[<&7>Не состоит в республике]>
+            - if <[player].has_flag[police_cases_involved]>:
+                - narrate "<&9>Упоминается в делах:"
+                - if <[player].flag[police_cases_involved].get[2].if_null[null]> == null:
+                    - define number <[player].flag[police_cases_involved]>
+                    - if <server.flag[police_case_<[number]>_accused].get[2].if_null[null]> == null:
+                        - if <server.flag[police_case_<[number]>_accused]> == <[player].name>:
+                            - define role обвиняемый
+                        - else:
+                            - if <server.flag[police_case_<[number]>_victim]> == <[player].name>:
+                                - define role пострадавший
+                            - else:
+                                - if <server.flag[police_case_<[number]>_witness]> == <[player].name>:
+                                    - define role свидетель
+                    - else:
+                        - if <server.flag[police_case_<[number]>_accused].contains_any[<[player].name>]>:
+                            - define role обвиняемый
+                        - else:
+                            - if <server.flag[police_case_<[number]>_victim].contains_any[<[player].name>]>:
+                                - define role пострадавший
+                            - else:
+                                - if <server.flag[police_case_<[number]>_witness].contains_any[<[player].name>]>:
+                                    - define role свидетель
+                    - narrate "<&hover[Открыть дело]><&click[/police case <[number]> look]><&f>Дело №<[number]><&end_click><&end_hover> <&7>от <server.flag[police_case_<[number]>].get[1].format[dd/MM/yyyy HH:mm]> - <&f><[role]>"
+                - else:
+                    - define loops <[player].flag[police_cases_involved].size>
+                    - repeat <[loops]>:
+                        - define number <[player].flag[police_cases_involved].get[<[value]>]>
+                        - if <[number]> == skip:
+                            - repeat next
+                        - if <server.flag[police_case_<[number]>_accused].get[2].if_null[null]> == null:
+                            - if <server.flag[police_case_<[number]>_accused]> == <[player].name>:
+                                - define role обвиняемый
+                            - else:
+                                - if <server.flag[police_case_<[number]>_victim]> == <[player].name>:
+                                    - define role пострадавший
+                                - else:
+                                    - if <server.flag[police_case_<[number]>_witness]> == <[player].name>:
+                                        - define role свидетель
+                        - if <server.flag[police_case_<[number]>_accused].get[2].if_null[null]> != null:
+                            - if <server.flag[police_case_<[number]>_accused].contains_any[<[player].name>]>:
+                                - define role обвиняемый
+                            - else:
+                                - if <server.flag[police_case_<[number]>_victim].contains_any[<[player].name>]>:
+                                    - define role пострадавший
+                                - else:
+                                    - if <server.flag[police_case_<[number]>_witness].contains_any[<[player].name>]>:
+                                        - define role свидетель
+                        - narrate "<&hover[Открыть дело]><&click[/police case <[number]> look]><&f>Дело №<[number]><&end_click><&end_hover> <&7>от <server.flag[police_case_<[number]>].get[1].format[dd/MM/yyyy HH:mm]> - <&f><[role]>"
+            - narrate <&9>=====================================================
+        - case case:
+            - choose <context.args.get[2]>:
+                - case create:
+                    - define accused <server.match_offline_player[<context.args.get[3].if_null[<empty>]>].if_null[null]>
+                    - if <[accused]> == null:
+                        - narrate <&9>=====================================================
+                        - narrate "Игрок <context.args.get[3]> не найден. Дело не создано"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - if <context.args.get[5]> != socialcraft:
+                        - define victim <server.match_offline_player[<context.args.get[5].if_null[<empty>]>].if_null[null]>
+                        - if <[victim]> == null:
+                            - narrate <&9>=====================================================
+                            - narrate "Игрок <context.args.get[5]> не найден. Дело не создано"
+                            - narrate <&9>=====================================================
+                            - stop
+                    - if <context.args.get[5]> == socialcraft:
+                        - define victim SocialCraft
+                    - define charges <context.args.get[4].if_null[null]>
+                    - if <[charges]> == null:
+                        - narrate <&9>=====================================================
+                        - narrate "Порядок использования команды:"
+                        - narrate "/police case create [обвиняемый] ["обвинение"] [пострадавший]"
+                        - narrate "Дело не создано"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - flag server police_case_count:++
+                    - define number <server.flag[police_case_count]>
+                    # Дата создания дела - 1
+                    - flag server police_case_<[number]>:->:<util.time_now>
+                    # Статус - 2
+                    - flag server police_case_<[number]>:->:<&2>В<&sp>работе
+                    # Создатель - 3
+                    - flag server police_case_<[number]>:->:<player.name>
+                    # Обвинение - 4
+                    - flag server police_case_<[number]>:->:<[charges]>
+                    # Доказательства - 5
+                    - flag server police_case_<[number]>:->:не<&sp>указано
+                    # Комментарии - 6
+                    - flag server police_case_<[number]>:->:не<&sp>указано
+                    # Дата закрытия - 7
+                    - flag server police_case_<[number]>:->:не<&sp>указано
+                    # Кто закрыл дело - 8
+                    - flag server police_case_<[number]>:->:не<&sp>указано
+                    # Принятые меры - 9
+                    - flag server police_case_<[number]>:->:не<&sp>указано
+                    # Обвиняемые
+                    - flag server police_case_<[number]>_accused:<[accused].name>
+                    # Пострадавшие
+                    - if <context.args.get[5]> != socialcraft:
+                        - flag server police_case_<[number]>_victim:<[victim].name>
+                    - if <context.args.get[5]> == socialcraft:
+                        - flag server police_case_<[number]>_victim:<[victim]>
+                    # Свидетели
+                    - flag server police_case_<[number]>_witness:не<&sp>указано
+                    - if <[accused].has_flag[police_cases_involved]>:
+                        - flag <[accused]> police_cases_involved:->:<[number]>
+                    - if !<[accused].has_flag[police_cases_involved]>:
+                        - flag <[accused]> police_cases_involved:<[number]>
+                    - if <context.args.get[5]> != socialcraft:
+                        - if <[victim].has_flag[police_cases_involved]>:
+                            - flag <[victim]> police_cases_involved:->:<[number]>
+                        - if !<[victim].has_flag[police_cases_involved]>:
+                            - flag <[victim]> police_cases_involved:<[number]>
+                    - narrate <&9>=====================================================
+                    - narrate "<&9>Создано дело № <[number]> <&f>от <server.flag[police_case_<[number]>].get[1].format[dd/MM/yyyy HH:mm]>"
+                    - narrate "<&7>Статус: <server.flag[police_case_<[number]>].get[2]>"
+                    - narrate "<&7>Создатель: <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>].get[3]>]><server.flag[police_case_<[number]>].get[3]><&end_click><&end_hover>"
+                    - narrate "<&7>Обвиняемый: <&f><&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_accused]>]><server.flag[police_case_<[number]>_accused]><&end_click><&end_hover>"
+                    - narrate "<&7>Пострадавший: <&f><&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_victim]>]><server.flag[police_case_<[number]>_victim]><&end_click><&end_hover>"
+                    - narrate "<&7>Обвинение: <&f><server.flag[police_case_<[number]>].get[4]>"
+                    - narrate "<&7>Доказательства: <&f><server.flag[police_case_<[number]>].get[5]>"
+                    - narrate "<&7>Свидетели: <&f><server.flag[police_case_<[number]>_witness]>"
+                    - narrate "<&7>Комментарии: <&f><server.flag[police_case_<[number]>].get[6]>"
+                    - narrate <&9>=====================================================
+            - choose <context.args.get[3]>:
+                - case look:
+                    - define number <context.args.get[2].if_null[null]>
+                    - if <[number]> == null:
+                        - narrate <&9>=====================================================
+                        - narrate "Требуется указать номер дела"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - if <[number]> > <server.flag[police_case_count]>:
+                        - narrate <&9>=====================================================
+                        - narrate "<&f>Дела с номером <[number]> не существует"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - narrate <&9>=====================================================
+                    - narrate "<&9>Дело № <[number]> <&f>от <server.flag[police_case_<[number]>].get[1].format[dd/MM/yyyy HH:mm]>"
+                    - narrate "<&7>Статус: <server.flag[police_case_<[number]>].get[2]>"
+                    - narrate "<&7>Создатель: <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>].get[3]>]><server.flag[police_case_<[number]>].get[3]><&end_click><&end_hover>"
+                    - if <server.flag[police_case_<[number]>_accused].get[2].if_null[null]> != null:
+                        - narrate "<&7>Обвиняемые: <&f><&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_accused].get[1]>]><server.flag[police_case_<[number]>_accused].get[1]><&end_click><&end_hover>"
+                        - narrate <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_accused].get[2]>]><server.flag[police_case_<[number]>_accused].get[2]><&end_click><&end_hover>
+                        - if <server.flag[police_case_<[number]>_accused].get[3].if_null[null]> != null:
+                            - narrate <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_accused].get[3]>]><server.flag[police_case_<[number]>_accused].get[3]><&end_click><&end_hover>
+                    - else:
+                        - narrate "<&7>Обвиняемый: <&f><&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_accused]>]><server.flag[police_case_<[number]>_accused]><&end_click><&end_hover>"
+                    - if <server.flag[police_case_<[number]>_victim].get[2].if_null[null]> != null:
+                        - narrate "<&7>Пострадавшие: <&f><&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_victim].get[1]>]><server.flag[police_case_<[number]>_victim].get[1]><&end_click><&end_hover>"
+                        - narrate <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_victim].get[2]>]><server.flag[police_case_<[number]>_victim].get[2]><&end_click><&end_hover>
+                        - if <server.flag[police_case_<[number]>_victim].get[3].if_null[null]> != null:
+                            - narrate <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_victim].get[3]>]><server.flag[police_case_<[number]>_victim].get[3]><&end_click><&end_hover>
+                    - else:
+                        - narrate "<&7>Пострадавший: <&f><&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_victim]>]><server.flag[police_case_<[number]>_victim]><&end_click><&end_hover>"
+                    - narrate "<&7>Обвинение: <&f><server.flag[police_case_<[number]>].get[4]>"
+                    - narrate "<&7>Доказательства: <&f><server.flag[police_case_<[number]>].get[5]>"
+                    - if <server.flag[police_case_<[number]>_witness].get[2].if_null[null]> != null:
+                        - narrate "<&7>Свидетели: <&f><&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_witness].get[1]>]><server.flag[police_case_<[number]>_witness].get[1]><&end_click><&end_hover>"
+                        - narrate <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_witness].get[2]>]><server.flag[police_case_<[number]>_witness].get[2]><&end_click><&end_hover>
+                        - if <server.flag[police_case_<[number]>_witness].get[3].if_null[null]> != null:
+                            - narrate <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_witness].get[3]>]><server.flag[police_case_<[number]>_witness].get[3]><&end_click><&end_hover>
+                    - else:
+                        - narrate "<&7>Свидетель: <&f><&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>_witness]>]><server.flag[police_case_<[number]>_witness]><&end_click><&end_hover>"
+                    - narrate "<&7>Комментарии: <&f><server.flag[police_case_<[number]>].get[6]>"
+                    - if <server.flag[police_case_<[number]>].get[2]> == <&9>Закрыто:
+                        - narrate "<&7>Закрыто <&f><server.flag[police_case_<[number]>].get[7].format[dd/MM/yyyy HH:mm]> <&7>игроком <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>].get[8]>]><server.flag[police_case_<[number]>].get[8]><&end_click><&end_hover>"
+                        - narrate "<&7>Принятые меры: <&f><server.flag[police_case_<[number]>].get[9]>"
+                    - if <server.flag[police_case_<[number]>].get[2]> == <&7>Ошибочное:
+                        - narrate "<&7>Закрыто как ошибочное <&f><server.flag[police_case_<[number]>].get[7].format[dd/MM/yyyy HH:mm]> <&7>игроком <&hover[Открыть профиль]><&click[/police profile <server.flag[police_case_<[number]>].get[8]>]><server.flag[police_case_<[number]>].get[8]><&end_click><&end_hover>"
+                    - narrate <&9>=====================================================
+                - case close:
+                    - define number <context.args.get[2].if_null[null]>
+                    - if <[number]> == null:
+                        - narrate <&9>=====================================================
+                        - narrate "Требуется указать номер дела"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - if <[number]> > <server.flag[police_case_count]>:
+                        - narrate <&9>=====================================================
+                        - narrate "<&f>Дела с номером <[number]> не существует"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - if <server.flag[police_case_<[number]>].get[2]> == <&9>Закрыто:
+                        - narrate <&9>=====================================================
+                        - narrate "<&f>Дело №<[number]> уже закрыто. Ничего не изменено"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - define measures <context.args.get[4].if_null[null]>
+                    - if <[measures]> == null:
+                        - narrate <&9>=====================================================
+                        - narrate "Требуется указать принятые меры"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - flag server police_case_<[number]>[2]:<&9>Закрыто
+                    - flag server police_case_<[number]>[7]:<util.time_now>
+                    - flag server police_case_<[number]>[8]:<player.name>
+                    - flag server police_case_<[number]>[9]:<[measures]>
+                    - narrate <&9>=====================================================
+                    - narrate "<&hover[Открыть дело]><&click[/police case <[number]> look]>Дело №<[number]><&end_click><&end_hover> закрыто. Принятые меры: <[measures]>"
+                    - narrate <&9>=====================================================
+                - case wrong:
+                    - define number <context.args.get[2].if_null[null]>
+                    - if <[number]> == null:
+                        - narrate <&9>=====================================================
+                        - narrate "Требуется указать номер дела"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - if <[number]> > <server.flag[police_case_count]>:
+                        - narrate <&9>=====================================================
+                        - narrate "<&f>Дела с номером <[number]> не существует"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - if <server.flag[police_case_<[number]>].get[2]> == <&7>Ошибочное:
+                        - narrate <&9>=====================================================
+                        - narrate "<&f>Дело №<[number]> уже закрыто как ошибочное. Ничего не изменено"
+                        - narrate <&9>=====================================================
+                        - stop
+                    - flag server police_case_<[number]>[2]:<&7>Ошибочное
+                    - flag server police_case_<[number]>[7]:<util.time_now>
+                    - flag server police_case_<[number]>[8]:<player.name>
+                    - if <server.flag[police_case_<[number]>_accused].get[2].if_null[null]> == null:
+                        - define accused <server.match_offline_player[<server.flag[police_case_<[number]>_accused]>]>
+                        - if <[accused].flag[police_cases_involved].get[2].if_null[null]> == null:
+                            - flag <[accused]> police_cases_involved:!
+                        - else:
+                            - define index <[accused].flag[police_cases_involved].find[<[number]>]>
+                            - flag <[accused]> police_cases_involved[<[index]>]:skip
+                    - else:
+                        - define loops <server.flag[police_case_<[number]>_accused].size>
+                        - repeat <[loops]>:
+                            - define accused <server.match_offline_player[<server.flag[police_case_<[number]>_accused].get[<[value]>]>]>
+                            - if <[accused].flag[police_cases_involved].get[2].if_null[null]> == null:
+                                - flag <[accused]> police_cases_involved:!
+                            - else:
+                                - define index <[accused].flag[police_cases_involved].find[<[number]>]>
+                                - flag <[accused]> police_cases_involved[<[index]>]:skip
+                    - if <server.flag[police_case_<[number]>_victim].get[2].if_null[null]> == null:
+                        - define victim <server.match_offline_player[<server.flag[police_case_<[number]>_victim]>]>
+                        - if <[victim].flag[police_cases_involved].get[2].if_null[null]> == null:
+                            - flag <[victim]> police_cases_involved:!
+                        - else:
+                            - define index <[victim].flag[police_cases_involved].find[<[number]>]>
+                            - flag <[victim]> police_cases_involved[<[index]>]:skip
+                    - else:
+                        - define loops <server.flag[police_case_<[number]>_victim].size>
+                        - repeat <[loops]>:
+                            - define victim <server.match_offline_player[<server.flag[police_case_<[number]>_victim].get[<[value]>]>]>
+                            - if <[victim].flag[police_cases_involved].get[2].if_null[null]> == null:
+                                - flag <[victim]> police_cases_involved:!
+                            - else:
+                                - define index <[victim].flag[police_cases_involved].find[<[number]>]>
+                                - flag <[victim]> police_cases_involved[<[index]>]:skip
+                    - if <server.flag[police_case_<[number]>_witness].get[2].if_null[null]> == null:
+                        - define witness <server.match_offline_player[<server.flag[police_case_<[number]>_witness]>]>
+                        - if <[witness].flag[police_cases_involved].get[2].if_null[null]> == null:
+                            - flag <[witness]> police_cases_involved:!
+                        - else:
+                            - define index <[witness].flag[police_cases_involved].find[<[number]>]>
+                            - flag <[witness]> police_cases_involved[<[index]>]:skip
+                    - else:
+                        - define loops <server.flag[police_case_<[number]>_witness].size>
+                        - repeat <[loops]>:
+                            - define witness <server.match_offline_player[<server.flag[police_case_<[number]>_witness].get[<[value]>]>]>
+                            - if <[witness].flag[police_cases_involved].get[2].if_null[null]> == null:
+                                - flag <[witness]> police_cases_involved:!
+                            - else:
+                                - define index <[witness].flag[police_cases_involved].find[<[number]>]>
+                                - flag <[witness]> police_cases_involved[<[index]>]:skip
+                    - narrate <&9>=====================================================
+                    - narrate "<&hover[Открыть дело]><&click[/police case <[number]> look]>Дело №<[number]><&end_click><&end_hover> закрыто как ошибочное"
+                    - narrate <&9>=====================================================
+                - case add:
+                    - choose <context.args.get[4]>:
+                        - case accused:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>_accused].get[3].if_null[null]> != null:
+                                - narrate <&9>=====================================================
+                                - narrate "К делу №<[number]> уже добавлено 3 обвиняемых. Больше добавить нельзя"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define accused <server.match_offline_player[<context.args.get[5].if_null[<empty>]>].if_null[null]>
+                            - if <[accused]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Игрок <context.args.get[5]> не найден"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>_accused].contains_any[<[accused].name>]>:
+                                - narrate <&9>=====================================================
+                                - narrate "Игрок <[accused].name> уже прикреплён к делу как обвиняемый"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - flag server police_case_<[number]>_accused:->:<[accused].name>
+                            - if <[accused].has_flag[police_cases_involved]>:
+                                - flag <[accused]> police_cases_involved:->:<[number]>
+                            - if !<[accused].has_flag[police_cases_involved]>:
+                                - flag <[accused]> police_cases_involved:<[number]>
+                            - narrate <&9>=====================================================
+                            - narrate "Добавлен обвиняемый к <&hover[Открыть дело]><&click[/police case <[number]> look]>делу №<[number]><&end_click><&end_hover>: <&hover[Открыть профиль]><&click[/police profile <[accused].name>]><[accused].name><&end_click><&end_hover>"
+                            - narrate <&9>=====================================================
+                        - case charges:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define charges <context.args.get[5].if_null[null]>
+                            - if <[charges]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать обвинение"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define previous_charges <server.flag[police_case_<[number]>].get[4]>
+                            - flag server police_case_<[number]>[4]:<[previous_charges]><&nl><[charges]>
+                            - narrate <&9>=====================================================
+                            - narrate "Добавлено обвинение к <&hover[Открыть дело]><&click[/police case <[number]> look]>делу №<[number]><&end_click><&end_hover>: <[charges]>"
+                            - narrate <&9>=====================================================
+                        - case comment:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define comment <context.args.get[5].if_null[null]>
+                            - if <[comment]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать комментарий"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>].get[6]> == не<&sp>указано:
+                                - flag server police_case_<[number]>[6]:<[comment]>
+                                - narrate <&9>=====================================================
+                                - narrate "Добавлен комментарий к <&hover[Открыть дело]><&click[/police case <[number]> look]>делу №<[number]><&end_click><&end_hover>: <[comment]>"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define previous_comment <server.flag[police_case_<[number]>].get[6]>
+                            - flag server police_case_<[number]>[6]:<[previous_comment]><&nl><[comment]>
+                            - narrate <&9>=====================================================
+                            - narrate "Добавлен комментарий к <&hover[Открыть дело]><&click[/police case <[number]> look]>делу №<[number]><&end_click><&end_hover>: <[comment]>"
+                            - narrate <&9>=====================================================
+                        - case evidence:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define evidence <context.args.get[5].if_null[null]>
+                            - if <[evidence]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется прикрепить ссылку на доказательства"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>].get[5]> == не<&sp>указано:
+                                - flag server police_case_<[number]>[5]:<[evidence]>
+                                - narrate <&9>=====================================================
+                                - narrate "Добавлены доказательства к <&hover[Открыть дело]><&click[/police case <[number]> look]>делу №<[number]><&end_click><&end_hover>: <[evidence]>"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define previous_evidence <server.flag[police_case_<[number]>].get[5]>
+                            - flag server police_case_<[number]>[5]:<[previous_evidence]><&nl><[evidence]>
+                            - narrate <&9>=====================================================
+                            - narrate "Добавлены доказательства к <&hover[Открыть дело]><&click[/police case <[number]> look]>делу №<[number]><&end_click><&end_hover>: <[evidence]>"
+                            - narrate <&9>=====================================================
+                        - case victim:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>_victim].get[3].if_null[null]> != null:
+                                - narrate <&9>=====================================================
+                                - narrate "К делу №<[number]> уже добавлено 3 пострадавших. Больше добавить нельзя"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define victim <server.match_offline_player[<context.args.get[5].if_null[<empty>]>].if_null[null]>
+                            - if <[victim]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Игрок <context.args.get[5]> не найден"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>_victim].contains_any[<[victim].name>]>:
+                                - narrate <&9>=====================================================
+                                - narrate "Игрок <[victim].name> уже прикреплён к делу как пострадавший"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - flag server police_case_<[number]>_victim:->:<[victim].name>
+                            - if <[victim].has_flag[police_cases_involved]>:
+                                - flag <[victim]> police_cases_involved:->:<[number]>
+                            - if !<[victim].has_flag[police_cases_involved]>:
+                                - flag <[victim]> police_cases_involved:<[number]>
+                            - narrate <&9>=====================================================
+                            - narrate "Добавлен пострадавший к <&hover[Открыть дело]><&click[/police case <[number]> look]>делу №<[number]><&end_click><&end_hover>: <&hover[Открыть профиль]><&click[/police profile <[victim].name>]><[victim].name><&end_click><&end_hover>"
+                            - narrate <&9>=====================================================
+                        - case witness:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>_witness].get[3].if_null[null]> != null:
+                                - narrate <&9>=====================================================
+                                - narrate "К делу №<[number]> уже добавлено 3 свидетелей. Больше добавить нельзя"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define witness <server.match_offline_player[<context.args.get[5].if_null[<empty>]>].if_null[null]>
+                            - if <[witness]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Игрок <context.args.get[5]> не найден"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>_witness].contains_any[<[witness].name>]>:
+                                - narrate <&9>=====================================================
+                                - narrate "Игрок <[witness].name> уже прикреплён к делу как свидетель"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>_witness]> == не<&sp>указано:
+                                - flag server police_case_<[number]>_witness:<[witness].name>
+                                - if <[witness].has_flag[police_cases_involved]>:
+                                    - flag <[witness]> police_cases_involved:->:<[number]>
+                                - if !<[witness].has_flag[police_cases_involved]>:
+                                    - flag <[witness]> police_cases_involved:<[number]>
+                                - narrate <&9>=====================================================
+                                - narrate "Добавлен свидетель к <&hover[Открыть дело]><&click[/police case <[number]> look]>делу №<[number]><&end_click><&end_hover>: <&hover[Открыть профиль]><&click[/police profile <[witness].name>]><[witness].name><&end_click><&end_hover>"
+                                - narrate <&9>=====================================================
+                            - else:
+                                - flag server police_case_<[number]>_witness:->:<[witness].name>
+                                - if <[witness].has_flag[police_cases_involved]>:
+                                    - flag <[witness]> police_cases_involved:->:<[number]>
+                                - if !<[witness].has_flag[police_cases_involved]>:
+                                    - flag <[witness]> police_cases_involved:<[number]>
+                                - narrate <&9>=====================================================
+                                - narrate "Добавлен свидетель к <&hover[Открыть дело]><&click[/police case <[number]> look]>делу №<[number]><&end_click><&end_hover>: <&hover[Открыть профиль]><&click[/police profile <[witness].name>]><[witness].name><&end_click><&end_hover>"
+                                - narrate <&9>=====================================================
+                - case edit:
+                    - choose <context.args.get[4]>:
+                        - case accused:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define accused <server.match_offline_player[<context.args.get[5].if_null[<empty>]>].if_null[null]>
+                            - if <[accused]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Игрок <context.args.get[5]> не найден"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>_accused].get[2].if_null[null]> == null:
+                                - define old_accused <server.match_offline_player[<server.flag[police_case_<[number]>_accused]>]>
+                                - if <[old_accused].flag[police_cases_involved].get[2].if_null[null]> == null:
+                                    - flag <[old_accused]> police_cases_involved:!
+                                - else:
+                                    - define index <[old_accused].flag[police_cases_involved].find[<[number]>]>
+                                    - flag <[old_accused]> police_cases_involved[<[index]>]:skip
+                            - else:
+                                - define loops <server.flag[police_case_<[number]>_accused].size>
+                                - repeat <[loops]>:
+                                    - define old_accused <server.match_offline_player[<server.flag[police_case_<[number]>_accused].get[<[value]>]>]>
+                                    - if <[old_accused].flag[police_cases_involved].get[2].if_null[null]> == null:
+                                        - flag <[old_accused]> police_cases_involved:!
+                                    - else:
+                                        - define index <[old_accused].flag[police_cases_involved].find[<[number]>]>
+                                        - flag <[old_accused]> police_cases_involved[<[index]>]:skip
+                            - flag server police_case_<[number]>_accused:<[accused].name>
+                            - if <[accused].has_flag[police_cases_involved]>:
+                                - flag <[accused]> police_cases_involved:->:<[number]>
+                            - if !<[accused].has_flag[police_cases_involved]>:
+                                - flag <[accused]> police_cases_involved:<[number]>
+                            - narrate <&9>=====================================================
+                            - narrate "Обвиняемый <&hover[Открыть дело]><&click[/police case <[number]> look]>дела №<[number]><&end_click><&end_hover> изменён: <&hover[Открыть профиль]><&click[/police profile <[accused].name>]><[accused].name><&end_click><&end_hover>"
+                            - narrate <&9>=====================================================
+                        - case charges:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define charges <context.args.get[5].if_null[null]>
+                            - if <[charges]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать обвинение"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - flag server police_case_<[number]>[4]:<[charges]>
+                            - narrate <&9>=====================================================
+                            - narrate "Обвинение <&hover[Открыть дело]><&click[/police case <[number]> look]>дела №<[number]><&end_click><&end_hover> изменено: <[charges]>"
+                            - narrate <&9>=====================================================
+                        - case comment:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define comment <context.args.get[5].if_null[null]>
+                            - if <[comment]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать комментарий"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - flag server police_case_<[number]>[6]:<[comment]>
+                            - narrate <&9>=====================================================
+                            - narrate "Комментарий <&hover[Открыть дело]><&click[/police case <[number]> look]>дела №<[number]><&end_click><&end_hover> изменён: <[comment]>"
+                            - narrate <&9>=====================================================
+                        - case evidence:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define evidence <context.args.get[5].if_null[null]>
+                            - if <[evidence]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется прикрепить ссылку на доказательства"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - flag server police_case_<[number]>[5]:<[evidence]>
+                            - narrate <&9>=====================================================
+                            - narrate "Доказательства <&hover[Открыть дело]><&click[/police case <[number]> look]>дела №<[number]><&end_click><&end_hover> изменены: <[evidence]>"
+                            - narrate <&9>=====================================================
+                        - case measures:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define measures <context.args.get[5].if_null[null]>
+                            - if <[measures]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать принятые меры"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - flag server police_case_<[number]>[9]:<[measures]>
+                            - narrate <&9>=====================================================
+                            - narrate "Принятые меры <&hover[Открыть дело]><&click[/police case <[number]> look]>дела №<[number]><&end_click><&end_hover> изменены: <[measures]>"
+                            - narrate <&9>=====================================================
+                        - case victim:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <context.args.get[5]> != socialcraft:
+                                - define victim <server.match_offline_player[<context.args.get[5].if_null[<empty>]>].if_null[null]>
+                                - if <[victim]> == null:
+                                    - narrate <&9>=====================================================
+                                    - narrate "Игрок <context.args.get[5]> не найден"
+                                    - narrate <&9>=====================================================
+                                    - stop
+                            - if <context.args.get[5]> == socialcraft:
+                                - define victim SocialCraft
+                            - if <server.flag[police_case_<[number]>_victim].get[2].if_null[null]> == null:
+                                - define old_victim <server.match_offline_player[<server.flag[police_case_<[number]>_victim]>]>
+                                - if <[old_victim].flag[police_cases_involved].get[2].if_null[null]> == null:
+                                    - flag <[old_victim]> police_cases_involved:!
+                                - else:
+                                    - define index <[old_victim].flag[police_cases_involved].find[<[number]>]>
+                                    - flag <[old_victim]> police_cases_involved[<[index]>]:skip
+                            - else:
+                                - define loops <server.flag[police_case_<[number]>_victim].size>
+                                - repeat <[loops]>:
+                                    - define old_victim <server.match_offline_player[<server.flag[police_case_<[number]>_victim].get[<[value]>]>]>
+                                    - if <[old_victim].flag[police_cases_involved].get[2].if_null[null]> == null:
+                                        - flag <[old_victim]> police_cases_involved:!
+                                    - else:
+                                        - define index <[old_victim].flag[police_cases_involved].find[<[number]>]>
+                                        - flag <[old_victim]> police_cases_involved[<[index]>]:skip
+                            - if <context.args.get[5]> != socialcraft:
+                                - flag server police_case_<[number]>_victim:<[victim].name>
+                                - if <[victim].has_flag[police_cases_involved]>:
+                                    - flag <[victim]> police_cases_involved:->:<[number]>
+                                - if !<[victim].has_flag[police_cases_involved]>:
+                                    - flag <[victim]> police_cases_involved:<[number]>
+                            - if <context.args.get[5]> == socialcraft:
+                                - flag server police_case_<[number]>_victim:<[victim]>
+                            - narrate <&9>=====================================================
+                            - if <context.args.get[5]> != socialcraft:
+                                - narrate "Пострадавший <&hover[Открыть дело]><&click[/police case <[number]> look]>дела №<[number]><&end_click><&end_hover> изменён: <&hover[Открыть профиль]><&click[/police profile <[victim].name>]><[victim].name><&end_click><&end_hover>"
+                            - else:
+                                - narrate "Пострадавший <&hover[Открыть дело]><&click[/police case <[number]> look]>дела №<[number]><&end_click><&end_hover> изменён: <[victim]>"
+                            - narrate <&9>=====================================================
+                        - case witness:
+                            - define number <context.args.get[2].if_null[null]>
+                            - if <[number]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Требуется указать номер дела"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <[number]> > <server.flag[police_case_count]>:
+                                - narrate <&9>=====================================================
+                                - narrate "<&f>Дела с номером <[number]> не существует"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - define witness <server.match_offline_player[<context.args.get[5].if_null[<empty>]>].if_null[null]>
+                            - if <[witness]> == null:
+                                - narrate <&9>=====================================================
+                                - narrate "Игрок <context.args.get[5]> не найден"
+                                - narrate <&9>=====================================================
+                                - stop
+                            - if <server.flag[police_case_<[number]>_witness].get[2].if_null[null]> == null:
+                                - define old_witness <server.match_offline_player[<server.flag[police_case_<[number]>_witness]>]>
+                                - if <[old_witness].flag[police_cases_involved].get[2].if_null[null]> == null:
+                                    - flag <[old_witness]> police_cases_involved:!
+                                - else:
+                                    - define index <[old_witness].flag[police_cases_involved].find[<[number]>]>
+                                    - flag <[old_witness]> police_cases_involved[<[index]>]:skip
+                            - else:
+                                - define loops <server.flag[police_case_<[number]>_witness].size>
+                                - repeat <[loops]>:
+                                    - define old_witness <server.match_offline_player[<server.flag[police_case_<[number]>_witness].get[<[value]>]>]>
+                                    - if <[old_witness].flag[police_cases_involved].get[2].if_null[null]> == null:
+                                        - flag <[old_witness]> police_cases_involved:!
+                                    - else:
+                                        - define index <[old_witness].flag[police_cases_involved].find[<[number]>]>
+                                        - flag <[old_witness]> police_cases_involved[<[index]>]:skip
+                            - flag server police_case_<[number]>_witness:<[witness].name>
+                            - if <[witness].has_flag[police_cases_involved]>:
+                                - flag <[witness]> police_cases_involved:->:<[number]>
+                            - if !<[witness].has_flag[police_cases_involved]>:
+                                - flag <[witness]> police_cases_involved:<[number]>
+                            - narrate <&9>=====================================================
+                            - narrate "Свидетель <&hover[Открыть дело]><&click[/police case <[number]> look]>дела №<[number]><&end_click><&end_hover> изменён: <&hover[Открыть профиль]><&click[/police profile <[witness].name>]><[witness].name><&end_click><&end_hover>"
+                            - narrate <&9>=====================================================
+        - case help:
+            - narrate <&9>=====================================================
+            - narrate "<&2>Помощь по команде /police"
+            - narrate "/police profile [игрок] <&7>- профиль игрока"
+            - narrate "/police case [номер] look <&7>- посмотреть дело"
+            - narrate "/police case create [обвиняемый] [обвинение] [пострадавший] <&7>- создать дело"
+            - narrate "/police case [номер] close ["принятые меры"] <&7>- закрыть дело"
+            - narrate "/police case [номер] wrong <&7>- закрыть дело как ошибочное"
+            - narrate "/police case [номер] add accused [игрок] <&7>- добавить обвиняемого (одного за раз)"
+            - narrate "/police case [номер] add comment  ["комментарий"] <&7>- добавить комментарий"
+            - narrate "/police case [номер] add evidence [ссылка] <&7>- добавить к делу ссылку на доказательства"
+            - narrate "/police case [номер] add victim [игрок] <&7>- добавить пострадавшего"
+            - narrate "/police case [номер] add witness [игрок] <&7>- добавить свидетеля"
+            - narrate "/police case [номер] edit accused [игрок] <&7>- изменить обвиняемого"
+            - narrate "/police case [номер] edit charges ["обвинение"] <&7>- изменить обвинение"
+            - narrate "/police case [номер] edit comment  ["комментарий"] <&7>- изменить комментарии"
+            - narrate "/police case [номер] edit evidence [ссылка] <&7>- изменить доказательства (удаляет старые)"
+            - narrate "/police case [номер] edit measures ["принятые меры"] <&7>- изменить принятые меры"
+            - narrate "/police case [номер] edit victim [игрок] <&7>- изменить пострадавшего"
+            - narrate "/police case [номер] edit witness [игрок] <&7>- изменить свидетеля (удаляет старых)"
+            - narrate "/police rank check [игрок] <&7>- проверить набранные на ранг полицейского ресы у игрока"
+            - narrate "/police rank assign [игрок] <&7>- выдать игроку ранг полицейского"
+            - narrate <&9>=====================================================
+#
+flag_testing_task:
+    type: task
+    script:
+    - define loops <player.flag[flag_test].size>
+    - repeat <[loops]>:
+        - if <player.flag[flag_test].get[<[value]>].if_null[null]> == null:
+            - narrate "Пропускаем <[value]>"
+            - repeat next
+        - narrate <player.flag[flag_test].get[<[value]>]>
+#
+#
+# Police spam
+police_spam_world:
+    type: world
+    events:
+        after police command:
+        - if <context.source_type> == PLAYER:
+            - define message "**<player.name>**: /police <context.raw_args>"
+        - if <context.source_type> == SERVER:
+            - define message "**Server**: /police <context.raw_args>"
+        - ~discordmessage id:sc_chat channel:<server.flag[sc_police_spam_channel]> <[message]>
+# Флаг для канала:
+# /ex flag server sc_police_spam_channel:<discord[sc_chat].group[SocialCraft].channel[police-spam]>
+# /ex flag server sc_police_spam_channel:<discord[sc_chat].group[SocialCraft].channel[1116821033358458920]>
+# /ex flag server sc_chat:<discord[sc_chat].group[SocialCraft].channel[1038430748023197826]>

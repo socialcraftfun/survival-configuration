@@ -1,0 +1,38 @@
+location: scworld:-1339.500:81.000:-509.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&d[Лидер]'
+    height: 0.3
+  - content: '&d&nБонусы'
+    height: 0.3
+  - content: 6 хоумов
+    height: 0.3
+  - content: 6 приватов
+    height: 0.3
+  - content: '&oСвоя республика'
+    height: 0.3
+  - content: '&oСвой чат республики'
+    height: 0.3
+  - content: '&oОбщий хоум республики'
+    height: 0.3
+  - content: '&oТп игроков к себе'
+    height: 0.3
+  - content: '&oСобственный банк'
+    height: 0.3
+  - content: '&oСтатистика игроков'
+    height: 0.3
+  - content: '&oДоска объявлений'
+    height: 0.3
+  - content: '&d------------------'
+    height: 0.3
+  - content: 'Что нужно: &d/ranks'
+    height: 0.3
+  - content: 'Повысить ранг: &d/rankup'
+    height: 0.3
+  actions: {}

@@ -1,0 +1,163 @@
+menu-settings:
+  name: 'КПК'
+  rows: 6
+  command: help
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+#
+# 1 СТРОКА
+#
+show_info:
+  position-x: 5
+  position-y: 1
+  id: writable_book
+  name: '&dОтобразить в чате'
+  action:
+    - close-menu
+    - "tell: &d====================================================="
+    - "tell: &fИгрок &d%denizen_<player.name>%"
+    - "tell: &fРегистрация: &7%denizen_<player.first_played_time.format[dd/MM/yyyy]>%"
+    - "tell: &fПроведено на сервере: &7%statistic_time_played%"
+    - "tell: &fМой ранг: %denizen_<player.flag[rank_system_main]>%"
+    - "tell: &fРеспублика: &7%denizen_<player.flag[is_in_resp].if_null[Вы не состоите в республике]>%"
+    - "tell: &fАлмазы: &7%vault_eco_balance%"
+    - "tell: &fЗвёзды: &7%playerpoints_points%"
+    - "tell: &fМои хоумы: &7%essentials_homes_set% / %essentials_homes_max%"
+#    - "tell: &fДоступно приватов: &7<map[&7Поселенец=1;&bГражданин=1;&9Полицейский=1;&eФермер=3;&6Лидер=6;&aПрезидент=10].get[<player.flag[rank_system_main]>]>"
+    - "tell: &fМои флаги для привата:"
+    - "tell: &7%denizen_<player.flag[region_flags_owned].separated_by[&n&l&7].if_null[Вы не приобретали флаги]>%"
+    - "tell: &d====================================================="
+#
+# 2 СТРОКА
+#
+time:
+  position-x: 2
+  position-y: 2
+  id: clock
+  name: '&dВремя на сервере'
+  lore:
+    - "&fРегистрация: &7%player_first_join_date%"
+    - "&fПроведено на сервере: &7%statistic_time_played%"
+#
+#
+rank:
+  position-x: 4
+  position-y: 2
+  id: diamond_pickaxe
+  name: '&dМой ранг'
+  lore:
+    - "%denizen_<player.flag[rank_system_main]>%"
+#
+#
+# resp:
+#   position-x: 6
+#   position-y: 2
+#   id: red_banner
+#
+#
+balance:
+  position-x: 8
+  position-y: 2
+  id: diamond
+  name: "&dБаланс"
+  lore:
+    - "&fАлмазы: &7%vault_eco_balance%"
+    - "&fЗвёзды: &7%playerpoints_points%"
+#
+# 3 СТРОКА
+#
+#
+homes: # todo placeholder js
+  position-x: 2
+  position-y: 3
+  id: red_bed
+  name: "&dДома"
+  lore:
+    - "&fУстановлено &7%essentials_homes_set% из %essentials_homes_max%"
+#
+#
+regions:
+  position-x: 4
+  position-y: 3
+  name: "&dМои приваты"
+  lore:
+    - "&fДоступно всего: &7%denizen_<map[&7Поселенец=1;&bГражданин=1;&9Полицейский=1;&eФермер=3;&6Лидер=6;&aПрезидент=10].get[<player.flag[rank_system_main]>]>%"
+#
+#
+flags:
+  position-x: 6
+  position-y: 3
+  name: "&dМои флаги для привата"
+  lore:
+    - "&f%denizen_<player.flag[region_flags_owned].separated_by[&n&;&f].if_null[Вы не приобретали флаги]>%"
+#
+#
+kits:
+  position-x: 8
+  position-y: 3
+  name: "&dДоступные киты"
+  lore:
+    - "&f- Kit start"
+    - "&fКликни чтобы получить"
+  action:
+    - "player: kit start"
+#
+# 5 СТРОКА
+#
+read_rules:
+  position-x: 2
+  position-y: 5
+  name: "&dПрочитать правила сервера"
+  action:
+    - close-menu
+    - "tell: &6====================================================="
+    - "tell: &6КРАТКИЕ ПРАВИЛА СЕРВЕРА"
+    - "tell: &a1. Не гриферить"
+    - "tell: &a2. Не брать чужое даже без привата"
+    - "tell: &a3. Быть уважительным к игрокам и админам"
+    - "tell: &a4. Не использовать нецензурную лексику в чате, табличках и любых названиях"
+    - "tell: &a5. Не обсуждать политику, не отыгрывать политическое РП"
+    - "tell: &a6. Не строить лаг-машины и не портить игровой мир"
+    - "tell: &a7. Не использовать баги и читы"
+    - "tell: &a8. Не рекламировать сторонние ресурсы"
+    - "tell: &aНаказание по ситуации: мут/тюрьма/бан"
+    - "tell: &6Прочитай полные правила по ссылке!"
+    - "tell: &6https://socialcraft.fun/forum/rules/"
+    - "tell: &6====================================================="
+#
+#
+test_rules:
+  position-x: 4
+  position-y: 5
+  name: "&dПройти тест на знание правил"
+  action:
+    - "close-menu"
+    - "player: startquiz rules"
+#
+#
+link_account:
+  position-x: 6
+  position-y: 5
+  name: "&dПривязать аккаунт в дискорде"
+#
+#
+# get_passport:
+#   position-x: 8
+#   position-y: 5
+#   name: "&dПолучить паспорт"
+#
+# 5 СТРОКА
+#
+
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 6

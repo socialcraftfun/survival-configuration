@@ -1,0 +1,93 @@
+connect_to_discord:
+    type: world
+    events:
+        after server start:
+        - ~discordconnect id:sc_chat token:<secret[sc_chat_bot_token]>
+
+# Command for saving chat name into variable: /ex flag server sc_chat:<discord[sc_chat].group[SocialCraft].channel[1038430748023197826]>
+
+chat_bridge:
+    type: world
+    debug: false
+    events:
+        on player chats:
+        - if !<player.has_flag[ds_chat]>:
+            - stop
+        - define message "**<player.name>**: <context.message>"
+        - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+        after discord message received channel:1038430748023197826:
+        - if <context.new_message.author.is_bot>:
+            - stop
+        - define author <context.new_message.author.nickname[706182076105490493].if_null[<context.new_message.author.name>]>
+        - define message "<&8>[<blue>D<&8>] <&7><[author]>: <&f><context.new_message.text>"
+        - announce to_flagged:ds_chat_notmuted <[message]>
+        on player joins:
+        - if !<player.has_flag[first_join]>:
+            - flag player first_join
+            - flag player ds_chat
+            - flag player ds_chat_notmuted
+            - flag player rank_system_main:<&7>Поселенец
+            - define message_new "*Приветствуем нового игрока **<player.name>** на **SocialCraft**!*"
+            - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message_new]>
+        - else:
+            - define message "***<player.name>** присоединился к игре*"
+            - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+        after player quits:
+        - define message "***<player.name>** вышел из игры*"
+        - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+        after player goes afk:
+        - define message "***<player.name>** ушёл АФК*"
+        - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+        after player returns from afk:
+        - define message "***<player.name>** больше не АФК*"
+        - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+        after discord message modified:
+        - if <context.channel.id> = 1038430748023197826:
+            - define message "<&8>[<blue>D<&8>] <&7><context.new_message.author.nickname[706182076105490493].if_null[<context.new_message.author.name>]>: <&f>*<context.new_message.text>"
+            # - define message "<&8>[<blue>D<&8>] <&r><&lt><context.new_message.author.name><&gt>: *<context.new_message.text>"
+            - announce to_flagged:ds_chat_notmuted <[message]>
+        # on player completes advancement:
+        # - if <context.advancement.before[/]> != recipes:
+        #     - define element <context.message.strip_color.split.get[1]>
+        #     - define name **<player.name>**
+        #     - define message *<context.message.strip_color.replace_text[firstregex:<[element]>].with[<[name]>]>*
+        #     - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+        # on player death: Не работает
+        # - define element <context.message.strip_color.split.get[1]>
+        # - define name <player.name>
+        # - define message <context.message>
+        # - narrate <context.message>
+        # - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+
+ds_chat_cmd:
+    type: command
+    name: discordchat
+    description: Управление дискорд чатом
+    usage: /discordchat toggle | mute
+    aliases:
+    - dschat
+    tab completions:
+        1: toggle|mute
+    script:
+    - choose <context.args.first>:
+        - case toggle:
+            - if <player.has_flag[ds_chat]>:
+                - flag player ds_chat:!
+                - narrate "<green>Дискорд чат отключен"
+                - stop
+            - flag player ds_chat
+            - narrate "<green>Дискорд чат включен"
+        - case mute:
+            - if <player.has_flag[ds_chat_notmuted]>:
+                - flag player ds_chat_notmuted:!
+                - narrate "<green>Дискорд чат заглушен"
+                - define message "*Игрок **<player.name>** заглушил(а) дискорд чат. Он(а) не увидит ваших сообщений*"
+                - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+                - stop
+            - flag player ds_chat_notmuted
+            - narrate "<green>Дискорд чат больше не заглушен"
+
+ds_chat_flagging_task:
+    type: task
+    script:
+    - flag <server.players> ds_chat_notmuted

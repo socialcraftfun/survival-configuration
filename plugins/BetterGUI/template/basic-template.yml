@@ -1,0 +1,21 @@
+# НАЗАД
+back:
+  id: ARROW
+  name: '&f&lНазад'
+  action:
+    - 'back-menu'
+# ЗАКРЫТЬ
+close:
+  id: BARRIER
+  name: '&f&lЗакрыть'
+  action:
+    - 'close-menu'
+# ПРИВИЛЕГИЯ
+privilege:
+  id: DIAMOND
+  name: '&dВаша привилегия'
+  lore:
+    - '%javascript_privilege%'
+# ДОНАТ
+donate:
+  nbt: '{Enchantments:[{id:fire_aspect,lvl:1}],HideFlags:1}'

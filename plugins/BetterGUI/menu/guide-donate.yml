@@ -1,0 +1,57 @@
+menu-settings:
+  name: 'Возможности привилегий'
+  rows: 4
+  command: 
+    - donate
+    - донат
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+# ПРИВИЛЕГИЯ
+privilege:
+  type: template
+  template: privilege
+  position-x: 4
+  position-y: 2
+# ДОНАТ ВИП
+donate-vip:
+  type: template
+  template: donate
+  id: PINK_WOOL
+  position-x: 5
+  position-y: 2
+  name: '&fПривилегия &d&lВип'
+  lore:
+    - ''
+    - '&d• &fВсе возможности инвестора на МЕСЯЦ!'
+    - ''
+    - '&d• &fСпавнеры на общую стоимость 5 звезд'
+    - ' &fв подарок при покупке!'
+donate-investor:
+  type: template
+  template: donate
+  id: GREEN_WOOL
+  position-x: 6
+  position-y: 2
+  name: '&fПривилегия &2&lИнвестор'
+  lore:
+    - ''
+    - '&2• &fДоступ к крафт-столам - &2/crafts'
+    - '&2• &fФлай на 250 блоков - &2/fly &8(500x500)'
+    - '&2• &fЦветные коды в тексте!'
+    - '      &7В чате, на табличках'
+    - '      &7в именах питомцев и тд'
+    - ''
+    - '&d• &fСпавнеры на общую стоимость 10 звезд'
+    - ' &fв подарок при покупке!'
+    - '&d• &b3 ✦ &fпри покупке'
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 4

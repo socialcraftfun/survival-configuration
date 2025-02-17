@@ -1,0 +1,164 @@
+menu-settings:
+  name: 'Помощь по приватам'
+  rows: 4
+  command: 
+  - helprg
+  - helprp
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+#
+# 1 СТРОКА
+#
+
+#
+# 2 СТРОКА
+#
+
+# ШАГ 1
+step_1:
+  id: compass
+  amount: 1
+  position-x: 4
+  position-y: 2
+  name: '&aКак создать свой приват?'
+  lore:
+    - ''
+    - '  &7&b/rp wand'
+    - '&7Получите маркер для региона'
+    - '&7Правым и левым кликом выберите'
+    - '&7два крайних угла области'
+    - '&7Максимальный размер — 50,000 блоков'
+  action:
+    - "command: rp wand"
+
+# ШАГ 2
+step_2:
+  id: ender_eye
+  amount: 2
+  position-x: 5
+  position-y: 2
+  name: '&aЗахват области'
+  lore:
+    - ''
+    - '  &b/rp claim [название]'
+    - '&7чтобы заприватить выбранную область.'
+    - ''
+
+# ШАГ 3
+step_3:
+  id: diamond
+  amount: 3
+  position-x: 6
+  position-y: 2
+  name: '&aУправление приватом'
+  lore:
+    - ''
+    - '  &7Теперь вы приватизировали территорию! Вы можете'
+    - '&7управлять ей, добавлять других игроков'
+    - '&7устанавливать флаги'
+    - ''
+    - '  &7Используйте команды для управления'
+    - '&b/rp addmember - &7Добавить в приват'
+    - '&b/rp removemember - &7Исключить из привата'
+    - '&b/rp delete - &7Удалить приват'
+    - '&b/rp flag - &7Открыть меню флагов'
+    - '&b/rp border - &7Отобразить границы привата'
+
+
+
+# Узнать больше
+website:
+  id: player_head
+  amount: 4
+  position-x: 9
+  position-y: 2
+  name: '&aУзнайте больше'
+  lore:
+    - ''
+    - '  &7Посетите наше вики для дополнительных руководств'
+    - '&7по управлению приватами.'
+    - ''
+    - '&9Клик&7, чтобы получить ссылку'
+  action:
+    - "tell: &9&nhttps://socialcraft.fun/docs/region"
+
+#
+# 3 СТРОКА
+#
+# Информация о лимитах
+region_limits:
+  id: paper
+  amount: 1
+  position-x: 3
+  position-y: 3
+  name: '&aЛимиты приватов'
+  lore:
+    - ''
+    - '&b[Гражданин] &7и другие ранги: &f1 приват по 50k блоков'
+    - '&6[Фермер]: &f2 привата по 100k блоков'
+    - '&6<Лидер>: &fбез ограничений для столицы республики'
+    - '&7Доп. приват для нужд республики по запросу'
+
+# Требование гражданства
+citizenship_required:
+  id: book
+  amount: 1
+  position-x: 7
+  position-y: 3
+  name: '&aГражданство для привата'
+  lore:
+    - ''
+    - '&7Приватить можно только после получения'
+    - '&7гражданства на сервере!'
+    - '&8(&b/ranks-citizen&8)'
+#
+# 4 СТРОКА
+#
+
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 4
+  position-y: 4
+
+# ХЕЛП по режиму
+help_mode:
+  id: player_head
+  position-x: 5
+  position-y: 4
+  name: '&fПомощь по игре'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help.yml'
+
+# ХЕЛП по чату
+help_chat:
+  id: player_head
+  position-x: 6
+  position-y: 4
+  name: '&fПомощь по голосовому чату'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help_voice.yml'
+
+# ХЕЛП по приватам
+help_region:
+  id: glass_bottle
+  position-x: 7
+  position-y: 4
+  name: '&fПомощь по приватам'
+  lore:
+    - ''
+    - '&eВы уже на текущей странице'

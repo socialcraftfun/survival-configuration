@@ -1,0 +1,20 @@
+location: scworld:-94.322:18.641:17.331
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&aРынок'
+    height: 0.3
+  - content: '&a----------------'
+    height: 0.3
+  - content: здесь можно
+    height: 0.3
+  - content: приобрести товары
+    height: 0.3
+  - content: игроков сервера
+    height: 0.3
+  actions: {}

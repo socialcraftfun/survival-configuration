@@ -1,0 +1,175 @@
+deposit:
+  title: deposit
+  command: none
+  permission: none
+  default-shop: sell
+  buy-shop-enabled: false
+  sell-shop-enabled: true
+  trade-shop-enabled: false
+  logging-enabled: false
+  close-after-purchase: false
+  pages:
+    page-0:
+      size: 54
+      page-name: Положить деньги
+      page-permission: ''
+      sell-items:
+        item-19:
+          id: 62
+          type: tradable
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            v: 3578
+            type: DIAMOND
+          show-lore: true
+          display-lore: []
+          show-description: true
+          description: []
+          Discount:
+            discount-enabled: false
+            discount-percentage: 0.0
+            show-discount-price: false
+            discount-price: 0.0
+            show-discount-start: false
+            discount-start: 23/10/2022 23:12:07
+            show-discount-duration: false
+            discount-duration: 0
+            show-discount-end: false
+            discount-end: 23/10/2022 23:12:07
+          show-price: true
+          trade-price: 1.0
+          custom-input-enabled: false
+          stack-sale-enabled: false
+          show-trade-limit: false
+          trade-limit: -1
+          show-limit-time: false
+          limit-reset-seconds: -1
+          show-broadcast-message: false
+          broadcast-message: ''
+          drop-item-on-full-inventory: false
+          sell-all-when-not-enough-items: true
+          custom-display-text-enabled: false
+          custom-display-text: []
+          permission: ''
+          logging-enabled: false
+          close-after-purchase: false
+        item-21:
+          id: 63
+          type: tradable
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            v: 3578
+            type: DIAMOND
+            amount: 16
+          show-lore: true
+          display-lore: []
+          show-description: true
+          description: []
+          Discount:
+            discount-enabled: false
+            discount-percentage: 0.0
+            show-discount-price: false
+            discount-price: 0.0
+            show-discount-start: false
+            discount-start: 23/10/2022 23:12:16
+            show-discount-duration: false
+            discount-duration: 0
+            show-discount-end: false
+            discount-end: 23/10/2022 23:12:16
+          show-price: true
+          trade-price: 16.0
+          custom-input-enabled: false
+          stack-sale-enabled: false
+          show-trade-limit: false
+          trade-limit: -1
+          show-limit-time: false
+          limit-reset-seconds: -1
+          show-broadcast-message: false
+          broadcast-message: ''
+          drop-item-on-full-inventory: false
+          sell-all-when-not-enough-items: true
+          custom-display-text-enabled: false
+          custom-display-text: []
+          permission: ''
+          logging-enabled: false
+          close-after-purchase: false
+        item-23:
+          id: 64
+          type: tradable
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            v: 3578
+            type: DIAMOND
+            amount: 32
+          show-lore: true
+          display-lore: []
+          show-description: true
+          description: []
+          Discount:
+            discount-enabled: false
+            discount-percentage: 0.0
+            show-discount-price: false
+            discount-price: 0.0
+            show-discount-start: false
+            discount-start: 23/10/2022 23:12:24
+            show-discount-duration: false
+            discount-duration: 0
+            show-discount-end: false
+            discount-end: 23/10/2022 23:12:24
+          show-price: true
+          trade-price: 32.0
+          custom-input-enabled: false
+          stack-sale-enabled: false
+          show-trade-limit: false
+          trade-limit: -1
+          show-limit-time: false
+          limit-reset-seconds: -1
+          show-broadcast-message: false
+          broadcast-message: ''
+          drop-item-on-full-inventory: false
+          sell-all-when-not-enough-items: true
+          custom-display-text-enabled: false
+          custom-display-text: []
+          permission: ''
+          logging-enabled: false
+          close-after-purchase: false
+        item-25:
+          id: 65
+          type: tradable
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            v: 3578
+            type: DIAMOND
+            amount: 64
+          show-lore: true
+          display-lore: []
+          show-description: true
+          description: []
+          Discount:
+            discount-enabled: false
+            discount-percentage: 0.0
+            show-discount-price: false
+            discount-price: 0.0
+            show-discount-start: false
+            discount-start: 23/10/2022 23:12:33
+            show-discount-duration: false
+            discount-duration: 0
+            show-discount-end: false
+            discount-end: 23/10/2022 23:12:33
+          show-price: true
+          trade-price: 64.0
+          custom-input-enabled: false
+          stack-sale-enabled: false
+          show-trade-limit: false
+          trade-limit: -1
+          show-limit-time: false
+          limit-reset-seconds: -1
+          show-broadcast-message: false
+          broadcast-message: ''
+          drop-item-on-full-inventory: false
+          sell-all-when-not-enough-items: true
+          custom-display-text-enabled: false
+          custom-display-text: []
+          permission: ''
+          logging-enabled: false
+          close-after-purchase: false

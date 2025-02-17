@@ -1,0 +1,7 @@
+sound:
+  enabled: true
+  sound_name: ENTITY_PLAYER_LEVELUP
+  volume: 10
+  pitch: 1
+
+notify_format: '&d&o&n{player}&r'

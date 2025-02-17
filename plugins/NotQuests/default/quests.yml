@@ -1,0 +1,47 @@
+quests:
+  guide_advancement:
+    displayName: Ачивки
+    description: Попробуйте новый путеводитель встроенный в ваш клиент. Посетите несколько
+      мест и получите вознаграждение!
+    rewards:
+      '1':
+        actionType: Number
+        specifics:
+          expression: '3'
+          variableName: QuestPoints
+          operator: add
+          additionalBooleans:
+            notifyPlayer: '0.0'
+        displayName: +3 Талон
+      '2':
+        actionType: Number
+        specifics:
+          expression: '30'
+          variableName: Money
+          operator: add
+        displayName: +30 Денег
+    objectives:
+      '1':
+        objectiveType: Condition
+        progressNeededExpression: '1'
+        specifics:
+          condition: capital
+          checkOnlyWhenCorrespondingVariableValueChanged: true
+        description: Посетить столицу сервера
+        displayName: Приключение в столице
+      '2':
+        objectiveType: Condition
+        progressNeededExpression: '1'
+        specifics:
+          condition: music
+          checkOnlyWhenCorrespondingVariableValueChanged: true
+        description: Послушать музыку на варпе /warp music_jojo
+        displayName: Меломан
+    takeEnabled: true
+    abortEnabled: true
+    limits:
+      completions: 1
+      accepts: -1
+      fails: -1
+    acceptCooldown:
+      complete: -1

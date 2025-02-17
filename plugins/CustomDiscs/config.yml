@@ -1,0 +1,44 @@
+# CustomDiscs Configuration
+# Join our Discord for support: https://discord.gg/eRvwvmEXWz
+info:
+  # Don't change this value
+  version: '1.2'
+debug: false
+global:
+  # Language of the plugin
+  # Supported: ru_RU, en_US
+  # Unknown languages will be replaced with en_US
+  locale: ru_RU
+  debug: false
+command:
+  download:
+    # The maximum download size in megabytes.
+    max-size: 50
+  create:
+    custom-model-data:
+      enable: false
+      value: 0
+  createyt:
+    custom-model-data:
+      enable: false
+      value: 0
+  distance:
+    max: 64
+disc:
+  # The distance from which music discs can be heard in blocks.
+  distance: 64
+  # The master volume of music discs from 0-1.
+  # You can set values like 0.5 for 50% volume.
+  volume: '1.0'
+  allow-hoppers: true
+providers:
+  youtube:
+    # This may help if the plugin is not working properly.
+    # When you first play the disc after the server starts, you will see an authorization request in the console. Use a secondary account for security purposes.
+    use-oauth2: false
+    # If you have oauth2 enabled, leave these fields blank.
+    # This may help if the plugin is not working properly.
+    # https://github.com/lavalink-devs/youtube-source?tab=readme-ov-file#using-a-potoken
+    po-token:
+      token: ''
+      visitor-data: ''

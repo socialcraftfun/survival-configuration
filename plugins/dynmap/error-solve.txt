@@ -1,0 +1,2 @@
+web/js/mimecraft.js
+chat_encoder убрать смещение

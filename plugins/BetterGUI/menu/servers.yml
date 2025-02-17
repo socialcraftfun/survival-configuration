@@ -1,0 +1,54 @@
+menu-settings:
+  name: 'Выберите сервер'
+  rows: 3
+  command: servers
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_PLING'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+#
+# 1 СТРОКА
+#
+
+# ПЕРСОНАЛ
+
+#
+# 2 СТРОКА
+#
+
+# craft
+craft:
+  id: GRASS_BLOCK
+  position-x: 3
+  position-y: 2
+  name: '&9&l&nSocialCraft&r &2&lВыживание &81.20.2'
+  lore:
+    - '&7Выживание с элементами государства.'
+    - '&7Гриферство &cзапрещено!'
+    - ''
+    - '&fОнлайн: &e%pinger_players_95.217.92.217:25568%&7/50'
+    - ''
+    - '&e► &aНажмите, чтобы присоедениться'
+  action:
+    - 'server: survival'
+# craft
+game:
+  id: RED_BED
+  position-x: 5
+  position-y: 2
+  name: '&lSocial&6&lGame &81.20.2'
+  lore:
+    - '&7Мини игры!!'
+    - ''
+    - '&fОнлайн: &e%pinger_players_135.181.126.159:25575%&7/100'
+    - ''
+    - '&e► &aНажмите, чтобы присоедениться'
+  action:
+    - 'server: minigame'
+#
+# 3 СТРОКА
+#

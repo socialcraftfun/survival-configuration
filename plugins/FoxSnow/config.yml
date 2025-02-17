@@ -1,0 +1,58 @@
+#
+# Plugin made by Kesims, contact me on Discord for any help: Kesims#0001
+# Thanks for using my plugin!
+#
+###############################
+# FOX SNOW CONFIGURATION FILE #
+###############################
+
+plugin-prefix: "&b&lFoxSnow &7>> " # Prefix that will be shown before every plugin message. Set to "" to disable.
+show-debug-messages: false
+
+auto-save-data: true
+
+# Put all worlds that you want the snow to appear here. Please, note that world names are case-sensitive.
+enabled-worlds:
+  - example_world
+  - another_example_world
+
+require-permission: true # Permission foxsnow.show and foxsnow.toggle won't be needed, if this is set to 'false'
+
+snow-under-blocks: true # If set to false, snow will only appear in places where there is no block above it
+rain-disable-snow: true # Stop snow effect, if it is raining (or snowing) naturally in the world player is in
+
+particle-count: 100           # Number of particles that will be spawned in each iteration
+max-particle-distance: 25     # Maximum distance from a player where the particle can spawn
+
+# You can limit when it is going to snow, minecraft day has 24000 ticks, by default it will always snow.
+# If you want to snow for example only at night, set this to 12500 - 23500. More info: https://minecraft.fandom.com/wiki/Daylight_cycle
+snowtime:
+  start: 0
+  end: 24000
+
+particles:
+  - WAX_OFF
+  - SNOWFLAKE
+  - END_ROD
+
+# You can use biome filter to enable the effect only in certain biomes
+# Available types:
+# :: BLACKLIST (the effect will not appear in biomes listed bellow)
+# :: WHITELIST (the effect will appear only in biomes that are listed)
+# You can find list of all possible biomes on the plugin's main page (http://foxsnow.fox-code.eu)
+biome-filter:
+  enabled: false
+  type: BLACKLIST
+  biomes:
+    - BLOCKED_BIOME_ONE
+    - ANOTHER_BLOCKED_BIOME
+
+snowman-effect:
+  range: -1           # Set to -1 to disable, else defines range around player where snow will be placed on the ground. Do not set this too high (it could cause a lag, even when it is as much async as possible), especially if you have a lot of players. Ideal value is around 3.
+  duration: 100       # How long will the snow stay on the ground before being removed, in ticks. Set to -1 to keep the snow on the ground "forever"
+  destroyable: false  # Defines if players will be able to break the snow and get snowballs from it
+
+# You can simply enable and disable hooks for other plugins here.
+# It is recommended to disable all hooks that you are not using to increase FoxSnow performance
+hooks:
+  worldguard: true

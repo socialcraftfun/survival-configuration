@@ -1,0 +1,62 @@
+menu-settings:
+  name: 'Описание рангов: &2Эколог'
+  rows: 3
+  command:
+    - ranks-eco
+    - ecologyst
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+# ОПИСАНИЕ
+info:
+  type: template
+  template: info
+  position-x: 2
+  position-y: 2
+  lore:
+    - '&f&o* Скоро'
+# ВОМОЖНОСТИ
+opportunity:
+  type: template
+  template: opportunity
+  position-x: 4
+  position-y: 2
+  lore:
+    #- '&f* Флай &8(&2/fly&8)'
+    #- '&7   на 50 блоков'
+# ТРЕБОВАНИЯ
+requirements:
+  type: template
+  template: requirements
+  position-x: 6
+  position-y: 2
+  lore:
+  - '&fБыть гражданином'
+  - '&fВремя: &a%statistic_hours_played%&f/&95ч.'
+  - '&fОпыт: &a%player_level%&f/&950Lvl'
+  - '&fБаланс: &a%vault_eco_balance_formatted%&f/&9128'
+  - '&f1 звезда почета'
+  - '&f64 сажанцев вишни'
+  - '&f64 листьев азалии'
+  - '&f64 плакучей лозы'
+  - '&f5 кувшиниц'
+  - '&f5 факельников'
+  - '&f32 паутины'
+  - '&f64 сухих кустов'
+# ОБЯЗАНОСТИ
+responsibilities:
+  type: template
+  template: responsibilities
+  position-x: 8
+  position-y: 2
+  lore:
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 3

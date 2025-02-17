@@ -1,0 +1,25 @@
+spawns:
+  default:
+    world: 3fa2b56c-fccc-495b-9a6b-13071b1aa778
+    x: -1356.5
+    y: 70.0
+    z: -479.5
+    yaw: -89.57256317138672
+    pitch: -0.9000527262687683
+    world-name: scworld
+  natanella37 1134 72 -681 90:
+    world: 18b469d6-8631-436c-ac6f-0b256a9f9f03
+    world-name: scworld
+    x: 1132.5
+    y: 72.0
+    z: -678.5
+    yaw: 90.299072265625
+    pitch: 8.850015640258789
+  ~~~:
+    world: 8549cd5a-5757-409a-8989-27dbb6e4a6a2
+    world-name: scworld
+    x: 0.5
+    y: 66.0
+    z: 0.5
+    yaw: -90.0041275024414
+    pitch: 0.15000511705875397

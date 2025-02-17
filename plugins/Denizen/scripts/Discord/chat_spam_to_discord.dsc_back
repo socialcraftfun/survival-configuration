@@ -1,0 +1,30 @@
+
+# Command for saving chat name into variable: /ex flag server game_chat_spam:<discord[sc_chat].group[SocialCraft].channel[chat-spam]>
+
+# Example: /ex flag server discord_botspam:<discord[mybot].group[Denizen].channel[bot-spam]>
+
+chat_spam_to_discord:
+    type: world
+    debug: false
+    events:
+        on player join:
+        - define message "`<player.name> присоединился к игре`"
+        - ~discordmessage id:sc_chat channel:<server.flag[game_chat_spam]> <[message]>
+        after player quits:
+        - define message "`<player.name> вышел из игры`"
+        - ~discordmessage id:sc_chat channel:<server.flag[game_chat_spam]> <[message]>
+        on player chats:
+        - define message "`<player.name>: <context.message>`"
+        - ~discordmessage id:sc_chat channel:<server.flag[game_chat_spam]> <[message]>
+        on player completes advancement:
+        - if <context.advancement.before[/]> != recipes:
+            - ~discordmessage id:sc_chat channel:<server.flag[game_chat_spam]> `<context.message.strip_color>`
+        after player kicked:
+        - define message "`<player.name> был кикнут: <context.reason>`"
+        - ~discordmessage id:sc_chat channel:<server.flag[game_chat_spam]> <[message]>
+        on command:
+        - if <context.source_type> == player:
+            - define message "`<player.name>: /<context.command> <context.raw_args>`"
+            - ~discordmessage id:sc_chat channel:<server.flag[game_chat_spam]> <[message]>
+        on player dies:
+        - ~discordmessage id:sc_chat channel:<server.flag[game_chat_spam]> `<context.message.strip_color>`

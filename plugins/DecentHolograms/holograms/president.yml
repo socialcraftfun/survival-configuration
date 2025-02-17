@@ -1,0 +1,36 @@
+location: scworld:-191.500:90.000:-201.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&2[Президент]'
+    height: 0.3
+  - content: '&2&nБонусы'
+    height: 0.3
+  - content: 10 хоумов
+    height: 0.3
+  - content: 10 приватов
+    height: 0.3
+  - content: Флай &7/fly
+    height: 0.3
+  - content: Сделать объявление &7/bc
+    height: 0.3
+  - content: '&oУправляет страной'
+    height: 0.3
+  - content: '&oУправляет столицей'
+    height: 0.3
+  - content: '&oПомогает админам'
+    height: 0.3
+  - content: '&2------------------'
+    height: 0.3
+  - content: '&2&nЧто нужно:'
+    height: 0.3
+  - content: '&oБыть избранным'
+    height: 0.3
+  - content: '&oна голосовании'
+    height: 0.3
+  actions: {}

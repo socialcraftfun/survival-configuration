@@ -1,0 +1,191 @@
+#
+# Таск для проверки нужных ресов игроком
+police_rank_check:
+    type: task
+    script:
+    - narrate ------------------------------
+    - narrate "Статистика игрока <player.name>"
+    # Ранг Гражданина
+    - if <player.in_group[citizen]>:
+        - narrate "<green>Игрок получал ранг Гражданина"
+    - if !<player.in_group[citizen]>:
+        - narrate "<red>Игрок не получал ранг Гражданина"
+    # Время игры
+    - define ticks <player.statistic[PLAY_ONE_MINUTE]>
+    - if <duration[<[ticks]>t].in_hours> >= 20:
+        - narrate "<green>Время онлайн: <&r><duration[<[ticks]>t].formatted><green>/<&r>20h"
+    - if <duration[<[ticks]>t].in_hours> < 20:
+        - narrate "<red>Время онлайн: <&r><duration[<[ticks]>t].formatted><red>/<&r>20h"
+    # Опыт
+    - if <player.xp_level> >= 100:
+        - narrate "<green>Опыт: <&r><player.xp_level><green>/<&r>100"
+    - if <player.xp_level> < 100:
+        - narrate "<red>Опыт: <&r><player.xp_level><red>/<&r>100"
+    # Баланс
+    - if <player.money> >= 128:
+        - narrate "<green>Баланс: <&r><player.money><green>/<&r>128"
+    - if <player.money> < 128:
+        - narrate "<red>Баланс: <&r><player.money><red>/<&r>128"
+    # Звёзды Почёта
+    - if <player.playerpoints_points> >= 1:
+        - narrate "<green>Звёзды Почёта: <&r><player.playerpoints_points><green>/<&r>1"
+    - if <player.playerpoints_points> < 1:
+        - narrate "<red>Звёзды Почёта: <&r><player.playerpoints_points><red>/<&r>1"
+    # Ачивка Герой деревни
+    - if <player.has_advancement[adventure/hero_of_the_village]>:
+        - narrate "<green>Ачивка Герой деревни: есть"
+    - if !<player.has_advancement[adventure/hero_of_the_village]>:
+        - narrate "<red>Ачивка Герой деревни: нет"
+    # Убитый моб - иссушитель
+    - if <player.statistic[kill_entity].qualifier[<entity[wither]>]> >= 1:
+        - narrate "<green>Убито иссушителей: <&r><player.statistic[kill_entity].qualifier[<entity[wither]>]><green>/<&r>1"
+    - if <player.statistic[kill_entity].qualifier[<entity[wither]>]> < 1:
+        - narrate "<red>Убито иссушителей: <&r><player.statistic[kill_entity].qualifier[<entity[wither]>]><red>/<&r>1"
+    # Звезда Незера
+    - if <player.inventory.contains_item[nether_star]>:
+        - narrate "<green>Звезда Незера: есть"
+    - if !<player.inventory.contains_item[nether_star]>:
+        - narrate "<red>Звезда Незера: нет"
+    # Скалковый катализатор
+    - if <player.inventory.contains_item[sculk_catalyst]>:
+        - narrate "<green>Скалковый катализатор: есть"
+    - if !<player.inventory.contains_item[sculk_catalyst]>:
+        - narrate "<red>Скалковый катализатор: нет"
+    # Тотемы бессмертия
+    - if <player.inventory.contains_item[totem_of_undying].quantity[16]>:
+        - narrate "<green>16 тотемов бессмертия: есть"
+    - if !<player.inventory.contains_item[totem_of_undying].quantity[16]>:
+        - narrate "<red>16 тотемов бессмертия: нет"
+    - narrate ------------------------------
+#
+#
+# Команда для проверки нужных ресов игроком
+rank_police_check:
+    type: command
+    name: rank
+    description: Проверка нужных ресов
+    usage: /rank police
+    permission: rank.police
+    permission message: У вас нет разрешения использовать эту команду
+    tab completions:
+        1: police
+    script:
+    - choose <context.args.first>:
+        - case police:
+            - run police_rank_check
+#
+#
+# Команда для модераторов для проверки соблюдания требований
+rank_police_player_check:
+    type: command
+    name: rpolice
+    description: Команда для проверки требований и выдачи ранга
+    usage: /rpolice check [player] | assign [player]
+    permission: rpolice.moderator
+    permission message: У вас нет разрешения использовать эту команду
+    tab completions:
+        1: check|assign
+        2: <server.online_players.parse[name]>
+    script:
+    - choose <context.args.first>:
+        - case check:
+            - narrate ------------------------------
+            - define playerName <server.match_player[<context.args.get[2]>]>
+            - narrate "Статистика игрока <[playerName]>"
+            # Ранг Гражданина
+            - if <player[<[playerName]>].in_group[citizen]>:
+                - narrate "<green>Игрок получал ранг Гражданина"
+            - if !<player[<[playerName]>].in_group[citizen]>:
+                - narrate "<red>Игрок не получал ранг Гражданина"
+            # Время игры
+            - define ticks <player[<[playerName]>].statistic[PLAY_ONE_MINUTE]>
+            - if <duration[<[ticks]>t].in_hours> >= 20:
+                - narrate "<green>Время онлайн: <&r><duration[<[ticks]>t].formatted><green>/<&r>20h"
+            - if <duration[<[ticks]>t].in_hours> < 20:
+                - narrate "<red>Время онлайн: <&r><duration[<[ticks]>t].formatted><red>/<&r>20h"
+            # Опыт
+            - if <player[<[playerName]>].xp_level> >= 100:
+                - narrate "<green>Опыт: <&r><player[<[playerName]>].xp_level><green>/<&r>100"
+            - if <player[<[playerName]>].xp_level> < 100:
+                - narrate "<red>Опыт: <&r><player[<[playerName]>].xp_level><red>/<&r>100"
+            # Баланс
+            - if <player[<[playerName]>].money> >= 128:
+                - narrate "<green>Баланс: <&r><player[<[playerName]>].money><green>/<&r>128"
+            - if <player[<[playerName]>].money> < 128:
+                - narrate "<red>Баланс: <&r><player[<[playerName]>].money><red>/<&r>128"
+            # Звёзды Почёта
+            - if <player[<[playerName]>].playerpoints_points> >= 1:
+                - narrate "<green>Звёзды Почёта: <&r><player[<[playerName]>].playerpoints_points><green>/<&r>1"
+            - if <player[<[playerName]>].playerpoints_points> < 1:
+                - narrate "<red>Звёзды Почёта: <&r><player[<[playerName]>].playerpoints_points><red>/<&r>1"
+            # Ачивка Герой деревни
+            - if <player[<[playerName]>].has_advancement[adventure/hero_of_the_village]>:
+                - narrate "<green>Ачивка Герой деревни: есть"
+            - if !<player[<[playerName]>].has_advancement[adventure/hero_of_the_village]>:
+                - narrate "<red>Ачивка Герой деревни: нет"
+            # Убитый моб - иссушитель
+            - if <player[<[playerName]>].statistic[kill_entity].qualifier[<entity[wither]>]> >= 1:
+                - narrate "<green>Убито иссушителей: <&r><player[<[playerName]>].statistic[kill_entity].qualifier[<entity[wither]>]><green>/<&r>1"
+            - if <player[<[playerName]>].statistic[kill_entity].qualifier[<entity[wither]>]> < 1:
+                - narrate "<red>Убито иссушителей: <&r><player[<[playerName]>].statistic[kill_entity].qualifier[<entity[wither]>]><red>/<&r>1"
+            # Звезда Незера
+            - if <player[<[playerName]>].inventory.contains_item[nether_star]>:
+                - narrate "<green>Звезда Незера: есть"
+            - if !<player[<[playerName]>].inventory.contains_item[nether_star]>:
+                - narrate "<red>Звезда Незера: нет"
+            # Скалковый катализатор
+            - if <player[<[playerName]>].inventory.contains_item[sculk_catalyst]>:
+                - narrate "<green>Скалковый катализатор: есть"
+            - if !<player[<[playerName]>].inventory.contains_item[sculk_catalyst]>:
+                - narrate "<red>Скалковый катализатор: нет"
+            # Тотемы бессмертия
+            - if <player[<[playerName]>].inventory.contains_item[totem_of_undying].quantity[16]>:
+                - narrate "<green>16 тотемов бессмертия: есть"
+            - if !<player[<[playerName]>].inventory.contains_item[totem_of_undying].quantity[16]>:
+                - narrate "<red>16 тотемов бессмертия: нет"
+            - narrate ------------------------------
+        - case assign:
+            - define playerName <server.match_player[<context.args.get[2]>]>
+            # Забрать опыт
+            - experience take level 100 player:<[playerName]>
+            # Снять деньги
+            - money take quantity:128 player:<[playerName]>
+            # Забрать звезду почёта
+            - playerpoints take 1 player:<[playerName]>
+            # Забрать звезду Незера
+            - take item:nether_star player:<[playerName]>
+            # Забрать скалковый катализатор
+            - take item:sculk_catalyst player:<[playerName]>
+            # Забрать тотемы бессмертия
+            - take item:totem_of_undying quantity:16 player:<[playerName]>
+            # Забрать старый ранг и выдать новый
+            - if <player[<[playerName]>].in_group[citizen]>:
+                - group remove citizen player:<[playerName]>
+            - if <player[<[playerName]>].in_group[farmer]>:
+                - group remove farmer player:<[playerName]>
+            - if <player[<[playerName]>].in_group[leader]>:
+                - group remove leader player:<[playerName]>
+            - if <player[<[playerName]>].in_group[eco]>:
+                - group remove eco player:<[playerName]>
+            - group add police player:<[playerName]>
+            # Выдать флаг
+            - flag <[playerName]> police
+            - flag <[playerName]> rank_system_main:<&9>Полицейский
+            - flag <[playerName]> rank_system_homes_number[1]:3
+            #- announce to_flagged:police "ты полицейский"
+            # Выдать меч и броню
+            - give netherite_sword player:<[playerName]>
+            - give netherite_helmet player:<[playerName]>
+            - give netherite_chestplate player:<[playerName]>
+            - give netherite_leggings player:<[playerName]>
+            - give netherite_boots player:<[playerName]>
+            # Сообщение в игру
+            - define player <server.match_player[<context.args.get[2]>].name>
+            - announce "<&b>Поздравляем нового <&9>Полицейского <&r><&o><&l><[player]><&b>!"
+            - playsound <server.online_players> sound:ENTITY_PLAYER_LEVELUP pitch:0.8
+            # Сообщение в дс
+            - define message "***Поздравляем** нового Полицейского **<[player]>**!*"
+            - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+            # Сообщение мне в дс
+            - define admin_embed "<discord_embed.with_map[title=Новый полицейский!;description=Игрок **<[player]>** стал полицейским, нужно выдать ему роль в дс и внести его в список зарплаты!;timestamp=<util.time_now>;color=#00FFFF]>"
+            - ~discordmessage id:sc_chat user:369386814445715457 <[admin_embed]>

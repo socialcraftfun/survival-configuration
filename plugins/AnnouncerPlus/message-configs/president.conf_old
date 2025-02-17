@@ -1,0 +1,94 @@
+every-broadcast-as-player-commands=[]
+# These commands will run as console once each interval
+# Example: "broadcast This is a test"
+every-broadcast-commands=[]
+# These commands will run as console once per player each interval
+# Example: "minecraft:give %player_name% dirt"
+every-broadcast-per-player-commands=[]
+interval-time-amount=3
+# Can be SECONDS, MINUTES, or HOURS
+interval-time-unit=MINUTES
+# The list of messages for a config
+messages=[
+    {
+        message-text=[
+            "",
+            "<bold>ВЫБОРЫ - <color:#E491A8><bold>ВЕСНА",
+            "{separator}",
+            "<color:#FFFFFF><bold>Emo_Punk666",
+            "Больше хлеба и картошки игрокам, голосуй за Emo_Punk666!",
+            "{separator}"
+        ]
+        sounds="minecraft:block.note_block.pling"
+        sounds-randomized=true
+    },
+    {
+        message-text=[
+            "",
+            "<bold>ВЫБОРЫ - <color:#E491A8><bold>ВЕСНА",
+            "{separator}",
+            "<color:#000000><bold>desouJ:"
+            "честно не прийду на сервер и даже на дебаты и в майнкрафт не зайду я честно каюсь, я не прийду на сервер, послушаю и пойду.",
+            "{separator}"
+        ]
+        sounds="minecraft:block.note_block.pling"
+        sounds-randomized=true
+    },
+    {
+        message-text=[
+            "",
+            "{separator}",
+            "<bold>ВЫБОРЫ - <color:#E491A8><bold>ВЕСНА",
+            "<color:#1DDEFC>groderalnas:"
+            "Больше постройки и ивенты больше Настроение голосуй  за  groderalnas!!!",
+            "{separator}"
+        ]
+        sounds="minecraft:block.note_block.pling"
+        sounds-randomized=true
+    },
+    {
+        message-text=[
+            "",
+            "{separator}",
+            "<bold>ВЫБОРЫ - <color:#E491A8><bold>ВЕСНА",
+            "<color:#2259BF>verest12",
+            "Я сделаю себе резиденцию, и вам честное нечиго!",
+            "{separator}"
+        ]
+        sounds="minecraft:block.note_block.pling"
+        sounds-randomized=true
+    },
+    {
+        message-text=[
+            "",
+            "{separator}",
+            "<bold>ВЫБОРЫ - <color:#E491A8><bold>ВЕСНА",
+            "<color:#C9B5C7>MrVringlus:"
+            "Если хотите сосиску в тесте",
+            "голосуйте за меня 😎",
+            "{separator}"
+        ]
+        sounds="minecraft:block.note_block.pling"
+        sounds-randomized=true
+    },
+    {
+        message-text=[
+            "",
+            "{separator}",
+            "<bold>ВЫБОРЫ - <color:#E491A8><bold>ВЕСНА",
+            "<color:#E4D9A5>narcissus:"
+            "Голосуйте за narcissus, чтобы вместе мы сделали наш мир лучше и справедливее! ",
+            "#VoteForChange"
+            "{separator}"
+        ]
+        sounds="minecraft:block.note_block.pling"
+        sounds-randomized=true
+    }
+    
+]
+
+random-message-order=false
+# Should disabled boss bar, action bar, title, and toast sections be removed?
+remove-disabled-message-elements=true
+# Should duplicate comments be removed from this config?
+remove-duplicate-comments=true

@@ -1,0 +1,5 @@
+permpack.redprotect.basic:
+  description: 'Basic permission for claiming region using red protect'
+  default: 'op'
+  children:
+    fawe.worldeditregion: true

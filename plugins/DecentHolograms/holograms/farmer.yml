@@ -1,0 +1,40 @@
+location: scworld:-1339.500:81.000:-517.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&e[Фермер]'
+    height: 0.3
+  - content: '&e&nБонусы'
+    height: 0.3
+  - content: 3 хоума 3 привата
+    height: 0.3
+  - content: Магазин на рынке
+    height: 0.3
+  - content: 1 спавнер за 3 звезды
+    height: 0.3
+  - content: 'Флаги для привата:'
+    height: 0.3
+  - content: '&7creeper-explosion'
+    height: 0.3
+  - content: '&7auto-plant'
+    height: 0.3
+  - content: Сделать объявление &7/bc
+    height: 0.3
+  - content: Потушить себя &7/ext
+    height: 0.3
+  - content: Открыть эндерчест &7/echest
+    height: 0.3
+  - content: Камнерез &7/stonecutter
+    height: 0.3
+  - content: '&e------------------'
+    height: 0.3
+  - content: 'Что нужно: &e/ranks'
+    height: 0.3
+  - content: 'Повысить ранг: &e/rank farmer'
+    height: 0.3
+  actions: {}

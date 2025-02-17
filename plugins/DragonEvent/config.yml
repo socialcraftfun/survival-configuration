@@ -1,0 +1,33 @@
+allow-end: false
+
+event_is_started: false
+
+player_needed: 4
+
+reminder:
+  minutes:
+  - 5
+  - 4
+  - 3
+  - 2
+  - 1
+  seconds: 15
+sounds:
+  seconds: 10
+timer: 300
+messages:
+  broadcasts:
+    minutes:
+      message:
+      - Портал откроется через %m минут!
+      popup:
+        title: '&cПортал откроется через'
+        subtitle: '&f%m &cминут!'
+    seconds:
+      message:
+      - Портал откроется через %s секунд!
+      popup:
+        title: '&cПортал откроется через'
+        subtitle: '&f%s &cсекунд!'
+  portal_opened: Портал открыт. Дракон ПРОБУДИЛСЯ!!
+ender_allow: true

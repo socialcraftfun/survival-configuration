@@ -1,0 +1,25 @@
+conditions:
+  music:
+    conditionType: Boolean
+    progressNeeded: 1
+    negated: false
+    description: ''
+    hiddenStatusExpression: '0'
+    specifics:
+      variableName: Advancement
+      operator: equals
+      expression: 'true'
+      additionalStrings:
+        Advancement: socialcraft:music_jojo
+  capital:
+    conditionType: Boolean
+    progressNeeded: 1
+    negated: false
+    description: ''
+    hiddenStatusExpression: '0'
+    specifics:
+      variableName: Advancement
+      operator: equals
+      expression: 'true'
+      additionalStrings:
+        Advancement: socialcraft:capital

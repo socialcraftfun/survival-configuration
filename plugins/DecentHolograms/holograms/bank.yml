@@ -1,0 +1,20 @@
+location: scworld:-148.500:89.000:-197.000
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&bБанк'
+    height: 0.3
+  - content: '&b----------------'
+    height: 0.3
+  - content: положить на счет
+    height: 0.3
+  - content: или снять деньги
+    height: 0.3
+  - content: со счета
+    height: 0.3
+  actions: {}

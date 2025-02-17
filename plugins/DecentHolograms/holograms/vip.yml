@@ -1,0 +1,34 @@
+location: scworld:-188.500:90.000:-205.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&d&lVip-donat'
+    height: 0.3
+  - content: '&d&nБонусы'
+    height: 0.3
+  - content: 3 хоума
+    height: 0.3
+  - content: 3 привата
+    height: 0.3
+  - content: Спавнеры на 5 звёзд
+    height: 0.3
+  - content: Флай &7/fly
+    height: 0.3
+  - content: Крафт столы &7/crafts
+    height: 0.3
+  - content: '&d------------------'
+    height: 0.3
+  - content: '&d&nКак получить:'
+    height: 0.3
+  - content: '&oВыиграй на ивенте или'
+    height: 0.3
+  - content: Купи на сайте &e(30 руб)
+    height: 0.3
+  - content: '&b&nsocialcraft.fun'
+    height: 0.3
+  actions: {}

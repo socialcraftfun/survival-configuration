@@ -1,0 +1,84 @@
+menu-settings:
+  name: 'Описание рангов: &6Лидер'
+  rows: 3
+  command: 
+    - ranks-leader
+    - leader
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+# ОПИСАНИЕ
+info:
+  type: template
+  template: info
+  position-x: 2
+  position-y: 2
+  lore:
+    - '&fИспользуется плагин SimpleClans'
+    - '&f для управления республикой'
+    - ''
+    - '&eВременное вики по всему функционалу *КЛИК*'
+  action:
+    - 'tell: https://wiki.roinujnosde.me/simpleclans/v/russian/'
+# ВОМОЖНОСТИ
+opportunity:
+  type: template
+  template: opportunity
+  position-x: 4
+  position-y: 2
+  lore:
+    - '&f* Управление республикой &8(&6/resp&8)'
+    - ' &7* Тег в чате'
+    - ' &7* Отдельные ранги для республики'
+    - ' &7* Чат республики'
+    - ' &7* Хоум республики'
+    - ' &7* Банк республики'
+    - ' &7* Доска объявлений'
+    - '&f* Флаги для привата'
+    - ' &7- creeper-explosion'
+    - '    &8иммунитет от криперов'
+    - ' &7- mob-spawning'
+    - '    &8отключить спавн мобов'
+    - ' &7- fire-spread'
+    - '    &8отключить распространение огня'
+    - '&f* 6 приватов &8(&6/rg claim&8)'
+    - '&f* 6 хоумов &8(&6/sethome&8)'
+# ТРЕБОВАНИЯ
+requirements:
+  type: template
+  template: requirements
+  position-x: 6
+  position-y: 2
+  lore:
+    - '&f* Быть гражданином'
+    - '&f* Набрать 3 игроков для республики'
+    - '&f* Сделать 3 общественные постройки'
+    - '&f* 64 изумрудных блока'
+    - '&f* 64 железных слитка'
+    - '&f* 64 саманных кирпичей'
+    - '&f* 64 базальта'
+    - '&f* 64 прожаренного хоруса'
+    - '&f* 64 стейка'
+    - '&f* 64 алмаза на счёте'
+    - '&f* Оставить заявку в канале'
+    - '&f  Вопросы админу'
+# ОБЯЗАНОСТИ
+responsibilities:
+  type: template
+  template: responsibilities
+  position-x: 8
+  position-y: 2
+  lore:
+    - '&f* Развивать свою республику'
+    - '&f* Поддерживать тёплые отношения'
+    - '&f  с другими республиками и игроками'
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 3

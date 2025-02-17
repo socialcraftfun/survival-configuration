@@ -1,0 +1,216 @@
+menu-settings:
+  name: 'Команды'
+  rows: 5
+  command: helpcommands
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+#
+# 1 СТРОКА
+#
+main:
+  id: lime_wool
+  position-x: 5
+  position-y: 1
+  name: '&bОсновные'
+  lore:
+    - ''
+    - '&f/reg пароль &7зарегистрироваться в лобби'
+    - '&f/l пароль &7залогиниться'
+    - '&f/changepassword старый новый &7поменять пароль'
+    - '&f/rtp &7тп в случайное место'
+    - '&f/kit start &7получить начальный набор'
+    - '&f/menu &7открыть инфо меню'
+    - '&f/sb &7вкл/выкл скорборд'
+    - '&f/co i &7проверить взаимодействия с блоками и сундуками'
+    - '&f/afk &7уйти афк'
+    - '&f/warp название &7тп на варп'
+    - '&f/dynmap hide (show) &7спрятаться с онлайн карты'
+    - '&f/startquiz rules &7пройти тест на знания правил'
+#
+# 2 СТРОКА
+#
+message:
+  id: magenta_wool
+  position-x: 2
+  position-y: 2
+  name: '&bОбщение'
+  lore:
+    - ''
+    - '&f&o! в начале сообщения чтобы писать в глобальный чат'
+    - '&f/toggleshout &7вкл/выкл режим глобал чата'
+    - '&f/m /msg /tell &7написать лс'
+    - '&f/r текст &7ответить на последнее лс'
+    - '&f/dschat toggle &7вкл/выкл отправку своих сообщений в дс'
+    - '&f/dschat mute &7вкл/выкл отображение сообщений из дс'
+    - '&f/mail send &7отправить письмо игроку'
+    - '&f/mail read &7просмотреть свою почту'
+    - '&f/mail clear &7очистить почту'
+    - '&f/rds &7ответить на лс из дс'
+#
+#
+region:
+  id: red_wool
+  position-x: 2
+  position-y: 2
+  name: '&bПриват'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help_region.yml'
+#
+#
+home:
+  id: green_wool
+  position-x: 6
+  position-y: 2
+  name: '&bДомой'
+  lore:
+    - ''
+    - '&f/sethome &7установить хоум'
+    - '&f/delhome &7удалить хоум'
+    - '&f/home &7тп на хоум'
+    - '&f/homes &7список хоумов'
+#
+#
+tp:
+  id: purple_wool
+  position-x: 8
+  position-y: 2
+  name: '&bТелепортации'
+  lore:
+    - ''
+    - '&f/call /tpa &7отправить запрос на тп'
+    - '&f/tpcancel &7отменить свой запрос'
+    - '&f/tpaccept &7принять запрос'
+    - '&f/tpdeny &7отказать'
+#
+# 3 СТРОКА
+#
+money:
+  id: light_blue_wool
+  position-x: 3
+  position-y: 3
+  name: '&bДеньги и звёзды'
+  lore:
+    - ''
+    - '&f/bal &7проверить баланс'
+    - '&f/baltop &7топ игроков по балансу'
+    - '&f/pay &7перевести алмазы игроку'
+    - '&f/points lead &7топ игроков по звёздам почёта'
+    - '&f/points pay &7передать звёзды игроку'
+#
+#
+ranks:
+  id: yellow_wool
+  position-x: 5
+  position-y: 3
+  name: '&bРанги'
+  lore:
+    - ''
+    - '&f/ranks &7список рангов сервера'
+    - '&f/rankup &7повысить ранг до Гражданина или Фермера'
+    - '&f/gender male/female &7установить пол (для Гражданина)'
+    - '&f/rank police &7проверить требования для Полицейского'
+#
+#
+roleplay:
+  id: cyan_wool
+  position-x: 7
+  position-y: 3
+  name: '&bРП'
+  lore:
+    - ''
+    - '&f/resp &7открыть меню республики'
+    - '&f/me &7«сделать» что-то'
+    - '&f/shout &7«прокричать» что-то'
+    - '&f/try &7«попытаться» сделать что-то'
+    - '&f/sit &7сесть'
+    - '&f/lay &7лечь'
+    - '&f/crawl &7ползти'
+    - '&f/head &7надеть предмет на голову'
+    - '&f/helpmarry &7Открыть семейное меню'
+#
+# 4 СТРОКА
+#
+extra:
+  id: orange_wool
+  position-x: 4
+  position-y: 4
+  name: '&bБОНУС'
+  lore:
+    - ''
+    - '&f&oДоступны только определённым рангам'
+    - '&f/wb &7открыть верстак'
+    - '&f/bc &7сделать объявление'
+    - '&f/fly &7вкл/выкл флай'
+    - '&f/echest &7открыть эндерчест'
+    - '&f/stonecutter &7открыть камнерез'
+    - '&f/ext &7потушить себя'
+    - '&f/cartographytable &7открыть стол картографа'
+    - '&f/grindstone &7открыть точильный камень'
+    - '&f/loom &7открыть ткацкий станок'
+    - '&f/smithingtable &7открыть стол кузнеца'
+#
+#
+police:
+  id: blue_wool
+  position-x: 6
+  position-y: 4
+  name: '&bПОЛИЦИЯ'
+  lore:
+    - ''
+    - '&f/co near &7взаимодействия с блоками'
+    - '&7и сундуками в радиусе 5 блоков'
+    - '&f/tp &7тп к игроку'
+    - '&f/mute &7выдать/забрать мут'
+    - '&f/jail /unjail &7посадить/вызволить из тюрьмы'
+    - '&f/smithtable &7открыть стол кузнеца'
+#
+# 5 СТРОКА
+#
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 5
+# ХЕЛП по режиму
+help_mode:
+  id: player_head
+  position-x: 5
+  position-y: 5
+  name: '&fПомощь по игре'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help.yml'
+# ХЕЛП по чату
+help_chat:
+  id: player_head
+  position-x: 6
+  position-y: 5
+  name: '&fПомощь по голосовому чату'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help_voice.yml'
+# ХЕЛП по приватам
+help_region:
+  id: glass_bottle
+  position-x: 7
+  position-y: 5
+  name: '&fПомощь по приватам'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help_region.yml'

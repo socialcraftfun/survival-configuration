@@ -1,0 +1,874 @@
+FileVersion: 8
+Messages:
+  Prefix: '&b[ARM]&r '
+  Buymessage: '&aРегион успешно куплен!'
+  NotEnoughMoney: '&4У тебя не достаточно денег!'
+  RegionAlreadySold: '&4Регион уже продан!'
+  NoPermission: '&4У вас нет разрешения!'
+  WorldDoesNotExist: '&4Выбранный мир не существует!'
+  RegionDoesNotExist: '&4Выбранный регион не существует в этом (или выбранном) мире!'
+  WGRegionNotFound: '&4Не удалось найти регион! Убедитесь, что вы выполняете эту команду
+    в том же мире, в котором существует регион! Некоторые версии WorldGuard требуют
+    ввода названия региона с учетом регистра!'
+  RegionAddedToARM: '&7Регион создан и добавлен в ARM!'
+  RegionAndSignAddedToARM: '&7Знак региона был создан, и регион был добавлен в ARM!'
+  SignAddedToRegion: '&7Регион уже существует! Знак добавлен в регион!'
+  SignRemovedFromRegion: '&7Знак региона удален! %remaining% Знак(и) остался!'
+  RegionZeroSignsReached: '&7Вы удалили последний знак этого региона! Обратите внимание,
+    что этот регион &4&l&nНЕ УДАЛЕН ИЗ ARM!!&r &7Если вы хотите отменить регистрацию
+    этого региона, выполните &6/arm delete %regionid%&7!'
+  SellSign1: '&2Продается'
+  SellSign2: '%regionid%'
+  SellSign3: '%price%%currency%'
+  SellSign4: '%dimensions%'
+  SoldSign1: '&4Продано'
+  SoldSign2: '%regionid%'
+  SoldSign3: ''
+  SoldSign4: '%owner%'
+  ProtectionOfContinuanceSign1: '&4Не продается!'
+  ProtectionOfContinuanceSign2: Регион находится
+  ProtectionOfContinuanceSign3: под постоянной
+  ProtectionOfContinuanceSign4: охраной!
+  Currency: $
+  CommandOnlyIngame: '&4Эта команда может быть выполнена только в игре!'
+  RegionInfoExpired: '&4Истекший'
+  GUIMainMenuName: '&1ARM - Меню'
+  GUIGoBack: '&6Вернуться назад'
+  GUIMyOwnRegions: '&6Мои регионы (Владелец)'
+  GUIMemberRegionsMenuName: '&1ARM - Мои регионы (Участник)'
+  GUIMyMemberRegions: '&6Мои регионы (Участник)'
+  GUISearchFreeRegion: '&6Поиск свободных регионов'
+  GUIOwnRegionsMenuName: '&1ARM - Мои регионы (Владелец)'
+  GUIMembersButton: '&6Члены'
+  GUIShowInfosButton: '&6Показать информацию'
+  GUITeleportToRegionButton: '&6Телепорт в регион'
+  GUIRegionFinderMenuName: '&1ARM - Регионо Искатель'
+  GUIMemberListMenuName: '&1ARM - Члены из %regionid%'
+  GUIMakeOwnerButton: '&aСделать владельцем'
+  GUIRemoveMemberButton: '&4Удалять'
+  GUIMakeOwnerWarningName: '&4&lВы уверены?'
+  GUIWarningYes: '&aДа'
+  GUIWarningNo: '&4Нет'
+  RegionTeleportMessage: '&7Вы были телепортированы в %regionid%'
+  NoFreeRegionWithThisKind: '&7Свободных регионов с таким типом не найдено :('
+  RegionkindDoesNotExist: '&4Выбранный вид региона не существует!'
+  RegionkindgroupNotExists: '&4Выбранная региональная группа не существует!'
+  RegionkindgroupModified: '&aРегионная группа изменена!'
+  RegionkindgroupListHeadline: '&6Региональные группы:'
+  RegionkindgroupAlreadyExists: '&4Региональная группа уже существует!'
+  RegionkindgroupCreated: '&aРегиональная группа создана!'
+  RegionkindgroupDeleted: '&aРегиональная группа удалена!'
+  RegionkindgroupHelpHeadline: |-
+    &6==[AdvancedRegionMarket Помощь по Региональным Группам ]==
+    &3Страница %actualpage% / %maxpage%
+  RegionkindgroupInfo:
+  - '&6======[Данные Региональных Групп]======'
+  - '&9Имя: &e%regionkindgroup%'
+  - '&9Отображаемое имя: &r%regionkindgroupdisplay%'
+  - '&9Отображать в лимитах: &e%regionkindgroupdisplayinlimits%'
+  - '&9Типы групп: &e%regionkindgroupmembers%'
+  RegionNowAvailable: '&aРегион теперь доступен!'
+  NoRegionAtPlayersPosition: '&7Не удалось найти регион в вашем местоположении!'
+  RegionAddMemberNotOnline: '&4Выбранный игрок не в сети!'
+  RegionAddMemberAdded: '&aУчастник добавлен!'
+  RegionRemoveMemberNotAMember: '&4Выбранный игрок не является членом региона'
+  RegionRemoveMemberRemoved: '&aУчастник удален!'
+  GUIResetRegionButton: '&4Сбросить регион'
+  GUIResetRegionWarningName: '&4&lСбросить ваш регион?'
+  ResetComplete: '&aСброс завершен!'
+  ResetRegionCooldownError: '&7Вам придется подождать&6 %remaininguserrestorecooldown-countdown-writtenout%
+    &7пока вы снова не сбросите свой регион'
+  GUIRegionTakeOverMenuName: '&4Захват региона'
+  RegionTransferCompleteMessage: '&aПеревод завершен!'
+  GUICloseWindow: '&6Закрыть окно'
+  RentSign1: '&2В аренду'
+  RentSign2: '%regionid%'
+  RentSign3: '%price%%currency%/%extendtime-short%'
+  RentSign4: 'МАХ.: %maxextendtime-writtenout%'
+  RentedSign1: '&4Сдан в аренду'
+  RentedSign2: '%regionid%/%owner%'
+  RentedSign3: '%price%%currency%/%extendtime-short%'
+  RentedSign4: '%remainingtime-countdown-short%'
+  RentExtendMessage: '&aRegion extended for &6%extendtime-current-writtenout%&a (For
+    %price-current%%currency%. Remaining time: &6%remainingtime-next-extend-countdown-writtenout%'
+  GUIExtendRentRegionButton: '&1Продлить регион'
+  Complete: '&aЗавершено!'
+  RegionBuyOutOfLimit: '&4Вне предела! Вы можете увидеть свои текущие ограничения,
+    выполнив &6/arm limit&4!'
+  RegionErrorCanNotBuildHere: '&4Вам разрешено только разбивать блоки, которые вы
+    разместили здесь!'
+  Unlimited: ∞
+  GUIUserSellButton: '&4Сбросить и продать регион'
+  GUIUserSellWarning: '&4&lПродать свой регион?'
+  LimitInfoTop: '&6=========[Информация об ограничении]========='
+  LimitInfoLimitReachedColorCode: '&r&4'
+  LimitInfoTotal: '&6- Общий: (&a%limitreachedcolor%%playerownedkind%/%limitkind%&6)'
+  LimitInfoRegionkind: '&6- %regionkinddisplay%: (&a%limitreachedcolor%%playerownedkind%/%limitkind%&6)'
+  LimitInfoRegionkindGroup: '&6- %regionkindgroupdisplay%: (&a%limitreachedcolor%%playerownedkind%/%limitkind%&6)'
+  GUILimitButton: '&6Мои ограничения'
+  MemberlistInfo: '&6Как стать членом:'
+  AddMemberMaxMembersExceeded: '&4Не удалось добавить участника в регион! В этом регионе
+    может быть только %maxmembers% участников.!'
+  RegionIsNotARentregion: '&4Регион не является арендным регионом!'
+  RegionNotOwn: '&4Вы не являетесь владельцем этого региона!'
+  RegionNotSold: '&4Регион не продан!'
+  PresetRemoved: '&aНабор удален!'
+  PresetSet: '&aДанные добавлены в набор(не забудьте сохранить его после завершения)!'
+  PresetSaved: '&aНабор сохранен!'
+  PresetAlreadyExists: '&4Набор настроек с таким названием уже существует!'
+  PresetPlayerDontHasPreset: '&4У вас не загружен набор!'
+  PresetDeleted: '&aНабор удален!'
+  PresetNotFound: '&4Набор с таким названием не найден!'
+  PresetLoaded: '&aНабор загружен!'
+  GUIRegionItemName: '%regionid% (%regionkinddisplay%)'
+  GUIRegionFinderRegionKindName: '&a&l%regionkinddisplay%'
+  RentRegionExpirationWarning: '&4&lВНИМАНИЕ! &r&4Ваш регион аренды &6%regionid% &4истекает
+    примерно через &6%remainingtime-countdown-writtenout%&4!'
+  ContractSign1: '&2Договор'
+  ContractSign2: '&2доступен'
+  ContractSign3: '%regionid%'
+  ContractSign4: '%price%%currency%/%extendtime-short%'
+  ContractSoldSign1: '&4Действующий договор'
+  ContractSoldSign2: '%regionid%/%owner%'
+  ContractSoldSign3: '%price%%currency%/%extendtime-short%'
+  ContractSoldSign4: '%remainingtime-countdown-short%'
+  ContractRegionExtended: '&aВаш контрактный регион %regionid% был продлен на %extendtime-writtenout%.
+    (За %price%%currency%.)'
+  GUIContractItem: '&6Управлять контрактом'
+  ContractRegionStatusActive: '&aАктивный'
+  ContractRegionStatusTerminated: '&4Прекращено'
+  RegionIsNotAContractRegion: '&4Регион не является контрактным регионом!'
+  OwnerMemberlistInfo: '&6Добавление участников:'
+  RegiontransferMemberNotOnline: '&4Участник не в сети!'
+  RegiontransferLimitError: '&4Передача прервана! (Регион превысил лимит игроков)'
+  SecondsSingular: секунда
+  MinutesSingular: минута
+  HoursSingular: час
+  DaysSingular: день
+  SecondsPlural: секунд
+  MinutesPlural: минут
+  HoursPlural: часов
+  DaysPlural: дней
+  SecondsShort: с
+  MinutesShort: м
+  HoursShort: ч
+  DaysShort: д
+  TimeUnitSplitter: ' и '
+  TimeUnitSplitterShort: ':'
+  UserNotAMemberOrOwner: '&4Вы не являетесь участником или владельцем этого региона!'
+  RegionInfoYes: '&2Да'
+  RegionInfoNo: '&4Нет'
+  RegionInfoNever: '&4Никогда'
+  RegionAleadyRegistred: '&4Регион уже зарегистрирован! &c(Если вы хотите удалить
+    и снова добавить его. Сначала удалите его с помощью &6/arm delete [REGION-ID]&c!)'
+  UnknownUUID: Неизвестный UUID
+  RegionStats: '&6=========[Статистика региона]========='
+  RegionStatsPattern: '&8Используемые регионы (%regionkind%&8):'
+  TeleporterNoSaveLocation: '&4Не удалось найти место для сохранения телепорта'
+  TeleporterDontMove: '&6Телепортация начнется через &c%time% Секунд&6. Не шевелись!'
+  TeleporterTeleportationAborded: '&4Телепортация прервана!'
+  OfferSent: '&aВаше предложение отправлено'
+  OfferAcceptedSeller: '&a%buyer% &aпринял ваше предложение'
+  OfferAcceptedBuyer: '&aПредложение принято! Теперь вы владелец &c%regionid%'
+  NoOfferToAnswer: '&4У вас нет предложения ответить'
+  OfferRejected: '&aПредложение отклонено!'
+  OfferHasBeenRejected: '&4%buyer% &4отклонил ваше предложение!'
+  NoOfferToReject: '&4У вас нет предложения отклонить'
+  OfferCancelled: '&aВаше предложение было отменено!'
+  OfferHasBeenCancelled: '&4%seller% &4отменил свое предложение!'
+  NoOfferToCancel: '&4У вас нет предложения отменить'
+  BuyerAlreadyGotAnOffer: '&4Выбранный покупатель уже получил предложение, на которое
+    он должен сначала ответить!'
+  SellerAlreadyCreatedAnOffer: '&4Вы уже создали предложение! Пожалуйста, дождитесь
+    ответа или сначала отмените его!'
+  SellerDoesNotLongerOwnRegion: '&4%seller% &4больше не владеет этим регионом. Его
+    предложение было отменено'
+  IncomingOffer: '&c%seller% &6предлагает вам свой регион &c%regionid% &6в мире &c%world%
+    &6за &c%price%%currency%&6! Вы можете принять его предложение &c/arm offer accept
+    &6или отклонить &c/arm offer reject'
+  SelectedPlayerIsNotOnline: '&4Выбранный игрок не в сети'
+  OfferTimedOut: '&4Срок действия предложения истек!'
+  BadSyntax: '&7Плохой синтаксис! Пожалуйста, используйте: &8%command%'
+  LandlordServer: Сервер
+  BadSyntaxSplitter: |2-
+
+    &7or &8%command%
+  HelpHeadline: |-
+    &6=====[AdvancedRegionMarket Помощь ]=====
+    &3Страница %actualpage% / %maxpage%
+  PresetInfoSellregion:
+  - '&6=========[Область продажи]========='
+  - '&9Автоцена: &e%presetautoprice%'
+  - '&9Цена: &e%presetprice%'
+  - '&9Процент окупаемости: &e%presetpaybackpercentage%'
+  - '&9Вид региона: &e%presetregionkind%'
+  - '&9Флаги: &e%presetflaggroup%'
+  - '&9Лимит Сущностей: &e%presetentitylimitgroup%'
+  - '&9Сброс бездействия: &e%presetinactivityreset%'
+  - '&9Отель: &e%presetishotel%'
+  - '&9Авто-продление: &e%presetautorestore%'
+  - '&9Ручное продление: &e%presetisuserrestorable%'
+  - '&9Макс. кол-во членов: &e%presetmaxmembers%'
+  - '&9Разрешенные подрегионы: &e%presetallowedsubregions%'
+  - '&9Команды установки:'
+  - '%presetsetupcommands%'
+  PresetInfoContractregion:
+  - '&6=========[Контракта]========='
+  - '&9Автоцена: &e%presetautoprice%'
+  - '&9Цена: &e%presetprice%'
+  - '&9Продлить время: &e%extendtime%'
+  - '&9Процент окупаемости: &e%presetpaybackpercentage%'
+  - '&9Вид региона: &e%presetregionkind%'
+  - '&9Флаги: &e%presetflaggroup%'
+  - '&9Лимит Сущностей: &e%presetentitylimitgroup%'
+  - '&9Сброс бездействия: &e%presetinactivityreset%'
+  - '&9Отель: &e%presetishotel%'
+  - '&9Авто-продление: &e%presetautorestore%'
+  - '&9Ручное продление: &e%presetisuserrestorable%'
+  - '&9Макс. кол-во членов: &e%presetmaxmembers%'
+  - '&9Разрешенные подрегионы: &e%presetallowedsubregions%'
+  - '&9Команды установки:'
+  - '%presetsetupcommands%'
+  PresetInfoRentregion:
+  - '&6=========[Область аренды]========='
+  - '&9Автоцена: &e%presetautoprice%'
+  - '&9Цена: &e%presetprice%'
+  - '&9Продлить время: &e%extendtime%'
+  - '&9Макс. время продления: &e%maxextendtime%'
+  - '&9Процент окупаемости: &e%presetpaybackpercentage%'
+  - '&9Вид региона: &e%presetregionkind%'
+  - '&9Флаги: &e%presetflaggroup%'
+  - '&9Лимит Сущностей: &e%presetentitylimitgroup%'
+  - '&9Сброс бездействия: &e%presetinactivityreset%'
+  - '&9Отель: &e%presetishotel%'
+  - '&9Авто-продление: &e%presetautorestore%'
+  - '&9Ручное продление: &e%presetisuserrestorable%'
+  - '&9Макс. кол-во членов: &e%presetmaxmembers%'
+  - '&9Разрешенные подрегионы: &e%presetallowedsubregions%'
+  - '&9Команды установки:'
+  - '%presetsetupcommands%'
+  NotDefined: '&8&oне определено'
+  PriceCanNotBeNegative: '&4Цена не может быть отрицательной!'
+  SellBackWarning: "&4Продать регион обратно на сервер::\n&4ВНИМАНИЕ: &cэто не мож\
+    ет быть  отменено! \nВаш регион &6%regionid% &cбудет очищен, и все блоки в нем\
+    \ будут\nсброшены! Вы и все участники потеряете свои права на него.\nВам верну\
+    т &6%paybackmoney%%currency% &cназад"
+  SubregionProtectionOfContinuanceError: '&4Выбранный регион - подрегион! Защита продолжения
+    не может быть активирована'
+  SubregionInactivityResetError: '&4Выбранный регион является подрегионом. Вы можете
+    изменить настройку InactivityReset для всех подобластей в config.yml.'
+  SubregionAutoRestoreError: '&4Выбранный регион является подрегионом. Вы можете изменить
+    настройку autoRestore для всех подобластей в config.yml!'
+  SubregionSetLandlordError: '&4Выбранный регион является подрегионом. Арендодатель
+    всегда является собственником прилегающего края!'
+  RegionNotRestoreable: '&4Регион не подлежит восстановлению!'
+  RegionSelectedMultipleRegions: '&6На вашей позиции более одного региона. Выберите
+    один: &4'
+  SubregionRegionkindError: '&4Выбранный регион является подрегионом. Вы можете редактировать
+    региональный вид для всех подобластей в config.yml!'
+  SubRegionRegionkindOnlyForSubregions: '&4Субрегион, регион вид только для подрегионов!'
+  SubregionTeleportLocationError: '&4Выбранный регион является подрегионом. Местоположение
+    телепорта не может быть изменено'
+  RegionNotRegistred: '&4Регион не зарегистрирован'
+  FirstPositionSet: '&aУстановлена первая позиция!'
+  SecondPositionSet: '&aВторая позиция установлена!'
+  MarkInOtherRegion: '&4Отметьте в другом регионе. Удаление старой отметки'
+  ParentRegionNotOwn: '&4Вы не владеете родительским регионом!'
+  SubRegionRemoveNoPermissionBecauseSold: '&4Вы не можете удалить этот регион. Если
+    вы считаете, что это ошибка, спросите администратора.'
+  SubRegionRemoveNoPermissionBecauseAvailable: '&4Вы не можете удалить этот регион,
+    потому что он продан. Попросите владельца или администратора освободить его'
+  PosCloudNotBeSetMarkOutsideRegion: '&4Не удалось установить позицию! Позиция вне
+    региона'
+  SubRegionAlreadyAtThisPosition: '&4Ваш выбор будет перекрывать подрегион, который
+    уже был создан'
+  SubRegionLimitReached: '&4Достигнут предел подрегиона! Вам не разрешено создавать
+    больше, &6%subregionlimit% &4подрегионов'
+  SelectionInvalid: '&4Выбор недействителен! Вам нужно выбрать 2 позиции! (Левый/Правый
+    клик) Введите "&6/arm subregion tool&4" чтобы получить инструмент выделения.'
+  RegionCreatedAndSaved: '&aРегион создан и сохранен!'
+  RegionNotASubregion: '&4Регион, а не подрегион!'
+  RegionDeleted: '&aРегион удален!'
+  DeleteRegionWarningName: '&4&lУдалить регион?'
+  UnsellRegionButton: '&4Отменить продажу региона'
+  UnsellRegionButtonLore:
+  - '&4Нажмите, чтобы отменить продажу своего подрегиона и'
+  - '&4выгнать игроков из него'
+  UnsellRegionWarningName: '&4&lПродать регион?'
+  SubregionHelpHeadline: |-
+    &6=====[AdvancedRegionMarket Subregion Помощь]=====
+    &3Страница %actualpage% / %maxpage%
+  SellbackLandlordNotEnoughMoney: '&4У арендодателя этого района не хватает денег!
+    Если вы хотите вернуть регион без возврата денег используйте &7/arm sellback %region%
+    nomoney&4!'
+  SellregionName: Регион на продажу
+  ContractregionName: Контрактный регион
+  RentregionName: Арендуемый регион
+  GUISubregionsButton: '&6Субрегионы'
+  GUISubregionListMenuName: '&1Субрегионы'
+  GUIHotelButton: '&6Функция-отеля'
+  GUIDeleteRegionButton: '&4Удалить регион'
+  GUITeleportToSignOrRegionButton: Телепорт в знак или в регион?
+  GUIRegionfinderTeleportToSignButton: '&6Купить знак телепорта'
+  GUIRegionfinderTeleportToRegionButton: '&6Телепорт в регион!'
+  GUINextPageButton: '&6Следущая страница'
+  GUIPrevPageButton: '&6Предыдущая страница'
+  Enabled: '&aвключено'
+  Disabled: '&cотключен'
+  Sold: '&cпродано'
+  Available: '&aдоступный'
+  SubregionIsUserResettableError: '&4Выбранный регион является подрегионом. Вы можете
+    изменить параметр isUserResettable для всех подобластей в config.yml! '
+  SubregionMaxMembersError: '&4Выбранный регион является подрегионом. Вы можете изменить
+    настройку maxMember для всех подобластей в config.yml.'
+  GUIHotelButtonLore:
+  - '&6Функция отеля позволяет не дать игрокам'
+  - '&6разбивать блоки, которые они не установили.'
+  - '&6Статус: %hotelfunctionstatus%'
+  - '&6Нажмите, чтобы включить/отключить'
+  GUISubregionInfoSell:
+  - '&6Тип продажи: %selltype%'
+  - '&6Статус: %soldstatus%'
+  - '&6Цена: %price%'
+  - '&6Цена за м2: %priceperm2%'
+  - '&6Габаритные размеры: %dimensions%'
+  GUISubregionInfoRent:
+  - '&6Тип продажи: %selltype%'
+  - '&6Статус: %soldstatus%'
+  - '&6Цена: %price%'
+  - '&6Цена за м2 (в неделю): %priceperm2perweek%'
+  - '&6Продлить за клик: %extendtime-writtenout%'
+  - '&6Макс. время: %maxextendtime-writtenout%'
+  - '&6Габаритные размеры: %dimensions%'
+  GUISubregionInfoContract:
+  - '&6Тип продажи: %selltype%'
+  - '&6Статус: %soldstatus%'
+  - '&6Цена: %price%'
+  - '&6Цена за м2 (в неделю): %priceperm2perweek%'
+  - '&6Автоматическое продление времени: %extendtime-writtenout%'
+  - '&6Габаритные размеры: %dimensions%'
+  GUIRegionfinderInfoSell:
+  - '&6Цена: %price%'
+  - '&6Цена за M2: %priceperm2%'
+  - '&6Габаритные размеры: %dimensions%'
+  - '&6Мир: %world%'
+  GUIRegionfinderInfoRent:
+  - '&6Цена: %price%'
+  - '&6Цена за M2 (в неделю): %priceperm2perweek%'
+  - '&6Продлить за клик: %extendtime-writtenout%'
+  - '&6Макс. время: %maxextendtime-writtenout%'
+  - '&6Габаритные размеры: %dimensions%'
+  - '&6Мир: %world%'
+  GUIRegionfinderInfoContract:
+  - '&6Цена: %price%'
+  - '&6Цена за M2 (в неделю): %priceperm2perweek%'
+  - '&6Автоматическое продление времени: %extendtime-writtenout%'
+  - '&6Габаритные размеры: %dimensions%'
+  - '&6Мир: %world%'
+  SubregionCreationCreateSignInfo:
+  - '&aВаш выбор был сохранен! Теперь вы можете создать знак для продажи региона.'
+  - '&aСоздать Продажа-Региона:'
+  - '&6Первая строка: &b[sub-sell]'
+  - '&6Последняя строка: &bЦена'
+  - ''
+  - '&aСоздать Аренда-Региона:'
+  - '&6Первая строка: &b[sub-rent]'
+  - '&6Последняя строка: &bЦена&6;&bПродлить За Клик&6;&bМакс Время Продления'
+  - '&6пример для продления ПродлитьЗаКлик/МаксВремяПродления: 5д (5 дней)'
+  - ''
+  - '&aСоздать контракт-регион:'
+  - '&6Первая строка: &b[sub-contract]'
+  - '&6Последняя строка: &bЦена за периуд&6;&bПродлить время'
+  - '&6пример для продления времени: 12ч (12 часов)'
+  - '&4Мы настоятельно рекомендуем не размещать знак внутри подрегиона.!'
+  SubregionCreationSelectAreaInfo:
+  - '&aУ вас есть инструмент в вашем инвентаре (перо), чтобы выбрать 2 точки вашего
+    региона,которые будут отмечать углы вашего нового подобласти.'
+  - '&aЛКМ, чтобы выбрать pos1'
+  - '&aПКМ, чтобы выбрать pos2'
+  - '&aВведите "&6/arm subregion create" &aесли вы закончили'
+  SubregionToolAlreadyOwned: '&4У вас уже есть инструмент для подрегионов. Пожалуйста,
+    используйте его вместо нового'
+  AutopriceList: '&6=========[Автопрайсы]========='
+  GUISubregionManagerNoSubregionItem: '&6Информация'
+  SelltypeNotExist: '&4Выбранный тип продажи не существует!'
+  SignLinkModeActivated: '&aРежим НАЖАТИЕ ПО ТАБЛИЧКЕ активирован! Щелкните регион,
+    а затем щелкните табличку. ARM автоматически создаст регион (или просто добавит
+    знак, если регион уже существует) с настройками вашего пресета'
+  SignLinkModeDeactivated: '&aРежим НАЖАТИЕ ПО ТАБЛИЧКЕ отключен!'
+  SignLinkModeAlreadyDeactivated: '&4Режим НАЖАТИЕ ПО ТАБЛИЧКЕ уже отключен!'
+  SignLinkModePresetNotPriceready: '&cВыбранный пресет еще не готов к цене! Все регионы,
+    которые вы создадите сейчас, будут созданы с автоматической ценой по умолчанию'
+  SignLinkModeNoPresetSelected: |-
+    &cУ вас не загружен пресет! Пожалуйста, сначала загрузите или создайте пресет! &cВы можете создать предустановку, используя &6/arm sellpreset/rentpreset/contractpreset &cкоманды!
+    Для получения &cинформацию о пресетах нажмите здесь:
+    &6https://bit.ly/2HURK0v (Github Wiki)
+  SignLinkModeSignBelongsToAnotherRegion: '&4Знак принадлежит другому региону!'
+  SignLinkModeSignSelected: '&aЗнак выбран!'
+  SignLinkModeMultipleWgRegionsAtPosition: '&4Не удалось выбрать WorldGuard-Region!
+    Доступно более одного региона! Вы можете добавить нежелательные регионы в список
+    игнорирования, расположенный в config.yml, если вы хотите, чтобы ARM игнорировала
+    эти регионы!'
+  SignLinkModeNoWgRegionAtPosition: '&4Не удалось выбрать WorldGuard-Region! На вашей
+    позиции нет региона!'
+  SignLinkModeCouldNotIdentifyWorld: '&4Не могу определить мир! Пожалуйста, выберите
+    WorldGuard-Region еще раз!'
+  SignLinkModeNoSignSelected: '&4Вы не выбрали знак'
+  SignLinkModeNoWgRegionSelected: '&4Вы не выбрали регион WorldGuard'
+  SignLinkModeSelectedRegion: '&aВыбранный регион: %regionid%'
+  SchematicNotFoundErrorUser: '&4Похоже, что схема вашего региона %regionid% еще не
+    создана. Пожалуйста, свяжитесь с администратором!'
+  EntityLimitHelpHeadline: |-
+    &6=====[AdvancedRegionMarket EntityLimit Помощь ]=====
+    &3Страница %actualpage% / %maxpage%
+  EntityLimitGroupNotExist: '&4Группа лимита Сущностей не существует!'
+  EntityLimitSet: '&aУстановлен лимит сущности!'
+  EntityLimitRemoved: '&aОграничение количества сущностей удалено!'
+  EntityTypeDoesNotExist: '&4Тип объекта &6%entitytype% &4не существует!'
+  EntityLimitGroupNotContainEntityLimit: '&4Выбранная Группа лимита Сущностей не содержит
+    выбранный тип сущности'
+  EntityLimitTotal: Общий
+  SubregionPaybackPercentageError: '&4Выбранный регион является подрегионом. Вы можете
+    редактировать paybackPercentage для всех подобластей в config.yml!'
+  EntityLimitCheckHeadline: '&6===[Проверка лимита объекта для %regionid%]==='
+  EntityLimitCheckPattern: '&6%entitytype%: &a(&r%actualentities%&a/&r%softlimitentities%&a)
+    %entityextensioninfo%'
+  EntityLimitCheckExtensionInfo: |2-
+
+    &6&o--> Лимит может быть увеличен до &r%hardlimitentities% &6объектов за &r%priceperextraentity%%currency%&6/сущьности
+  EntityLimitGroupAlreadyExists: '&4Группа уже существует!'
+  EntityLimitGroupCreated: '&aГруппа лимита Сущностей создана!'
+  EntityLimitGroupCanNotRemoveSystem: '&4Вы не можете удалить системную группу пределов
+    сущностей!'
+  EntityLimitGroupDeleted: '&aГруппа лимита Сущностей удалена!'
+  EntityLimitGroupInfoHeadline: '&6======[Информация о группе пределов сущностей]======'
+  EntityLimitGroupInfoGroupname: '&6Имя группы: '
+  EntityLimitGroupInfoPattern: '&6%entitytype%: &r%softlimitentities% %entityextensioninfo%'
+  EntityLimitInfoExtensionInfo: |2-
+
+    &6&o--> Лимит может быть увеличен до &r%hardlimitentities% &6Сущностей за &r%priceperextraentity%%currency%&6/Сущностей
+  EntityLimitGroupListHeadline: '&6Группы пределов сущностей:'
+  SubregionEntityLimitOnlyForSubregions: '&4Группа лимитов подрегиона только для подрегиона'
+  MassactionSplitter: '&6все регионы с регионом &a%regionkind%'
+  SubregionEntityLimitError: '&4Не удалось изменить группу пределов сущности для региона
+    &6%regionid%&4! Регион - это подрегион!'
+  SubregionFlagGroupError: '&4Не удалось изменить группу флагов для региона &6%regionid%&4!
+    Регион - это подрегион!'
+  GUIEntityLimitItemButton: '&6Ограничения сущьности'
+  GUIEntityLimitItemLore:
+  - '&6Нажмите, чтобы отобразить ограничения на'
+  - '&6количество объектов для этого региона в чате'
+  - '%entityinfopattern%'
+  - ''
+  - 'Вы можете увеличить свой лимит сущностей с помощью:'
+  - '&6/arm entitylimit buyextra %regionid% [ENTITYTYPE/total]'
+  GUIEntityLimitInfoPattern: '&6%entitytype%: &a(&r%actualentities%&a/&r%softlimitentities%&a)
+    %entityextensioninfo%'
+  GUIEntityLimitInfoExtensionInfo: '&6&oМАКС. &r%hardlimitentities% &6за &r%priceperextraentity%%currency%&6/Сущностей'
+  EntityLimitGroupEntityLimitAlreadyUnlimited: '&4Лимит сущностей для выбранной сущности
+    и региона уже не ограничен!'
+  EntityLimitGroupExtraEntitiesSet: '&aУстановлены экстра-сущности!'
+  EntityLimitGroupExtraEntitiesExpandSuccess: '&aВы успешно расширили лимит сущностей
+    до &6%softlimitentities% &a(За &6%priceperextraentity%%currency%&a)'
+  EntityLimitGroupExtraEntitiesHardlimitReached: '&4Нельзя купить еще одну сущность-
+    расширение! Достигнут жесткий предел!'
+  EntityLimitGroupExtraEntitiesSetSubregionError: '&4Невозможно изменить ограничение
+    на количество объектов! Регион яв-ся подрегионом'
+  EntityLimitGroupExtraEntitiesBuySubregionError: '&4Невозможно увеличить ограничение
+    на количество объектов! Регион яв-ся подрегионм'
+  ApplyPresetSubregionError: '&4Невозможно применить предустановку! Регион - яв-ся
+    подрегионом'
+  EntityLimitGroupCouldNotspawnEntity: |-
+    &4Не удалось создать сущность в регионе &6%region%&4!
+    Не порожденная сущность превысит предел сущностей региона. Для получения дополнительной информации введите &6/arm entitylimit check %region%&4!
+    Это сообщение получили все в регионе %region%! Если вы не являетесь членом этого региона, вы можете проигнорировать это сообщение.
+  ArmBasicCommandMessage: |-
+    &6Продвинутый региональный рынок v%pluginversion% к Alex9849
+    &6Скачать: &3https://bit.ly/2CfO3An
+    &6Получите список со всеми командами с помощью &3/arm help
+  RegionBuyProtectionOfContinuance: '&4Не могу купить регион! Регион находится под
+    постоянной защитой и больше не будет продаваться'
+  RegionResetProtectionOfContinuanceError: '&4Не могу сбросить регион! Регион - под
+    постоянной охраной!'
+  RegionRestoreProtectionOfContinuanceError: '&4Не могу восстановить регион! Регион
+    находится под постоянной охраной!'
+  RegionKindCreated: '&aТип региона создан!'
+  RegionKindAlreadyExists: '&4Тип региона уже существует!'
+  RegionKindDeleted: '&aТип региона удален!'
+  RegionKindCanNotRemoveSystem: '&4Нельзя удалить систему - Тип региона!'
+  RegionKindListHeadline: '&6Тип Региона:'
+  RegionKindModified: '&aТип регоина изменен!'
+  MaterialNotFound: '&4Материал не найден!'
+  RegionKindLoreLineNotExist: '&aВыбранная линия не существует!'
+  RegionKindCanNotBeSearchedInRegionfinder: '&4Выбранный тип региона недоступен в
+    средстве поиска регионов.!'
+  RegionkindInfo:
+  - '&6======[Информация по типу регионов]======'
+  - '&9Имя: &e%regionkind%'
+  - '&9Отображаемое имя: &r%regionkinddisplay%'
+  - '&9Элемент: &e%regionkinditem%'
+  - '&9Отображение в пределах: &e%regionkinddisplayinlimits%'
+  - '&9Показать в поиске региона: &e%regionkinddisplayinregionfinder%'
+  - '&9Тип региональной группы: &e%regionkindregionkindgroups%'
+  - '&9Описание:'
+  - '%regionkindlorelist%'
+  RegionKindHelpHeadline: |-
+    &6=====[Продвинутый регион Рынок Регион помощь ]=====
+    &3Страница %actualpage% / %maxpage%
+  PlayerNotFound: '&4Не удалось найти выбранного игрока!'
+  RegionInfoSellregionUser:
+  - '&6=========[Информация о регионе]========='
+  - '&9ID: &e%regionid% &7(Тип: &r%selltype%&7)'
+  - '&9Продано: &e%issold%'
+  - '&9Цена: &e%price%'
+  - '&9Владелец: &e%owner%'
+  - '&9Участники: &e%members%'
+  - '&9МАКС. кол-во участников: &e%maxmembers%'
+  - '&9Тип Региона: &e%regionkinddisplay% &7%regionkindregionkindgroupsdisplaywithbrackets%'
+  - '&9Флаг группы: &e%flaggroup%'
+  - '&9Арендодатель: &e%landlord% &7(Получает деньги)'
+  - '&9Группа лимита Сущностей: &e%entitylimitgroup% '
+  - '&9Отель: &e%ishotel%'
+  - '&9Возможность восстановления пользователем: &e%isuserrestorable%'
+  - '&9Сброс бездействия включен: &e%isinactivityreset%'
+  - '&9Последний вход на территорию: &e%lastownerlogin%'
+  - '&9Обратный отсчет сброса: &e%inactivityresetin-countdown-short%'
+  - '&9Доступно через: &e%takeoverin-countdown-short%'
+  - '&9Авто Продледние: &e%isautorestore% &9Автоцена: &e%autoprice%'
+  - '&9Процент окупаемости : &e%paypackpercentage%%'
+  - '&9Защита продолжения: &e%isprotectionofcontinuance%'
+  - '&9Разрешенные субрегионы: &e%subregionlimit%'
+  - '&9Субрегионы: &e&e%subregions%'
+  RegionInfoRentregionUser:
+  - '&6=========[Информация о регионе]========='
+  - '&9ID: &e%regionid% &7(Тип: &r%selltype%&7)'
+  - '&9Продано: &e%issold%'
+  - '&9Цена: &e%price% &7на &e%extendtime-writtenout% &7макс.: &e%maxextendtime-writtenout%'
+  - '&9Оставшееся время: &e%remainingtime-countdown-short%'
+  - '&9Владелец: &e%owner%'
+  - '&9Члены: &e%members%'
+  - '&9МАКС. количество членов: &e%maxmembers%'
+  - '&9Тип региона: &e%regionkinddisplay% &7%regionkindregionkindgroupsdisplaywithbrackets%'
+  - '&9Флаги группы: &e%flaggroup%'
+  - '&9Арендодатель: &e%landlord% &7(Получает деньги)'
+  - '&9Группа лимита Сущностей: &e%entitylimitgroup%'
+  - '&9Отель: &e%ishotel%'
+  - '&9Возможность восстановления пользователем: &e%isuserrestorable%'
+  - '&9Сброс бездействия включен: &e%isinactivityreset%'
+  - '&9Последний вход на территорию: &e%lastownerlogin%'
+  - '&9Сбросить за бездействие: &e%inactivityresetin-countdown-short%'
+  - '&9Возможен захват: &e%takeoverin-countdown-short%'
+  - '&9Авто продление: &e%isautorestore% &9Автоцена: &e%autoprice%'
+  - '&9Процент окупаемости : &e%paypackpercentage%%'
+  - '&9Защита продолжения: &e%isprotectionofcontinuance%'
+  - '&9Разрешенные подрегионы: &e%subregionlimit%'
+  - '&9Субрегионы: &e%subregions%'
+  RegionInfoContractregionUser:
+  - '&6=========[Информация о регионе]========='
+  - '&9ID: &e%regionid% &7(Тип: &r%selltype%&7)'
+  - '&9Продано: &e%issold%'
+  - '&9Цена: &e%price% &7на &e%extendtime-writtenout% &7(автоматическое продление)'
+  - '&9Далее продлить: &e%remainingtime-countdown-short%'
+  - '&9Владелец: &e%owner%'
+  - '&9Участники: &e%members%'
+  - '&9МАКС. кол-во участников: &e%maxmembers%'
+  - '&9Тип Региона: &e%regionkinddisplay% &7%regionkindregionkindgroupsdisplaywithbrackets%'
+  - '&9Флаги группы: &e%flaggroup%'
+  - '&9Арендодатель: &e%landlord% &7(Получает деньги)'
+  - '&9Группа лимита Сущностей: &e%entitylimitgroup%'
+  - '&9Отель: &e%ishotel%'
+  - '&9Возможность восстановления пользователем: &e%isuserrestorable%'
+  - '&9Сброс бездействия включен: &e%isinactivityreset%'
+  - '&9Последний вход на территорию: &e%lastownerlogin%'
+  - '&9Сбросить за бездействие: &e%inactivityresetin-countdown-short%'
+  - '&9Возможен захват : &e%takeoverin-countdown-short%'
+  - '&9Авто продление: &e%isautorestore% &9Автоцена: &e%autoprice%'
+  - '&9Процент окупаемости в%: &e%paypackpercentage%'
+  - '&9Защита продолжения: &e%isprotectionofcontinuance%'
+  - '&9Разрешенные подрегионы: &e%subregionlimit%'
+  - '&9Субрегионы: &e%subregions%'
+  RegionInfoSellregionAdmin:
+  - '&6=========[Информация о регионе]========='
+  - '&9ID: &e%regionid% &7(Тип: &r%selltype%&7)'
+  - '&9Продано: &e%issold%'
+  - '&9Цена: &e%price%'
+  - '&9Владелец: &e%owner%'
+  - '&9Участники: &e%members%'
+  - '&9МАКС. Кол-во участников: &e%maxmembers%'
+  - '&9Тип региона: &e%regionkinddisplay% &7%regionkindregionkindgroupsdisplaywithbrackets%'
+  - '&9Флаги группы: &e%flaggroup%'
+  - '&9Арендодатель: &e%landlord% &7(Получает деньги)'
+  - '&9Группа лимита Сущностей: &e%entitylimitgroup%'
+  - '&9Отель: &e%ishotel%'
+  - '&9Возможность восстановления пользователем: &e%isuserrestorable%'
+  - '&9Сброс бездействия включен: &e%isinactivityreset%'
+  - '&9Последний вход на территорию: &e%lastownerlogin%'
+  - '&9Сбросить за бездействие: &e%inactivityresetin-countdown-short%'
+  - '&9Возможен захват: &e%takeoverin-countdown-short%'
+  - '&9Авто продление: &e%isautorestore% &9Автоцена: &e%autoprice%'
+  - '&9Процент окупаемости : &e%paypackpercentage%%'
+  - '&9Защита продолжения: &e%isprotectionofcontinuance%'
+  - '&9Разрешенные подрегионы: &e%subregionlimit%'
+  - '&9Субрегионы: &e%subregions%'
+  RegionInfoRentregionAdmin:
+  - '&6=========[Информация о регионе]========='
+  - '&9ID: &e%regionid% &7(Тип: &r%selltype%&7)'
+  - '&9Продано: &e%issold%'
+  - '&9Цена: &e%price% &7на &e%extendtime-writtenout% &7макс.: &e%maxextendtime-writtenout%'
+  - '&9Оставшееся время: &e%remainingtime-countdown-short%'
+  - '&9Владелец: &e%owner%'
+  - '&9Участники: &e%members%'
+  - '&9МАКС. Кол-во участников: &e%maxmembers%'
+  - '&9Тип региона: &e%regionkinddisplay% &7%regionkindregionkindgroupsdisplaywithbrackets%'
+  - '&9Флаги группы: &e%flaggroup%'
+  - '&9Арендодатель: &e%landlord% &7(Получает деньги)'
+  - '&9Группа лимита Сущностей: &e%entitylimitgroup%'
+  - '&9Отель: &e%ishotel%'
+  - '&9Возможность восстановления пользователем: &e%isuserrestorable%'
+  - '&9Сброс бездействия включен: &e%isinactivityreset%'
+  - '&9Последний вход на территорию: &e%lastownerlogin%'
+  - '&9Сбросить за бездействие: &e%inactivityresetin-countdown-short%'
+  - '&9Возможен захват: &e%takeoverin-countdown-short%'
+  - '&9Авто продление: &e%isautorestore% &9Автоцена: &e%autoprice%'
+  - '&9Процент окупаемости : &e%paypackpercentage%%'
+  - '&9Защита продолжения: &e%isprotectionofcontinuance%'
+  - '&9Разрешенные подрегионы: &e%subregionlimit%'
+  - '&9Субрегионы: &e%subregions%'
+  RegionInfoContractregionAdmin:
+  - '&6=========[Информация о регионе]========='
+  - '&9ID: &e%regionid% &7(Тип: &r%selltype%&7)'
+  - '&9Продано: &e%issold%'
+  - '&9Цена: &e%price% &7на &e%extendtime-writtenout% &7(автоматическое продление)'
+  - '&9Далее продлить в: &e%remainingtime-countdown-short%'
+  - '&9Владелец: &e%owner%'
+  - '&9Участники: &e%members%'
+  - '&9МАКС. Кол-во участников: &e%maxmembers%'
+  - '&9Тип региона: &e%regionkinddisplay% &7%regionkindregionkindgroupsdisplaywithbrackets%'
+  - '&9Флаги группы: &e%flaggroup%'
+  - '&9Арендодатель: &e%landlord% &7(Получает деньги)'
+  - '&9Группа лимита Сущностей: &e%entitylimitgroup%'
+  - '&9Отель: &e%ishotel%'
+  - '&9Возможность восстановления пользователем: &e%isuserrestorable%'
+  - '&9Сброс бездействия включен: &e%isinactivityreset%'
+  - '&9Последний вход на территорию: &e%lastownerlogin%'
+  - '&9Сбросить за бездействие: &e%inactivityresetin-countdown-short%'
+  - '&9Возможен захват: &e%takeoverin-countdown-short%'
+  - '&9Авто продление: &e%isautorestore% &9Автоцена: &e%autoprice%'
+  - '&9Процент окупаемости : &e%paypackpercentage%%'
+  - '&9Защита продолжения: &e%isprotectionofcontinuance%'
+  - '&9Разрешенные подрегионы: &e%subregionlimit%'
+  - '&9Субрегионы: &e%subregions%'
+  RegionInfoSellregionSubregion:
+  - '&6=========[Информация о регионе]========='
+  - '&9ID: &e%regionid% &7(Тип: &r%selltype%&7, Субрегион)'
+  - '&9Продано: &e%issold%'
+  - '&9Цена: &e%price%'
+  - '&9Владелец: &e%owner%'
+  - '&9Участники: &e%members%'
+  - '&9МАКС. Кол-во участников: &e%maxmembers%'
+  - '&9Тип региона: &e%regionkinddisplay% &7%regionkindregionkindgroupsdisplaywithbrackets%'
+  - '&9Флаги группы: &e%flaggroup%'
+  - '&9Арендодатель: &e%landlord% &7(Получает деньги)'
+  - '&9Группа лимита Сущностей: &e%entitylimitgroup%'
+  - '&9Отель: &e%ishotel%'
+  - '&9Возможность восстановления пользователем: &e%isuserrestorable%'
+  - '&9Сброс бездействия включен: &e%isinactivityreset%'
+  - '&9Последний вход на территорию: &e%lastownerlogin%'
+  - '&9Сбросить за бездействие: &e%inactivityresetin-countdown-short%'
+  - '&9Возможен захват: &e%takeoverin-countdown-short%'
+  - '&9Авто продление: &e%isautorestore% &9Автоцена: &e%autoprice%'
+  - '&9Процент окупаемости : &e%paypackpercentage%%'
+  RegionInfoRentregionSubregion:
+  - '&6=========[Информация о регионе]========='
+  - '&9ID: &e%regionid% &7(Тип: &r%selltype%&7, Субрегион)'
+  - '&9Продано: &e%issold%'
+  - '&9Цена: &e%price% &7на &e%extendtime-writtenout% &7макс.: &e%maxextendtime-writtenout%'
+  - '&9Оставшееся время: &e%remainingtime-countdown-short%'
+  - '&9Владелец: &e%owner%'
+  - '&9Участники: &e%members%'
+  - '&9МАКС. Кол-во участников: &e%maxmembers%'
+  - '&9Тип Региона: &e%regionkinddisplay% &7%regionkindregionkindgroupsdisplaywithbrackets%'
+  - '&9Флаги группы: &e%flaggroup%'
+  - '&9Арендодатель: &e%landlord% &7(Получает деньги)'
+  - '&9Группа лимита Сущностей: &e%entitylimitgroup%'
+  - '&9Отель: &e%ishotel%'
+  - '&9Возможность восстановления пользователем: &e%isuserrestorable%'
+  - '&9Сброс бездействия включен: &e%isinactivityreset%'
+  - '&9Последний вход на территорию: &e%lastownerlogin%'
+  - '&9Сбросить за бездействие: &e%inactivityresetin-countdown-short%'
+  - '&9Возможен захват : &e%takeoverin-countdown-short%'
+  - '&9Авто-продление: &e%isautorestore% &9Автоцена: &e%autoprice%'
+  - '&9Процент окупаемости : &e%paypackpercentage%%'
+  RegionInfoContractregionSubregion:
+  - '&6=========[Информация о регионе]========='
+  - '&9ID: &e%regionid% &7(Тип: &r%selltype%&7, Субрегион)'
+  - '&9Продано: &e%issold%'
+  - '&9Цена: &e%price% &7на &e%extendtime-writtenout% &7(автоматическое продление)'
+  - '&9Далее продлить в: &e%remainingtime-countdown-short%'
+  - '&9Владелец: &e%owner%'
+  - '&9Участники: &e%members%'
+  - '&9Максимум. количество членов: &e%maxmembers%'
+  - '&9Тип Региона: &e%regionkinddisplay% &7%regionkindregionkindgroupsdisplaywithbrackets%'
+  - '&9Флаги группы: &e%flaggroup%'
+  - '&9Арендодатель: &e%landlord% &7(Получает деньги)'
+  - '&9Группа лимита Сущностей: &e%entitylimitgroup%'
+  - '&9Отель: &e%ishotel%'
+  - '&9Возможность восстановления пользователем: &e%isuserrestorable% '
+  - '&9Сброс бездействия включен: &e%isinactivityreset%'
+  - '&9Последний вход на территорию: &e%lastownerlogin%'
+  - '&9Сбросить за бездействие: &e%inactivityresetin-countdown-short%'
+  - '&9Возможен захват: &e%takeoverin-countdown-short%'
+  - '&9Авто-продление: &e%isautorestore% &9Автоцена: &e%autoprice%'
+  - '&9Процент окупаемости : &e%paypackpercentage%%'
+  GUIWarningInfoButton: '&4Предупреждение!'
+  GUIFlageditorButton: '&6Редактор флагов'
+  GUIFlageditorMenuName: '&1Редактор флагов (%region%)'
+  GUIFlageditorDeleteFlagButton: '&4Удалить флаг'
+  GUIFlageditorSetFlagGroupAllButton: '&9Набор для всех'
+  GUIFlageditorSetFlagGroupMembersButton: '&9Набор для участников и владельцев'
+  GUIFlageditorSetFlagGroupOwnersButton: '&9Набор для владельцев'
+  GUIFlageditorSetFlagGroupNonMembersButton: '&9Набор для не членов и не владельцев'
+  GUIFlageditorSetFlagGroupNonOwnersButton: '&9Набор для не владельцев'
+  GUIFlageditorSetStateflagAllowButton: '&2Разрешать'
+  GUIFlageditorSetStateflagDenyButton: '&4Отрицать'
+  GUIFlageditorSetBooleanflagTrueButton: '&2Да'
+  GUIFlageditorSetBooleanflagFalseButton: '&4Нет'
+  GUIFlageditorSetStringflagSetMessageButton: '&2Установить сообщение'
+  GUIFlageditorSetIntegerflagSetIntegerButton: '&2Установить номер'
+  GUIFlageditorSetDoubleflagSetDoubleButton: '&2Установить номер'
+  FlageditorFlagNotActivated: '&4Флаг не активирован!'
+  FlageditorFlagHasBeenDeleted: '&2Флаг был удален!'
+  FlageditorFlagHasBeenUpdated: '&2Флаг обновлен!'
+  FlageditorFlagCouldNotBeUpdated: Не удалось изменить флаг %flag%!
+  FlageditorStringflagSetMessageInfo: '&9Пожалуйста, напишите сообщение:'
+  FlageditorIntegerflagSetMessageInfo: '&9Запишите число без десятичных знаков:'
+  FlageditorDoubleflagSetMessageInfo: '&9Пожалуйста, запишите номер:'
+  GUIFlageditorResetButton: '&4Сбросить все флаги к настройкам по умолчанию'
+  GUIFlageditorUnknownFlagSetPropertiesButton: '&2Установить свойства'
+  GUIFlageditorUnknownFlagSetPropertiesInfo: '&9Запишите, пожалуйста, свойства вашего
+    нового флага: FlaggroupDoesNotExist: ''4Группа флагов не существует!'
+  FlaggroupDoesNotExist: '&4Группа флагов не существует!'
+  SubregionFlaggroupOnlyForSubregions: '&4Группа флагов подрегиона только для подрегионов'
+  GUITeleportToRegionButtonLore:
+  - Нажмите, чтобы телепортировать
+  - вас в ваш регион
+  GUIMakeOwnerButtonLore:
+  - Щелкните, чтобы передать права
+  - владельца выбранному участнику.
+  - '&4ПРЕДУПРЕЖДЕНИЕ: &cВы потеряете права владельца'
+  - '&cи станете участником'
+  GUIRemoveMemberButtonLore:
+  - Нажмите, чтобы удалить выбранного
+  - участника из вашего региона
+  GUIResetRegionButtonLore:
+  - Click to reset your region
+  - '&4WARNING: &cThis can not be undone! Your region'
+  - '&cwill be resetted and everything on it will'
+  - '&cbe deleted!'
+  - ''
+  - '&cYou can only reset you region once every %remaininguserrestorecooldown-countdown-short%'
+  - '&2You and all members keep their rights on the region'
+  TakeOverItemLore:
+  - '&aВы являетесь членом этого региона.'
+  - '&aВладелец давно не был в сети.'
+  - '&aВы можете бесплатно передать '
+  - '&aправа владельца на свой аккаунт.'
+  - '&aФактический владелец станет членом региона.'
+  - '&aЕсли регион не переносится или '
+  - '&cвладелец не выходит в сеть в течение'
+  - '&c&7%inactivityresetin-countdown-short%'
+  - '&cрегион будет сброшен, и все, кто'
+  - '&cнаходится в нем, потеряют свои права'
+  - '&cПотом вернется в продажу!'
+  GUIExtendRentRegionButtonLore:
+  - '&aНажмите, чтобы Продлить свой регион на &6%extendtime-current-writtenout%'
+  - '&aэто будет стоить вам &6%price-current%%currency%&a!'
+  - '&aСрок действия этого региона истечет через &6%remainingtime-countdown-short%&a.'
+  - '&aВы можете Продлить свой регион до &6%maxextendtime-writtenout%&a.'
+  GUIRentRegionLore:
+  - '&aИстекает &6%remainingtime-countdown-short%'
+  GUIUserSellButtonLore:
+  - Нажмите, чтобы продать свой регион
+  - '&4ВНИМАНИЕ: &cЭто не может быть отменено!'
+  - '&cВаш регион будет освобожден, и все блоки '
+  - '&cв нем будут сброшены! Вы и все его участники.'
+  - '&cпотеряете свои права на него.'
+  - '&cВы получите &6%paybackmoney%%currency% &cназад'
+  MemberlistInfoLore:
+  - '&aВы можете быть добавлены в качестве'
+  - '&aучастника в регион другого человека,'
+  - '&aчтобы строить вместе с ним. Просто попросите'
+  - '&aвладельца региона добавить вас с помощью:'
+  - '&6/arm addmember REGIONID USERNAME'
+  - '&aДля этого вам нужно быть в сети'
+  GUIContractItemLore:
+  - '&aСтатус: %status%'
+  - '&aЕсли активен, следующий продлится:'
+  - '&6%remainingtime-countdown-short%'
+  GUIContractItemRegionLore:
+  - '&aСтатус: %status%'
+  - '&aЕсли активен, следующий продлится:'
+  - '&6%remainingtime-countdown-short%'
+  OwnerMemberlistInfoLore:
+  - '&aВы можете добавлять участников в свой регион'
+  - '&aчтобы строить вместе с ними'
+  - '&aВы можете добавлять участников:'
+  - '&6/arm addmember %regionid% USERNAME'
+  - '&aУчастники должны быть в сети, чтобы добавить их'
+  GUISubregionManagerNoSubregionItemLore:
+  - '&aВ вашем регионе нет подрегионов.'
+  - '&aВы можете создать новый подрегион, который'
+  - '&aсможете продавать другим игрокам, набрав'
+  - '&6/arm subregion tool &aи после отобразились шаги'
+  SellPresetHelpHeadline: |-
+    &6=====[AdvancedRegionMarket Помошь продаж]=====
+    &3Страница %actualpage% / %maxpage%
+  ContractPresetHelpHeadline: |-
+    &6=====[AdvancedRegionMarket Помощь по контрактам]=====
+    &3Страница %actualpage% / %maxpage%
+  RentPresetHelpHeadline: |-
+    &6=====[AdvancedRegionMarket Помощь по аренде]=====
+    &3Страница %actualpage% / %maxpage%
+  InfoDeactivated: '&4деактивирован'
+  InfoNotSold: '&4Регион не продан!'
+  InfoNow: '&2Теперь'
+  InfoNotCalculated: '&8Ожидание расчета...'
+  CouldNotFindOrLoadSchematicLog: '&4Не удалось найти или загрузить схему для региона
+    %region% в мире %world%! Вы можете восстановить его с помощью /arm updateschematic
+    %region%'
+  RegionSoldBackSuccessfully: '&2Ваш регион &6%regionid% &2успешно продан на сервер!
+    &6%paybackmoney%%currency% &2были добавлены на ваш счет! '
+  RegionModifiedBoolean: '&6%option% %state% &6на &a%selectedregions%&6!'
+  RegionModified: '&6%option% &6установлены на %selectedregions%&6!'
+  UpdatingSchematic: '&8Обновление схемы...'
+  SchematicUpdated: '&aСхема обновлена!'
+  ContractRegionTerminated: '&6Ваш контрактрегион &a%region% &6успешно завершен. Он
+    будет сброшен через &a%remainingtime-countdown-short% за исключением того, что
+    он будет повторно активирован!'
+  ContractRegionReactivated: '&6Ваш контрактрегион &a%region% &6успешно активирован.
+    Он будет автоматически продлен на &a%remainingtime-countdown-short% &6если вы
+    сможете заплатить за аренду!!'
+  RegionInfoFeatureDisabled: '&4Функция отключена!'
+  FlagGroupFeatureDisabled: '&4Флаги группы в настоящее время отключены! Вы можете
+    активировать их в config.yml!'
+  BackupCreated: '&aРезервная копия создана!'
+  BackupRestored: '&aРезервная копия восстановлена!'
+  CouldNotLoadBackup: '&4Не удалось загрузить резервную копию! Возможно, его нет или
+    файл поврежден!'
+  BackupListHeader: '&6=======[Бэкапы региона %regionid%]======='
+  TeleportLocationHasToBeInsideRegion: '&4Телепорт-локация должна быть внутри вашего
+    региона!'
+  TeleportLocationUnsafe: '&4Телепорт-локация небезопасна!'
+  TeleportLocationUpdated: '&2Локация телепорта обновлена!'
+  RegionIsNotARentOrContractregion: '&4Region is not a rent or contractregion!'
+  RegionTimeAdded: '&aRegion extended! New expiration-date: %remainingtime-date%'
+  RegionTimeHalted: '&aCountdown stopped for all rent- and contract-regions'
+  RegionTimeContinuing: '&aCountdown continues for all rent- and contract-regions'
+  LimitInfoFreePluginVersionDisclaimer: '&cThis server uses the free version of AdvancedRegionMarket.
+    Therefore the number of regions a player can own has been set to 1!'
+  PresetUpdated: '&aPreset updated!'
+  ContractRegionExpirationWarningTerminated: '&4&lWARNING! &r&4Your &6terminated &r&4ContractRegion
+    &6%regionid% &4will expire in about &6%remainingtime-countdown-writtenout%&4!'
+  ContractRegionExpirationWarningLowBalance: '&4&lWARNING! &r&4You don''t have enough
+    money to pay the next rent! Your &6&l&nNOT&r&6-terminated &4ContractRegion &6%regionid%
+    &4will expire in about &6%remainingtime-countdown-writtenout%&4!'

@@ -1,0 +1,11 @@
+ПАСПОРТ&r
+Сервера &1Social&bCraft&r
+Гражданин: &c{player}&r
+-----------&r
+Номер: &c{number}&r
+Пол: &c{gender}&r
+Возраст: &c{playtime}&r
+Дата выдачи: &c{data}&r
+Место жительства: &c%simpleclans_clan_name%&r
+-----------&r
+Добро пожаловать на сервер&r

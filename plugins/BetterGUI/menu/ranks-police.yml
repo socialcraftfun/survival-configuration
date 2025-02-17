@@ -1,0 +1,81 @@
+menu-settings:
+  name: 'Описание рангов: &9Полицейский'
+  rows: 3
+  command: 
+    - ranks-police
+    - police
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+# ОПИСАНИЕ
+info:
+  type: template
+  template: info
+  position-x: 2
+  position-y: 2
+  lore:
+    - '&fПоддерживай порядок'
+    - ' &fи наказывай нарушителей'
+    - ' &fправил SocialCraft!'
+# ВОМОЖНОСТИ
+opportunity:
+  type: template
+  template: opportunity
+  position-x: 4
+  position-y: 2
+  lore:
+    - '&f* Получает зарплату'
+    - '&f* Читает локальные чаты'
+    - '&f* Команды:'
+    - '&7 - /co near - показать кто ставил/ломал блоки рядом'
+    - '&7 - /tp - телепортироваться к игроку'
+    - '&7 - /mute - выдать мут'
+    - '&7 - /jail /unjail - посадить в тюрьму'
+    - '&f* Крафт-столы &8(&b/crafts&8)'
+    - ' &7- Стол кузнеца &8(&b/smithtable&8)'
+    - ''
+    - '&eНезеритовый меч'
+    - '&eНезеритовая броня'
+# ТРЕБОВАНИЯ
+requirements:
+  type: template
+  template: requirements
+  position-x: 6
+  position-y: 2
+  lore:
+    - '&fЧтобы подать заявку:'
+    - '&fБыть гражданином'
+    - '&fВремя: &b%statistic_hours_played%&f/&920ч.'
+    - '&fОпыт: &b%player_level%&f/&9100Lvl'
+    - '&fБаланс: &b%vault_eco_balance_formatted%&f/&9128'
+    - '&fАчивка Герой деревни'
+    - '&fУбить 1 Иссушителя'
+    - '&f1 Звезда почёта'
+    - '&f1 Звезда Незера'
+    - '&f1 Скалк-катализатор'
+    - '&f16 Тотемов бессмертия'
+    - '&eЗнать правила SocialCraft'
+    - '&eПройти собеседование '
+    - '&e с админом или президентом'
+# ОБЯЗАНОСТИ
+responsibilities:
+  type: template
+  template: responsibilities
+  position-x: 8
+  position-y: 2
+  lore:
+    - '&f* Следить за соблюдением'
+    - '&f  порядка на сервере'
+    - '&f* Помогать игрокам в беде'
+    - '&f* Не злоупотреблять своими'
+    - '&f  возможностями'
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 3

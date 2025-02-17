@@ -1,0 +1,26 @@
+# root folder
+
+cache/
+crash-reports/
+libraries/
+logs/
+versions/
+
+*.jar
+.console_history
+eula.txt
+usercache.json
+
+# worlds
+
+!scworld/
+scworld_nether/
+scworld_the_end/
+
+# plugins folder
+
+plugins/CoreProtect/database.db
+plugins/squaremap/web/
+plugins/dynmap/web/
+plugins/spark
+plugins_to_update/

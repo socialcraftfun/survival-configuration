@@ -1,0 +1,44 @@
+# This is the Message file for all Simple Elevator messages.
+#
+# All messages are fully customizable and support color codes, formatting and ASCII symbols.
+# HEX color codes are supported in 1.16+. The format is &#XXXXXX e.g. '&#XXXXXXYour message'
+# Set the Prefix and use %prefix% to add the corresponding prefix to a message.
+# Prepend any message with <ActionBar> to send it as an ActionBar message.
+# Leave a message blank ('') to disable it.
+#
+# You can also create messages with Hover and Click events. Syntax options: (Space between comma and quote is NOT allowed)
+#  - ["Message","/Command"]
+#  - ["Message","Hover"]
+#  - ["Message","/Command","Hover"]
+#  - ["Message","/Command","Suggest"]
+#  - ["Message","/Command","Hover","Suggest"]
+# You can add as many events to a message as you want. Example:
+# '%prefix% &cInvalid arguments! ["&c&n&oHelp","/se help","&aClick to get help!"]'
+# The "Suggest" tag is used if the click event should suggest the command. Default is Run.
+
+Prefix: '&7[&eЛифт&7]'
+Messages:
+  General:
+    InvalidPermission: '%prefix% &cНет прав!'
+    PlayerOnly: '%prefix% &cТолько для игроков!'
+    NoCommands: '&cНеизвестная комманда. Введите "/help" для помощи.'
+    InvalidArguments: '%prefix% &cНеверный аргумент! ["&c&n&oHelp","/elevator help","&aНажми
+      что получить помощь!"]'
+    InvalidCreateInput: '%prefix% &cInvalid combination and/or distance input!'
+    InvalidMaterialInput: '%prefix% &cCombination contains (an) invalid material(s).'
+    InvalidElevatorDestination: '%prefix% &cCannot place destination Elevator!'
+    ElevatorDestinationOccupied: '&cЛифт поламался! Требуется техобслуживание'
+    ElevatorDestinationTooGreat: '%prefix% &cСлишком большое расстояние до следующего
+      этажа! Max: %maxDistance% блоков'
+    UnknownCombination: '%prefix% &cUnknown combination input! Combinations range
+      from (1 - %combinations%)'
+    ElevatorPlaced: '%prefix% &aЛифт установлен!'
+    ElevatorNotPlaced: '%prefix% &cЗдесь нельзя разместить лифт!'
+    TooGreatDistanceUp: '%prefix% &cРастояние до этажа вверх слишком большое!'
+    TooGreatDistanceDown: '%prefix% &cРастояние до этажа вниз слишком большое!'
+  FactionsUUID:
+    EnemyFaction: '%prefix% &cВы не можете использовать лифты на вражеской территории!'
+  Admin:
+    ConfigurationsReloaded: '&aНастройки перезагружены!'
+  CombatLogX:
+    InCombat: '%prefix% &cYou can''t use jumppads when in combat!'

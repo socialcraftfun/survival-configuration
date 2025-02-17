@@ -1,0 +1,191 @@
+menu-settings:
+  name: 'Крафт столы'
+  rows: 4
+  command: crafts
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+#
+# ВЕРСТАК
+#
+workbench:
+  position-x: 3
+  position-y: 2
+  id: WORKBENCH
+  name: '&aВерстак'
+  lore:
+    - '&7Можно открыть командой &f/wb'
+    - ''
+    - '&eНажмите, чтобы открыть'
+  action: 
+    - 'sound: BLOCK_WOOD_HIT'
+    - 'player: essentials:wb'
+  click-requirement:
+    default:
+      permission:
+        permission: essentials.workbench
+      fail-command: 'sound: BLOCK_NOTE_BLOCK_DIDGERIDOO'
+#
+# ЭНДЕРСУНДУК
+#
+enderchest:
+  position-x: 4
+  position-y: 2
+  id: ENDER_CHEST
+  name: '&aЭндер-сундук'
+  lore:
+    - '&7Можно открыть командой &f/endersee'
+    - ''
+    - '&eНажмите, чтобы открыть'
+  action:
+    - 'sound: BLOCK_ENDER_CHEST_OPEN'
+    - 'player: essentials:endersee'
+  сlick-requirement:
+    default:
+      permission2:
+        permission: essentials.endersee
+      fail-command: 'sound: BLOCK_NOTE_BLOCK_DIDGERIDOO'
+#
+# ЗАЧАРОВАЛЬНЯ
+#
+enchanting-table:
+  type: predicate
+  position-x: 5
+  position-y: 2
+  button:
+    id: ENCHANTING_TABLE
+    name: '&aСтол зачарования'
+    lore:
+      - '&7Можно открыть командой &f/et'
+      - ''
+      - '&eНажмите, чтобы открыть'
+    action:
+      - 'sound: BLOCK_WOOD_HIT'
+      - 'player: essentialsplus:et'
+    сlick-requirement:
+      default:
+        permission:
+          permission: essentialsplus.enchantingtable
+        fail-command: 'sound: BLOCK_NOTE_BLOCK_DIDGERIDOO'
+#
+# ТАКАЦКИЙ СТАНОК
+#
+loom:
+  type: predicate
+  position-x: 6
+  position-y: 2
+  button:
+    id: LOOM
+    name: '&aТкацкий станок'
+    lore:
+      - '&7Можно открыть командой &f/loom'
+      - ''
+      - '&eНажмите, чтобы открыть'
+    action:
+      - 'sound: ENTITY_VILLAGER_WORK_SHEPHERD'
+      - 'player: essentials:loom'
+    сlick-requirement:
+      default:
+        permission:
+          permission: essentials.loom
+        fail-command: 'sound: BLOCK_NOTE_BLOCK_DIDGERIDOO'
+#
+# СТОЛ КАРТОГРАФА
+#
+cartography-table:
+  type: predicate
+  position-x: 7
+  position-y: 2
+  button:
+    id: CARTOGRAPHY_TABLE
+    name: '&aСтол картографа'
+    lore:
+      - '&7Можно открыть командой &f/carttable'
+      - ''
+      - '&eНажмите, чтобы открыть'
+    action:
+      - 'sound: ENTITY_VILLAGER_WORK_CARTOGRAPHER'
+      - 'player: essentials:carttable'
+    сlick-requirement:
+      default:
+        permission:
+          permission: essentials.cartographytable
+        fail-command: 'sound: BLOCK_NOTE_BLOCK_DIDGERIDOO'
+#
+# СТОЛ КУЗНЕЦА
+#
+smithtable:
+  type: predicate
+  position-x: 4
+  position-y: 3
+  button:
+    id: SMITHING_TABLE
+    name: '&aСтол кузнеца'
+    lore:
+      - '&7Можно открыть командой &f/smithtable'
+      - ''
+      - '&eНажмите, чтобы открыть'
+    action:
+      - 'sound: ENTITY_VILLAGER_WORK_TOOLSMITH'
+      - 'player: essentials:smithtable'
+    сlick-requirement:
+      default:
+        permission:
+          permission: essentials.smithingtable
+        fail-command: 'sound: BLOCK_NOTE_BLOCK_DIDGERIDOO'
+#
+# КАМНЕРЕЗ
+#
+stonecutter:
+  type: predicate
+  position-x: 5
+  position-y: 3
+  button:
+    id: STONECUTTER
+    name: '&aКамнерез'
+    lore:
+      - '&7Можно открыть командой &f/stonecutter'
+      - ''
+      - '&eНажмите, чтобы открыть'
+    action:
+      - 'sound: ENTITY_VILLAGER_WORK_MASON'
+      - 'player: essentials:stonecutter'
+    сlick-requirement:
+      default:
+        permission:
+          permission: essentials.stonecutter
+        fail-command: 'sound: BLOCK_NOTE_BLOCK_DIDGERIDOO'
+#
+# ТОЧИЛО
+#
+grindstone:
+  type: predicate
+  position-x: 6
+  position-y: 3
+  button:
+    id: GRINDSTONE
+    name: '&aТочило'
+    lore:
+      - '&7Можно открыть командой &f/grindstone'
+      - ''
+      - '&eНажмите, чтобы открыть'
+    action:
+      - 'sound: ENTITY_VILLAGER_WORK_WEAPONSMITH'
+      - 'player: essentials:grindstone'
+    сlick-requirement:
+      default:
+        permission:
+          permission: essentials.grindstone
+        fail-command: 'sound: BLOCK_NOTE_BLOCK_DIDGERIDOO'
+#
+# НАЗАД
+#
+#back:
+#  position-x: 1
+#  position-y: 4
+#  type: template
+#  template: back

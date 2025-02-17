@@ -1,0 +1,52 @@
+%YAML 1.1
+---
+isSafe: true
+icons: {
+    }
+sets:
+    markers:
+        hide: false
+        circles:
+            circle_1:
+                markup: false
+                fillOpacity: 0.0
+                boostFlag: true
+                strokeWeight: 3
+                label: spawn
+                fillColor: 16711680
+                world: scworld
+                x: -1356.0
+                zr: 500.0
+                y: 70.0
+                z: -479.0
+                xr: 500.0
+                strokeColor: 16711680
+                strokeOpacity: 0.0
+        deficon: default
+        areas:
+            area_1:
+                markup: false
+                ytop: 64.0
+                fillOpacity: 0.0
+                boostFlag: true
+                strokeWeight: 3
+                label: raid
+                fillColor: 16711680
+                world: scworld
+                x:
+                - 3094.0
+                - 3334.0
+                z:
+                - -4278.0
+                - -4521.0
+                ybottom: 64.0
+                strokeColor: 16711680
+                strokeOpacity: 0.0
+        label: markers
+        markers: {
+            }
+        lines: {
+            }
+        layerprio: 0
+playersets: {
+    }

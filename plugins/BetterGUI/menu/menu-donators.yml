@@ -1,0 +1,73 @@
+menu-settings:
+  name: 'Меню донатера'
+  rows: 4
+  command: dm
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+# ПРИВИЛЕГИЯ
+privilege:
+  type: template
+  template: privilege
+  position-x: 4
+  position-y: 2
+# ИНФО
+info:
+  id: NAME_TAG
+  position-x: 6
+  position-y: 2
+  name: '&bЦели сервера'
+  lore:
+    - '&fВсе денежные средства, вырученные с любых'
+    - '&fигровых товаров, идут на'
+    - '&e&nподдержку&r и &a&nулучшение &rсервера!' 
+    - ''
+    - '&bЕсли Вам нравится наш сервер и Вы'
+    - '&bЖелаете его стреительного развития,'
+    - '&bПомогите своим донатом:)'
+    - ''
+    - '               &a&l&oСпасибо!'
+  action:
+    - 'tell: &7&l| &fСайт для покупки донат-услуг - &ehttps://donate.socialcraft.fun'
+# СПАВНЕР
+#spawner:
+#   material: SPAWNER
+#   position-x: 7
+#   position-y: 2
+#   name: 'Выбор спавнера - &b&l%sudon_type%'
+#   lore:
+#     - '&7Вам доступно &c&l%sudon_spawners% &7спавнеров'
+#     - ''
+#     - '&8[&c&li&8] &fПКМ - выбрать моба в спавнере'
+#   action:
+#     - 'open-spawner'
+# ОПИСАНИЕ ПРИВИЛЕГИЙ
+menu-donate:
+  id: BOOK
+  slot: 31
+  name: '&a&lОписание привилегий'
+  lore:
+     - '&fНажмите, чтобы узнать подробности о'
+     - '&f привилегиях'
+  action:
+    - 'open-menu: guide-donate.yml'
+# ОБМЕННИК КРИСТАЛ
+exchanger_stars:
+  id: NETHER_STAR
+  slot: 35
+  name: '&b&lОбменник звезд'
+  lore:
+    - '&fЗдесь вы можете обменять звёзды (&b✦&f)'
+    - '&f на особые бонусы'
+  action:
+    - 'open-menu: shop-stars.yml'
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 4

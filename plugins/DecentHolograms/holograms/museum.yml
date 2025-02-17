@@ -1,0 +1,16 @@
+location: scworld:-124.700:79.200:-25.700
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&dМузей искусств'
+    height: 0.3
+  - content: '&d----------------'
+    height: 0.3
+  - content: ждет ваши арты
+    height: 0.3
+  actions: {}

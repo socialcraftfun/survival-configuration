@@ -1,0 +1,78 @@
+menu-settings:
+  name: 'Описание рангов: &2Президент'
+  rows: 3
+  command: 
+    - ranks-president
+    - president
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+# ОПИСАНИЕ
+info:
+  type: template
+  template: info
+  position-x: 2
+  position-y: 2
+  lore:
+    - '&fЦентральная личность на SocialCraft'
+    - '&fУправляй столицей и помогай'
+    - '&f админам делать сервер ещё лучше!'
+# ВОМОЖНОСТИ
+opportunity:
+  type: template
+  template: opportunity
+  position-x: 4
+  position-y: 2
+  lore:
+    - '&f* Команды:'
+    - '&7 - /fly - Флай'
+    - '&7    (Можно выдать другим игрокам)'
+    - '&7 - /bc - Объявление на весь сервер' # TODO перенести на журналиста
+    - '&f* Флаги для привата'
+    - ' &7- creeper-explosion'
+    - '    &8иммунитет от криперов'
+    - ' &7- mob-spawning'
+    - '    &8отключить спавн мобов'
+    - ' &7- fire-spread'
+    - '    &8отключить распространение огня'
+    - '&f* 10 приватов &8(&6/rg claim&8)'
+    - '&f* 10 домов &8(&6/sethome&8)'
+    - ''
+    - '&eУчаствуй в совещаниях с админами'
+# ТРЕБОВАНИЯ
+requirements:
+  type: template
+  template: requirements
+  position-x: 6
+  position-y: 2
+  lore:
+    - '&fПодай заявку на участие'
+    - ' &fв выборах, которые проходят'
+    - ' &fраз в 2 месяца'
+    - '&fПридумай слоган, составь'
+    - ' &fсписок планов на время'
+    - ' &fправления и пройди дебаты'
+    - ''
+    - '&7* Необходимо быть гражданином'
+    - '&7* Взнос 1 звезда и 32 алмаза'
+# ОБЯЗАНОСТИ
+responsibilities:
+  type: template
+  template: responsibilities
+  position-x: 8
+  position-y: 2
+  lore:
+    - '&f- Направление развития сервера'
+    - '&f- Развитие и постройка столицы'
+    - '&f- Помощь игрокам'
+    - '&f- Набор полицейских'
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 1
+  position-y: 3

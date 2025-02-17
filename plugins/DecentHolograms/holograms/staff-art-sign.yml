@@ -1,0 +1,16 @@
+location: scworld:-129.919:141.611:-289.309
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&aСовременное'
+    height: 0.3
+  - content: '&aискусство'
+    height: 0.3
+  - content: '&bот Стаффа'
+    height: 0.3
+  actions: {}

@@ -1,0 +1,23 @@
+start: Conductor.greeting1
+Lines:
+  Conductor:
+    color: <WHITE>
+    greeting1:
+      text: Приветсвуем в SocialCraft! Возьмите путеводитель!
+      next: Player.response1
+    accepted1:
+      text: <white>Нажми <red><bold><key:key.advancements></bold></red> <white>и зайди
+        в раздел SocialCraft чтобы открыть путеводитель
+      actions:
+      - action give_advancment_guide
+  Player:
+    color: <WHITE>
+    response1:
+      text: Ок
+      next: Conductor.accepted1
+npcIDs:
+- 13
+npcs:
+  citizens-13:
+    type: citizens
+    integerID: 13

@@ -1,0 +1,67 @@
+menu-settings:
+  name: 'Помощь'
+  rows: 4
+  command: help
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+#
+# 1 СТРОКА
+#
+
+#
+# 2 СТРОКА
+#
+
+
+#
+# 3 СТРОКА
+#
+
+#
+# 4 СТРОКА
+#
+
+# НАЗАД
+back:
+  type: template
+  template: back
+  position-x: 4
+  position-y: 4
+
+# ХЕЛП по режиму
+help_mode:
+  id: player_head
+  position-x: 5
+  position-y: 4
+  name: '&fПомощь по игре'
+  lore:
+    - ''
+    - '&eВы уже на текущей странице'
+# ХЕЛП по чату
+help_chat:
+  id: player_head
+  position-x: 6
+  position-y: 4
+  name: '&fПомощь по голосовому чату'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help_voice.yml'
+# ХЕЛП по приватам
+help_region:
+  id: glass_bottle
+  position-x: 7
+  position-y: 4
+  name: '&fПомощь по приватам'
+  lore:
+    - ''
+    - '&aКлик&7, чтобы открыть'
+  action:
+    - 'open: help_region.yml'

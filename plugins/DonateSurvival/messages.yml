@@ -1,0 +1,8 @@
+plugin-prefix: '[Donate]'
+
+menu:
+  spawner:
+    display: '&fСпавнер &b&l{type}'
+    lore:
+      - ''
+      - '&aНажмите, чтобы выбрать этот спавнер'

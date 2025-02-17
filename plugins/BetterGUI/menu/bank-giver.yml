@@ -1,0 +1,73 @@
+menu-settings:
+  name: 'Положить деньги'
+  rows: 1
+  command: 
+    - bank-give
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+#
+give1:
+  position-x: 2
+  position-y: 1
+  amount: 1
+  id: GREEN_WOOL
+  name: '&aПоложить &l&a1 денег'
+  click-requirement:
+    default:
+      check-inv:
+        item:
+          value: "diamond, 1"
+          take: true
+      fail-action: "tell: Нету нужное количество алмазов в инвентаре"
+  action: "give-money: 1"
+#
+give10:
+  position-x: 5
+  position-y: 1
+  amount: 1
+  id: GREEN_WOOL
+  name: '&aПоложить &l&a10 денег'
+  click-requirement:
+    default:
+      check-inv:
+        item:
+          value: "diamond, 10"
+          take: true
+      fail-action: "tell: Нету нужное количество алмазов в инвентаре"
+  action: "give-money: 10"
+#
+give50:
+  position-x: 8
+  position-y: 1
+  amount: 1
+  id: GREEN_WOOL
+  name: '&aПоложить &l&a50 денег'
+  click-requirement:
+    default:
+      check-inv:
+        item:
+          value: "diamond, 50"
+          take: true
+      fail-action: "tell: Нету нужное количество алмазов в инвентаре"
+  action: "give-money: 50"
+#
+give64:
+  position-x: 9
+  position-y: 1
+  amount: 1
+  id: GREEN_WOOL
+  name: '&aПоложить &l&aстак денег'
+  click-requirement:
+    default:
+      check-inv:
+        item:
+          value: "diamond, 64"
+          take: true
+      fail-action: "tell: Нету нужное количество алмазов в инвентаре"
+  action: "give-money: 64"
+#

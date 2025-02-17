@@ -1,0 +1,16 @@
+# ИНФОРМАЦИЯ
+info:
+  id: OAK_SIGN
+  name: '&e&lОписание'
+# ВОМОЖНОСТИ
+opportunity:
+  id: LIME_WOOL
+  name: '&a&lВозможности'
+# ТРЕБОВАНИЯ
+requirements:
+  id: ANVIL
+  name: '&c&lТребования'
+# ОБЯЗАНОСТИ
+responsibilities:
+  id: WRITABLE_BOOK
+  name: '&6&lОбязаности'

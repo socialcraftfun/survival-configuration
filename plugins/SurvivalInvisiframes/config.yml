@@ -1,0 +1,11 @@
+# Whether or not to enable invisible item frames glowing when there's no item in them
+# This will also make them visible when there's no item in them
+item-frames-glow: true
+recipe:
+  ==: org.bukkit.inventory.ItemStack
+  v: 4189
+  type: LINGERING_POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    potion-type: minecraft:invisibility

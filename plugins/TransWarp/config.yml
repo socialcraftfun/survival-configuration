@@ -1,0 +1,87 @@
+# Виды транспорта тут будут
+transports:
+  city_bus:
+    max_distance: 11000
+    min_distance: 100
+    speed: 30
+    cost: 2
+  intercity_bus:
+    max_distance: 474500
+    min_distance: 83800
+    speed: 70
+  launch:
+    max_distance: 30000
+    mix_distance: 1000
+    speed: 70
+  train:
+    max_distance: 425000
+    min_distance: 1000
+    speed: 140
+  helicopter:
+    max_distance: 425000
+    min_distance: 1000
+    speed: 225
+  airplane:
+    max_distance: 100000000
+    min_distance: 1000
+    speed: 800
+#Отдельный транспорт для перемещений между мирами
+teleporter:
+  # Сколько ждать телепортации (в секундах)
+  time: 100
+  cost: 5
+inter_world_transit: true
+# Если активировано - цена за проезд у транспорта фиксированная и НЕ зависит от дальности
+static_cost: true
+menu:
+  enabled: true
+messages:
+  common:
+    prefix: '&a[&9Transwarp&a] &f'
+    reloaded: TransWarp reloaded
+    no_permissions: Нет прав
+    for_player: This command only for player
+    invalid_usage: Неверное использование
+    no_enough_money: '&eНет денег'
+  command:
+    transport_set: Транспорт успешно установлен
+    help: |-
+      /transwarp reload
+      /settransport <имя> <категория>
+  titles:
+    time_left_title: Вы приедете через
+    time_left_subtitle: '{time}'
+    got_title: '&aУдачи'
+    got_subtitle: '&eВы прибыли на место назначения'
+  error:
+    transport_type_not_initialized: Этот тип транспорта не задан в конфигурации!
+    transport_not_found: Не найдено подходящего транспорта для вас
+    transport_too_close: Слишком близко
+    transport_too_far: Слишком далеко
+  timer:
+    second: секунда
+    seconds: секунд
+    minute: минут
+    minutes: минута
+  transport:
+    you_got: '&6Вы приехали. Удачного дня'
+    transport_to_spawn: Транспорт на спавн
+    transport_to_home: Транспорт домой {home}
+    transport_to_warp: Поездка на варп {warp}
+  menu:
+    title: '{title}'
+    item_title:
+      fast: '&6Быстрый телепорт'
+      fast_lock: '&cНЕДОСТУПНО'
+      gps: '&6GPS'
+      transport: '&6Транспорт'
+    lore:
+      fast:
+      - '&aБыстрая телепортация на точку'
+      fast_lock:
+      - '&4Купите донат, чтобы открыть возможность телепортации'
+      gps:
+      - '&7Нажмите, чтобы использовать навигатор'
+      transport:
+      - ''
+config_version: 1.0.3

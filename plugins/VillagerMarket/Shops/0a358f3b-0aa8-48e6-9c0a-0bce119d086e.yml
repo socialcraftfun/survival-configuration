@@ -1,0 +1,25 @@
+storageSize: 2
+shopfrontSize: 1
+type: PLAYER
+duration: 7d
+cost: 32
+storage: []
+trusted: []
+disable_notifications: false
+expire: 0
+times_rented: 1
+collected_money: 0.0
+require_permission: false
+stats:
+  items_sold: 0
+  items_bought: 0
+  money_earned: 0.0
+  money_spent: 0.0
+entity:
+  profession: NONE
+  name: §aСвободный магазин!
+  location:
+    x: -1332.681417230864
+    y: 70.0
+    z: -428.30438043666993
+    world: scworld

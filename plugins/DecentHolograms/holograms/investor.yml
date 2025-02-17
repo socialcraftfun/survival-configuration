@@ -1,0 +1,36 @@
+location: scworld:-1343.500:80.000:-509.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&2&lИнвестор'
+    height: 0.3
+  - content: '&2&nБонусы'
+    height: 0.3
+  - content: 3 хоума
+    height: 0.3
+  - content: 3 привата
+    height: 0.3
+  - content: 3 звезды почёта
+    height: 0.3
+  - content: Спавнеры на 10 звёзд
+    height: 0.3
+  - content: Флай &7/fly
+    height: 0.3
+  - content: Крафт столы &7/crafts
+    height: 0.3
+  - content: '&2------------------'
+    height: 0.3
+  - content: '&2&nКак получить:'
+    height: 0.3
+  - content: '&oКупить на сайте &e(150 руб)'
+    height: 0.3
+  - content: '&oНавсегда!'
+    height: 0.3
+  - content: '&b&nsocialcraft.fun'
+    height: 0.3
+  actions: {}

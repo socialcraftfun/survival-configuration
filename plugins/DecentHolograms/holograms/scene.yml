@@ -1,0 +1,20 @@
+location: scworld:-137.500:85.000:-116.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&bСцена'
+    height: 0.3
+  - content: '&b----------------'
+    height: 0.3
+  - content: общественные
+    height: 0.3
+  - content: мероприятия,
+    height: 0.3
+  - content: шоу фейерверков
+    height: 0.3
+  actions: {}

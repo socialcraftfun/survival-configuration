@@ -1,0 +1,75 @@
+
+menu-settings:
+  name: 'Описание рангов: &bГражданин'
+  rows: 3
+  command: 
+    - ranks-citizen
+    - citizen
+  open-action:
+    - 'sound: BLOCK_NOTE_BLOCK_BASS'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+# ОПИСАНИЕ
+info:
+  type: template
+  template: info
+  position-x: 2
+  position-y: 2
+  lore:
+    - '&fСамая первая роль'
+    - '&fОна важна для дальшего развития.'
+    - '&fВсе следующие ранги можно получить'
+    - ' &fтолько имея гражданство!'
+# ВОМОЖНОСТИ
+opportunity:
+  type: template
+  template: opportunity
+  position-x: 4
+  position-y: 2
+  lore:
+    - '&f* Приватизация територии'
+    - '&f* 3 хоума &8(&b/sethome&8)'
+    - '&f* Обменник звезд &8(&b/stars&8)'
+    - '&f* Вступление в республику &8(&b/resp&8)'
+    - ' &7- Варп страны'
+    - '&f* Крафт-столы &8(&b/crafts&8)'
+    - ' &7- Портативный верстак &8(&b/wb&8)'
+    - '&f* Голосование на выборах'
+    - '&f* Возможность баллотироваться'
+    - '&f* Возможность пожениться'
+    - '&f* Спрятаться на онлайн карте'
+    - ''
+    - '&eПолучение паспорта'
+    #- '&eЧемодан'
+    #- '&eГерб &bSocial&fCraft'
+# ТРЕБОВАНИЯ
+requirements:
+  type: template
+  template: requirements
+  position-x: 6
+  position-y: 2
+  lore:
+    - '&fВремя: &b%statistic_hours_played%&f/&95ч.'
+    - '&fОпыт: &b%player_level%&f/&930Lvl'
+    - '&fБаланс: &b%vault_eco_balance_formatted%&f/&932'
+    - '&fУстановленный пол &6%rpmaster_human_gender% &8(&b/gender&8)'
+    - '&f64 Аметистовых блоков'
+    - '&f64 Кирпичных блоков'
+    - '&f64 Кварцевых блоков'
+# ОБЯЗАНОСТИ
+responsibilities:
+  type: template
+  template: responsibilities
+  position-x: 8
+  position-y: 2
+  lore:
+    - '&fСоблюдать закон и порядок!'
+# НАЗАД
+back:
+ type: template
+ template: back
+ position-x: 1
+ position-y: 3

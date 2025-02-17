@@ -1,0 +1,27 @@
+rankup:
+  not-done: '&c✘'
+  done: '&a✓'
+  gui:
+    name: 'rankup menu'
+    requirements-name: '&dRequirements For {next_rank}'
+    money-msg: '&aMoney&8: &e{your}&7/&b{required}'
+    level-msg: '&aLevel&8: &e{your}&7/&b{required}'
+    player-kills-msg: '&aKill Score&8: &e{your}&7/&b{required}'
+    total-mob-kills-msg: '&aMob kills&8: &e{your}&7/&b{required}'
+    mob-kills-msg: '&a{required-mob} kills&8: &e{your}&7/&b{required}'
+    item-msg-msg: ''#В ролс
+    block-break-msg: 'Place'#В роли
+    playtime-msg: '&aPlayed minutes&8: &e{your}&7/&b{required}'
+    permission-msg: '&aНаличие права: &c{required}'
+  chat:
+    money-msg: '&8[&3TBR&8] &7You need &a{required} &7amount of money but you
+          only have &c{your}&7.'
+    level-msg: '&8[&3TBR&8] &7You need to be &a{required} &7level to rank up
+                but you are &c{your} &7yet.'
+incorrect_usage: '&cНеправильное использование'
+influence_permissions: '&cНет прав'
+
+gender:
+  not-known: 'Неизвестно'
+  male: 'Мужчина'
+  female: 'Женщина'

@@ -1,0 +1,143 @@
+advancements_map_into_flag_task:
+    type: task
+    debug: false
+    script:
+    - definemap advancements_map:
+        advancement:
+            story/root: Minecraft
+            story/mine_stone: Каменный век
+            story/upgrade_tools: Обновка!
+            story/smelt_iron: Куй железо...
+            story/obtain_armor: Дресс-код
+            story/lava_bucket: Горячая штучка
+            story/iron_tools: И кирка без дела ржавеет
+            story/deflect_arrow: Не дождётесь!
+            story/form_obsidian: Две стихии
+            story/mine_diamond: Алмазы!
+            story/enter_the_nether: Огненные недра
+            story/shiny_gear: Осыпь меня алмазами
+            story/enchant_item: Чародей
+            story/follow_ender_eye: Недреманное око
+            story/enter_the_end: Конец?
+            nether/root: Незер
+            nether/find_bastion: Наф-Наф тут больше не живёт
+            nether/obtain_ancient_debris: Осколки прошлого
+            nether/find_fortress: Чертоги страха
+            nether/obtain_crying_obsidian: Обсидиановы слёзы
+            nether/distract_piglin: Бранзулетка!
+            nether/ride_strider: Ты неси по лаве меня
+            nether/loot_bastion: Было ваше — стало наше!
+            nether/use_lodestone: Путеводный камень
+            nether/get_wither_skull: Бедный Йорик!
+            nether/obtain_blaze_rod: В полымя
+            nether/charge_respawn_anchor: Ларец Кощея
+            nether/ride_strider_in_overworld_lava: Совсем как дома
+            nether/summon_wither: Чудо-юдо
+            nether/brew_potion: Местный зельевар
+            nether/create_beacon: Желанный свет
+            end/root: Энд
+            end/kill_dragon: Освободите Энд
+            end/enter_end_gateway: Идеальный побег
+            end/find_end_city: Будь как дома, путник
+            adventure/root: Приключения
+            adventure/voluntary_exile: Добровольное изгнание
+            adventure/spyglass_at_parrot: Это птица?
+            adventure/kill_a_mob: Охотник на монстров
+            adventure/read_power_of_chiseled_bookshelf: Знание — сила
+            adventure/trade: Не отходя от кассы!
+            adventure/trim_with_any_armor_pattern: С чистого литья
+            adventure/honey_block_slide: Замёдленное падение
+            adventure/ol_betsy: Самострел
+            adventure/lightning_rod_with_villager_no_fire: Куда молния бьёт дважды
+            adventure/fall_from_world_height: Пещеры и скалы
+            adventure/salvage_sherd: Крупицы истории
+            adventure/avoid_vibration: мыш (кродеться)
+            adventure/sleep_in_bed: Спи, моя радость, усни
+            adventure/spyglass_at_ghast: Это аэростат?
+            adventure/throw_trident: Попасть впросак
+            adventure/shoot_arrow: Точно в цель
+            adventure/trade_at_world_height: Звёздный торговец
+            adventure/whos_the_pillager_now: И кто тут теперь разбойник?
+            adventure/craft_decorated_pot_using_only_sherds: Эпоха возрождения
+            adventure/play_jukebox_in_meadows: Играй, гармония!
+            adventure/walk_on_powder_snow_with_leather_boots: Прыткий как заяц
+            adventure/spyglass_at_dragon: Это самолёт?
+            adventure/very_very_frightening: Грянул майский гром
+            husbandry/root: Сельское хозяйство
+            husbandry/safely_harvest_honey: Пора подкрепиться
+            husbandry/breed_an_animal: Романтический ужин
+            husbandry/allay_deliver_item_to_player: Просто так!
+            husbandry/ride_a_boat_with_a_goat: Волк, коза и капуста
+            husbandry/tame_an_animal: Друг человека
+            husbandry/make_a_sign_glow: Чтенье — свет!
+            husbandry/fishy_business: На крючке
+            husbandry/silk_touch_nest: Полосатый груз
+            husbandry/tadpole_in_a_bucket: Почётный пассажир
+            husbandry/obtain_sniffer_egg: Легенда о нюхозавре
+            husbandry/plant_seed: Поле чудес
+            husbandry/wax_on: Навести воск
+            husbandry/allay_deliver_cake_to_note_block: Только раз в году!
+            husbandry/tactical_fishing: Рыбацкая хитрость
+            husbandry/leash_all_frog_variants: Кто шагает дружно в ряд?
+            husbandry/feed_snifflet: Шмыгунчик
+            husbandry/wax_off: Убрать воск
+            husbandry/axolotl_in_a_bucket: Ласковый и нежный зверь
+            husbandry/plant_any_sniffer_seed: Палеоботаника
+            husbandry/kill_axolotl_target: Дружба — это чудо!
+        goal:
+            story/cure_zombie_villager: Доктор для зомби
+            nether/create_full_beacon: Маяковский
+            end/respawn_dragon: Дежавю
+            end/dragon_breath: Освежи дыхание
+            end/elytra: Где твои крылья?
+            adventure/totem_of_undying: Свет в конце тоннеля
+            adventure/summon_iron_golem: Три закона големотехники
+        challenge:
+            nether/return_to_sender: Вернуть отправителю
+            nether/fast_travel: Кротовая нора
+            nether/uneasy_alliance: Война миров
+            nether/netherite_armor: Ладные доспехи
+            nether/explore_nether: Горящий тур
+            nether/all_potions: Энергетический коктейль
+            nether/all_effects: Невозможное возможно
+            end/levitate: Прекрасный вид!
+            adventure/hero_of_the_village: Герой деревни
+            adventure/kill_mob_near_sculk_catalyst: Оно живое
+            adventure/kill_all_mobs: Зверобой
+            adventure/trim_with_all_exclusive_armor_patterns: Кузнец своего стиля
+            adventure/two_birds_one_arrow: Двух птиц одним выстрелом
+            adventure/arbalistic: Арбаллистика
+            adventure/adventuring_time: Время приключений
+            adventure/sniper_duel: Снайперская дуэль
+            adventure/bullseye: В яблочко!
+            husbandry/obtain_netherite_hoe: Заявка на победу
+            husbandry/froglights: Перекрёсток семи болот
+    - flag server advancements_map:<[advancements_map]>
+
+advancements_to_discord:
+    type: world
+    debug: false
+    events:
+        on player completes advancement:
+        - if <context.advancement.before[/]> != recipes:
+            - define message null
+            - define map <server.flag[advancements_map]>
+            - foreach <[map]> key:type as:submap:
+                - foreach <[submap]> key:eng as:ru:
+                    - if <[eng]> == <context.advancement>:
+                        - if <[type]> == advancement:
+                            - define message "***<player.name>** получил достижение **<[ru]>***"
+                            - foreach stop
+                        - if <[type]> == goal:
+                            - define message "***<player.name>** достиг цели **<[ru]>***"
+                            - foreach stop
+                        - if <[type]> == challenge:
+                            - define message "***<player.name>** завершил испытание **<[ru]>***"
+                            - foreach stop
+            - if <[message]> == null:
+                - define element <context.message.strip_color.split.get[1]>
+                - define name **<player.name>**
+                - define message *<context.message.strip_color.replace_text[firstregex:<[element]>].with[<[name]>]>*
+                - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>
+                - stop
+            - ~discordmessage id:sc_chat channel:<server.flag[sc_chat]> <[message]>

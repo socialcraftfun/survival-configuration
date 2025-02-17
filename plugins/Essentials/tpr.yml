@@ -1,0 +1,36 @@
+# Configuration for the random teleport command.
+# Use the /settpr command in-game to set random teleport locations.
+
+min-range: 600.0
+max-range: 2000.0
+excluded-biomes:
+- cold_ocean
+- deep_cold_ocean
+- deep_frozen_ocean
+- deep_lukewarm_ocean
+- deep_ocean
+- deep_warm_ocean
+- frozen_ocean
+- frozen_river
+- lukewarm_ocean
+- ocean
+- river
+- warm_ocean
+center:
+  world: 18b469d6-8631-436c-ac6f-0b256a9f9f03
+  x: 0.5
+  y: 0.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+  world-name: scworld
+locations:
+  scworld:
+    center:
+      world: 3fa2b56c-fccc-495b-9a6b-13071b1aa778
+      world-name: scworld
+      x: 0.0
+      y: 63.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0

@@ -1,0 +1,7 @@
+actions:
+  give_advancment_guide:
+    actionType: GiveQuest
+    displayName: give_advancment_guide
+    specifics:
+      quest: guide_advancement
+      forceGive: false

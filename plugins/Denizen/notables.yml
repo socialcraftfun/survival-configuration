@@ -1,0 +1,37 @@
+Cuboids:
+  sf_green_team_sign:
+    object: cu@scworld,-134,93,-4602,-134,93,-4602
+    flags: ''
+  sf_start_signs:
+    object: cu@scworld,-134,93,-4602,-132,93,-4602
+    flags: ''
+  sf_red_team_sign:
+    object: cu@scworld,-132,93,-4602,-132,93,-4602
+    flags: ''
+  fools_day_area:
+    object: cu@scworld,1183,5,7291,1205,11,7335
+    flags: ''
+  mafia_area:
+    object: cu@scworld,-3300,59,-3283,-3264,70,-3247
+    flags: ''
+  newyear_event_area:
+    object: cu@scworld,111,62,-4541,255,102,-4455
+    flags: ''
+  shop_test_area_note:
+    object: cu@scworld,1193,5,7291,1200,11,7298
+    flags: ''
+  sf_stop_sign:
+    object: cu@scworld,-133,94,-4601,-133,94,-4601
+    flags: ''
+  green_team_sign:
+    object: cu@scworld,-134,93,-4602,-134,93,-4602
+    flags: ''
+  red_team_sign:
+    object: cu@scworld,-132,93,-4602,-132,93,-4602
+    flags: ''
+  snow_arena_area:
+    object: cu@scworld,-194,82,-4662,-70,152,-4538
+    flags: ''
+Locations:
+  destination: -447.9891383755871,-38.93781245881645,-2610.6385703181827,61.08896,75.46745,scworld
+  fools_day_point: 154.42835374102904,122.20000004768372,881.4603032403669,4.050015,271.68045,scworld_nether

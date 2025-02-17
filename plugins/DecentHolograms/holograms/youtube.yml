@@ -1,0 +1,34 @@
+location: scworld:-180.500:90.000:-205.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&c&lYou&f&lTube'
+    height: 0.3
+  - content: '&c&nБонусы'
+    height: 0.3
+  - content: 5 хоумов
+    height: 0.3
+  - content: Флай &7/fly
+    height: 0.3
+  - content: Крафт столы &7/crafts
+    height: 0.3
+  - content: '&oОбъявление о твоём'
+    height: 0.3
+  - content: '&oстриме или видео'
+    height: 0.3
+  - content: '&oна весь сервер'
+    height: 0.3
+  - content: '&c------------------'
+    height: 0.3
+  - content: '&c&nКак получить:'
+    height: 0.3
+  - content: '&oСделать видео или'
+    height: 0.3
+  - content: '&oстрим о SocialCraft'
+    height: 0.3
+  actions: {}

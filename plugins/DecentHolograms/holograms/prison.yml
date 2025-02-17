@@ -1,0 +1,18 @@
+location: scworld:-48.460:71.277:-175.950
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&4Тюрьма'
+    height: 0.3
+  - content: '&4----------------'
+    height: 0.3
+  - content: для нарушителей
+    height: 0.3
+  - content: правил SocialCraft
+    height: 0.3
+  actions: {}
